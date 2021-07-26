@@ -1,0 +1,23 @@
+:root{
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: #f79a21;
+    --border-color: #dbdbdb;
+    --header-height: 70px;
+}
+*{
+    box-sizing: inherit;
+}
+
+*::-webkit-scrollbar{
+	overflow: hidden;
+	display: none;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
