@@ -146,57 +146,89 @@
                 </ul>
             </nav>
             <div class="content">
-                <div class="account">
+                <div class="product">
                     <div class="grid">
                         <div class="account__location">
                             <div>
                                 <a class="accout__location-home" href="?controller=trangchu">Trang chủ</a>
                             </div>
                             <div>
-                                <p class="accout__location-current"> > &nbsp;&nbsp;&nbsp; Đăng ký</p>
+                                <p class="accout__location-current"> > &nbsp;&nbsp;&nbsp; Sản phẩm</p>
                             </div>
                         </div>
                     </div>
                     <div class="grid wide">
-                        <div class="account__heading">Đăng ký tài khoản</div>
-                        <div class="account__register">
-                            <div class="row">
-                                <div class="col l-12 m-12 c-12">
-                                    <form action="#" method="post">
-                                        <div class="row">
-                                            <div class="col l-6 m-12 c-12">
-                                                <div class="account__register-item">
-                                                    <label for="register-fullname" class="account__register-input-label">Họ và tên</label>
-                                                    <input type="text" class="account__register-input" id="register-fullname" placeholder="Họ và tên">
+                        <div class="row">
+                            <div class="col l-2 m-0 c-0">
+                                <nav class="catalog">
+                                    <h3 class="catalog__heading">Danh mục</h3>
+                                    <ul class="catalog__list">
+                                        <li class="catalog__item">
+                                            <a href="#" class="catalog__item-link">Áo khoác</a>
+                                        </li>
+                                        <li class="catalog__item">
+                                            <a href="#" class="catalog__item-link">Áo phông</a>
+                                        </li>
+                                        <li class="catalog__item">
+                                            <a href="#" class="catalog__item-link">Quần đùi</a>
+                                        </li>
+                                        <li class="catalog__item">
+                                            <a href="#" class="catalog__item-link">Quần âu</a>
+                                        </li>
+                                        <li class="catalog__item">
+                                            <a href="#" class="catalog__item-link">Giày, dép</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col l-10 m-12 c-12">
+                                <nav class="mobile-catalog">
+                                    <ul class="mobile-catalog__list">
+                                        <li class="mobile-catalog__item">
+                                            <a href="" class="mobile-catalog__link">
+                                                Áo khoác
+                                            </a>
+                                        </li>
+                                        <li class="mobile-catalog__item">
+                                            <a href="" class="mobile-catalog__link">
+                                                Áo thun
+                                            </a>
+                                        </li>
+                                        <li class="mobile-catalog__item">
+                                            <a href="" class="mobile-catalog__link">
+                                                Quần đùi
+                                            </a>
+                                        </li>
+                                        <li class="mobile-catalog__item">
+                                            <a href="" class="mobile-catalog__link">
+                                                Quần âu
+                                            </a>
+                                        </li>
+                                        <li class="mobile-catalog__item">
+                                            <a href="" class="mobile-catalog__link">
+                                                Giày, dép
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <div class="row sm-gutter">
+                                    <div class="col l-2-4 m-4 c-6">
+                                        <div class="home-product-item">
+                                            <a href="" class="home-product-item__link">
+                                                <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-1.jpg');"></div>
+                                                <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
+                                                <div class="hone-product-item__price">
+                                                    <span class="home-product-item__price-current">
+                                                        1.000.000đ
+                                                    </span>
                                                 </div>
-                                            </div>
-                                            <div class="col l-6 m-12 c-12">
-                                                <div class="account__register-item">
-                                                    <label for="register-phone" class="account__register-input-label">Số điện thoại</label>
-                                                    <input type="text" class="account__register-input" id="register-phone" placeholder="Số điện thoại">
+                                                <div class="home-product-item__favourite">
+                                                        <i class="fas fa-check"></i>
+                                                        <span>Yêu thích</span>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </div>
-                                        <div class="row">
-                                            <div class="col l-6 m-12 c-12">
-                                                <div class="account__register-item">
-                                                    <label for="register-email" class="account__register-input-label">Email</label>
-                                                    <input type="text" class="account__register-input" id="register-email" placeholder="Email">
-                                                </div>
-                                            </div>
-                                            <div class="col l-6 m-12 c-12">
-                                                <div class="account__register-item">
-                                                    <label for="register-password" class="account__register-input-label">Mật khẩu</label>
-                                                    <input type="password" class="account__register-input" id="register-password" placeholder="Mật khẩu">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col l-6 m-12 c-12">
-                                                <input type="submit" class="account__register-submit" value="Đăng ký" id="login-username">
-                                            </div>
-                                        </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>

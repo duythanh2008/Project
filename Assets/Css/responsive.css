@@ -1,0 +1,77 @@
+@media (max-width: 1023px){
+    .hide-on-mobile-tablet{
+        display: none
+    }
+    .header__navbar-mobile-bars{
+        display: inline-block;
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px){
+    .hide-on-tablet{
+        display: none;
+    }
+}
+
+/* Mobile */
+@media (max-width: 739px){
+    .row{
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    .header{
+        height: 60px;
+    }
+    .hide-on-mobile{
+        display: none;
+    }
+    .header__navbar-logo{
+        width: 100px;
+    }
+    .pagination-item__link{
+        --height: 28px;
+        font-size: 1.6rem;
+        min-width: 36px;
+        height: var(--height);
+    }
+    .footer__content{
+        padding: 0 24px;
+    }
+    .footer__heading{
+        text-align: center;
+    }
+    .footer__download,
+    .footer__list-item-link{
+        justify-content: center;
+    }
+    .footer__download-apps{
+        flex: unset;
+    }
+    .footer__download-app-link{
+        padding: 6px 8px;
+    }
+    .account__heading{
+        margin: 0 16px;
+    }
+    .account__login{
+        margin-top: 20px;
+    }
+    .account__login-item{
+        padding: 15px 16px;
+    }
+    .account-link-register{
+        padding: 15px 16px;
+        margin-top: 20px;
+    }
+    .account__register{
+        margin-top: 20px;
+    }
+    .account__register-item{
+        padding: 15px 16px;
+    }
+    .account__register-submit{
+        width: calc(100% - 32px);
+        margin: 15px 16px;
+    }
+}

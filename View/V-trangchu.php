@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="./Assets/Img/logo.png">
     <link rel="stylesheet" href="./Assets/Css/grid.css">
-    <link rel="stylesheet" href="./Assets/Css/main.css">
+    <link rel="stylesheet" href="./Assets/Css/responsive.css">
     <link rel="stylesheet" href="./Assets/Css/base.css">
+    <link rel="stylesheet" href="./Assets/Css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,13 +35,13 @@
                                 </a>
                             </li>
                             <li class="header__navbar-item header__navbar-item-has-category">
-                                <a href="" class="header__navbar-link">
+                                <a href="?controller=sanpham" class="header__navbar-link">
                                     Sản phẩm
                                 </a>
                                 <ul class="header__navbar-category-product">
                                     <li class="header__navbar-category-item">
                                         <a href="" class="header__navbar-category-link">
-                                            Áo thun
+                                            Áo khoác
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
@@ -104,11 +105,11 @@
                         <a href="?controller=trangchu" class="header__navbar-mobile-link">Trang chủ</a>
                     </li>
                     <li>
-                        <a href="" class="header__navbar-mobile-link">Sản phẩm</a>
+                        <a href="?controller=sanpham"" class="header__navbar-mobile-link">Sản phẩm</a>
                         <ul class="header__navbar-category-product-mobile">
                                     <li class="header__navbar-category-item-mobile">
                                         <a href="" class="header__navbar-category-link-mobile">
-                                            Áo thun
+                                            Áo khoác
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item-mobile">
@@ -166,19 +167,23 @@
                             Sản phẩm nổi bật
                         </h3>
                         <div class="row sm-gutter">
-                            <?php foreach ($product as $key => $value) { ?>
                             <div class="col l-2-4 m-4 c-6">
-                                <a href="" class="home-product-item">
-                                    <div class="home-product-item__img" style="background-image: url('<?php echo $value['image'] ?>');"></div>
-                                    <h4 class="home-product-item__name"><?php echo $value['name'] ?></h4>
-                                    <div class="hone-product-item__price">
-                                        <span class="home-product-item__price-current">
-                                        <?php echo number_format($value['price']) ?>đ
-                                        </span>
-                                    </div>
-                                </a>
+                                <div class="home-product-item">
+                                    <a href="" class="home-product-item__link">
+                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-1.jpg');"></div>
+                                        <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
+                                        <div class="hone-product-item__price">
+                                            <span class="home-product-item__price-current">
+                                                1.000.000đ
+                                            </span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                                <i class="fas fa-check"></i>
+                                                <span>Yêu thích</span>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -218,7 +223,7 @@
                                     <a href="#" class="footer__list-item-link">Áo phông</a>
                                 </li>
                                 <li class="footer__list-item">
-                                    <a href="#" class="footer__list-item-link">Áo thun</a>
+                                    <a href="#" class="footer__list-item-link">Áo khoác</a>
                                 </li>
                                 <li class="footer__list-item">
                                     <a href="#" class="footer__list-item-link">Quần đùi</a>

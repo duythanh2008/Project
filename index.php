@@ -19,5 +19,8 @@
         case 'dangky':
             require_once './Controller/C-dangky.php';
             break;
+        case 'sanpham':
+            require_once './Controller/C-sanpham.php';
+            break;
     }
 ?>
