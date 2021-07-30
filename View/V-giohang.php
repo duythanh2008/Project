@@ -135,7 +135,7 @@
                                 </ul>
                     </li>
                     <li>
-                        <a href="?controller=lienhe" class="header__navbar-mobile-link">Liên hệ</a>
+                        <a href="" class="header__navbar-mobile-link">Liên hệ</a>
                     </li>
                     <li>
                         <a href="" class="header__navbar-mobile-link">Đơn hàng</a>
@@ -146,97 +146,24 @@
                 </ul>
             </nav>
             <div class="content">
-                <div class="product">
+                <div class="contact">
                     <div class="grid">
                         <div class="account__location">
                             <div>
                                 <a class="accout__location-home" href="?controller=trangchu">Trang chủ</a>
                             </div>
                             <div>
-                                <p class="accout__location-current"> > &nbsp;&nbsp;&nbsp; Sản phẩm</p>
+                                <p class="accout__location-current"> > &nbsp;&nbsp;&nbsp; Giỏ hàng</p>
                             </div>
                         </div>
                     </div>
                     <div class="grid wide">
-                        <div class="row">
-                            <div class="col l-2 m-0 c-0">
-                                <nav class="catalog">
-                                    <h3 class="catalog__heading">Danh mục</h3>
-                                    <ul class="catalog__list">
-                                        <li class="catalog__item">
-                                            <a href="#" class="catalog__item-link">Áo khoác</a>
-                                        </li>
-                                        <li class="catalog__item">
-                                            <a href="#" class="catalog__item-link">Áo phông</a>
-                                        </li>
-                                        <li class="catalog__item">
-                                            <a href="#" class="catalog__item-link">Quần đùi</a>
-                                        </li>
-                                        <li class="catalog__item">
-                                            <a href="#" class="catalog__item-link">Quần âu</a>
-                                        </li>
-                                        <li class="catalog__item">
-                                            <a href="#" class="catalog__item-link">Giày, dép</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div class="col l-10 m-12 c-12">
-                                <nav class="mobile-catalog">
-                                    <ul class="mobile-catalog__list">
-                                        <li class="mobile-catalog__item">
-                                            <a href="" class="mobile-catalog__link">
-                                                Áo khoác
-                                            </a>
-                                        </li>
-                                        <li class="mobile-catalog__item">
-                                            <a href="" class="mobile-catalog__link">
-                                                Áo thun
-                                            </a>
-                                        </li>
-                                        <li class="mobile-catalog__item">
-                                            <a href="" class="mobile-catalog__link">
-                                                Quần đùi
-                                            </a>
-                                        </li>
-                                        <li class="mobile-catalog__item">
-                                            <a href="" class="mobile-catalog__link">
-                                                Quần âu
-                                            </a>
-                                        </li>
-                                        <li class="mobile-catalog__item">
-                                            <a href="" class="mobile-catalog__link">
-                                                Giày, dép
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                                <div class="row sm-gutter">
-                                    <div class="col l-2-4 m-4 c-6">
-                                        <div class="home-product-item">
-                                            <a href="" class="home-product-item__link">
-                                                <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-1.jpg');"></div>
-                                                <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                                <div class="hone-product-item__price">
-                                                    <span class="home-product-item__price-current">
-                                                        1.000.000đ
-                                                    </span>
-                                                </div>
-                                                <div class="home-product-item__favourite">
-                                                        <i class="fas fa-check"></i>
-                                                        <span>Yêu thích</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
             <footer class="footer">
-                <div class="grid wide footer__content">
+            <div class="grid wide footer__content">
                     <div class="row">
                         <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">Liên hệ</h3>

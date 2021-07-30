@@ -38,19 +38,6 @@
     .footer__content{
         padding: 0 24px;
     }
-    .footer__heading{
-        text-align: center;
-    }
-    .footer__download,
-    .footer__list-item-link{
-        justify-content: center;
-    }
-    .footer__download-apps{
-        flex: unset;
-    }
-    .footer__download-app-link{
-        padding: 6px 8px;
-    }
     .account__heading{
         margin: 0 16px;
     }

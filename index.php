@@ -22,5 +22,11 @@
         case 'sanpham':
             require_once './Controller/C-sanpham.php';
             break;
+        case 'lienhe':
+            require_once './Controller/C-lienhe.php';
+            break;
+        case 'giohang':
+            require_once './Controller/C-giohang.php';
+            break;
     }
 ?>

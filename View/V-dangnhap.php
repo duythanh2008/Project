@@ -67,13 +67,13 @@
                                 </ul>
                             </li>
                             <li class="header__navbar-item">
-                                <a href="" class="header__navbar-link">
-                                    Tin tức
+                                <a href="?controller=lienhe" class="header__navbar-link">
+                                    Liên hệ
                                 </a>
                             </li>
                             <li class="header__navbar-item">
                                 <a href="" class="header__navbar-link">
-                                    Liên hệ
+                                    Đơn hàng
                                 </a>
                             </li>
                             <li class="header__navbar-item">
@@ -83,7 +83,7 @@
                             </li>
                         </ul>
                         <div class="header__navbar-cart">
-                            <a href="" class="header__navbar-cart-link">
+                            <a href="?controller=giohang" class="header__navbar-cart-link">
                                 <i class="header__navbar-cart-icon fas fa-shopping-cart"></i>
                                 Giỏ hàng
                             </a>
@@ -135,10 +135,10 @@
                                 </ul>
                     </li>
                     <li>
-                        <a href="" class="header__navbar-mobile-link">Tin tức</a>
+                        <a href="?controller=lienhe" class="header__navbar-mobile-link">Liên hệ</a>
                     </li>
                     <li>
-                        <a href="" class="header__navbar-mobile-link">Liên hệ</a>
+                        <a href="" class="header__navbar-mobile-link">Đơn hàng</a>
                     </li>
                     <li>
                         <a href="?controller=dangnhap" class="header__navbar-mobile-link">Tài khoản</a>
@@ -179,6 +179,9 @@
                                                     " href="#">Quên mật khẩu ?</a>
                                         <input type="submit" class="account__login-submit" value="Đăng nhập" id="login-username">
                                     </div>
+                                    <div class="account__login-item">
+                                        <a class="account__login-item-link" href="#">Đăng nhập với tư cách Quản trị viên</a>
+                                    </div>
                                 </div>
                                 </form>
                             </div>
@@ -195,9 +198,20 @@
                 </div>
             </div>
             <footer class="footer">
-                <div class="grid wide footer__content">
+            <div class="grid wide footer__content">
                     <div class="row">
-                        <div class="col l-3 m-4 c-6">
+                        <div class="col l-2-4 m-4 c-6">
+                            <h3 class="footer__heading">Liên hệ</h3>
+                            <ul class="footer__list">
+                                <li class="footer__list-item">
+                                    <p class="footer__list-item-link">Địa chỉ: Số 1 Hoàng Đạo Thúy, Nhân Chính, Thanh Xuân, Hà Nội</p>
+                                </li>
+                                <li class="footer__list-item">
+                                    <p class="footer__list-item-link">Hotline: 0987654321</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">Chăm sóc khách hàng</h3>
                             <ul class="footer__list">
                                 <li class="footer__list-item">
@@ -208,7 +222,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col l-3 m-4 c-6">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">Giới thiệu</h3>
                             <ul class="footer__list">
                                 <li class="footer__list-item">
@@ -222,7 +236,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col l-3 m-4 c-6">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">Danh mục</h3>
                             <ul class="footer__list">
                                 <li class="footer__list-item">
@@ -242,7 +256,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col l-3 m-4 c-6">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">Theo dõi chúng tôi</h3>
                             <ul class="footer__list">
                                 <li class="footer__list-item">
