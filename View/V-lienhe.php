@@ -76,17 +76,56 @@
                                     Đơn hàng
                                 </a>
                             </li>
+                            <?php
+                                if(isset($_SESSION['customer']) && $_SESSION['customer'] != NULL){
+                            ?>
+                            <li class="header__navbar-item">
+                               <a href="#" style="margin-left: 12px;
+                                                  text-decoration: none;
+                                                  padding: 0 6px;
+                                                  font-size: 1.5rem;
+                                                  color: var(--white-color);"> <?php echo $user[0]['username']?></a><a href="?controller=dangxuat" style="margin-left: 1px;" class="header__navbar-link">Thoát</a>
+                            </li>
+                            <?php }else{ ?>
                             <li class="header__navbar-item">
                                 <a href="?controller=dangnhap" class="header__navbar-link">
                                     Tài khoản
                                 </a>
                             </li>
+                            <?php } ?>
                         </ul>
                         <div class="header__navbar-cart">
-                            <a href="?controller=giohang" class="header__navbar-cart-link">
-                                <i class="header__navbar-cart-icon fas fa-shopping-cart"></i>
-                                Giỏ hàng
-                            </a>
+                            <div class="header__navbar-cart-wrap">
+                                    <a href="?controller=giohang" class="header__navbar-cart-link">
+                                        <i class="header__navbar-cart-icon fas fa-shopping-cart"></i>
+                                        Giỏ hàng
+                                    </a>
+                                    <div class="header__navbar-cart-list">
+                                        <h4 class="header__navbar-cart-heading">Sản phẩm đã thêm</h4>
+                                        <ul class="header__navbar-cart-list-item">
+                                            <li class="header__navbar-cart-item">
+                                                <img src="./Assets/Img/product-1.jpg" alt="" class="header__navbar-cart-img">
+                                                <div class="header__navbar-cart-item-info">
+                                                    <div class="header__navbar-cart-item-head">
+                                                        <h5 class="header__navbar-cart-item-name">Áo khoác đỏ</h5>
+                                                        <div class="header__navbar-cart-item-price-wrap">
+                                                            <span class="header__navbar-cart-item-price">2.000.000đ</span>
+                                                            <span class="header__navbar-cart-item-multiply">x</span>
+                                                            <span class="header__navbar-cart-item-quantity">2</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="header__navbar-cart-item-body">
+                                                        <span class="header__navbar-cart-item-desc">
+                                                            Size: S
+                                                        </span>
+                                                        <span class="header__navbar-cart-item-remove">Xóa</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <a href="?controller=giohang" class="header__navbar-cart-item-cart header__navbar-cart-item-cart-btn">Xem giỏ hàng</a>
+                                        </ul>
+                                    </div>
+                                </div>
                             <label for="nav__mobile-input" class="header__navbar-mobile-bars">       
                                 <i class="fas fa-bars"></i>
                             </label>
@@ -140,9 +179,20 @@
                     <li>
                         <a href="" class="header__navbar-mobile-link">Đơn hàng</a>
                     </li>
+                    <?php
+                        if(isset($_SESSION['customer']) && $_SESSION['customer'] != NULL){
+                    ?>
                     <li>
-                        <a href="?controller=dangnhap" class="header__navbar-mobile-link">Tài khoản</a>
+                       <a href="#" class="header__navbar-mobile-link-account" style="margin-right: 10px"> <?php echo $user[0]['username']?></a>
+                       <a href="?controller=dangxuat" class="header__navbar-mobile-link-account">Thoát</a>
                     </li>
+                    <?php }else{ ?>
+                    <li>
+                        <a href="?controller=dangnhap" class="header__navbar-mobile-link">
+                            Tài khoản
+                        </a>
+                    </li>
+                    <?php } ?>
                 </ul>
             </nav>
             <div class="content">
@@ -178,8 +228,9 @@
                             </div>
                             <div class="col l-6 m-12 c-12">
                                 <div class="contact-info">
-                                    <p class="contact-info__address">Địa chỉ: Số 1, Hoàng Đạo Thúy, Phường Nhân Chính, Quận Thanh Xuân, Hà Nội</p>
-                                    <p class="contact-info__phone">Hotline: <a href="tel: 0987654321" class="contact-info__phone-link">0987654321</a> </p>
+                                    <h3 class="contact-info__address">Địa chỉ: Số 1, Hoàng Đạo Thúy, Phường Nhân Chính, Quận Thanh Xuân, Hà Nội</h3>
+                                    <h3 class="contact-info__phone">Hotline: <a href="tel: 0987654321" class="contact-info__phone-link">0987654321</a> </h3>
+                                    <h3 class="contact-info__mail">Mail: contact@fashiongenz.com</h3>
                                     <iframe class="contact-info__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6768648167285!2d105.80168511531349!3d21.005586293944056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aca1f608e5d5%3A0x1a8159d717fd1eff!2zMSBIb8OgbmcgxJDhuqFvIFRow7p5LCBOaMOibiBDaMOtbmgsIFRoYW5oIFh1w6JuLCBIw6AgTuG7mWkgMTIwNjM4LCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1627629310954!5m2!1svi!2s" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                                 </div>
                             </div>
@@ -195,6 +246,9 @@
                             <ul class="footer__list">
                                 <li class="footer__list-item">
                                     <p class="footer__list-item-link">Địa chỉ: Số 1 Hoàng Đạo Thúy, Nhân Chính, Thanh Xuân, Hà Nội</p>
+                                </li>
+                                <li class="footer__list-item">
+                                    <p class="footer__list-item-link">Mail: contact@fashiongenz.com</p>
                                 </li>
                                 <li class="footer__list-item">
                                     <p class="footer__list-item-link">Hotline: 0987654321</p>

@@ -1,9 +1,13 @@
+/* Mobile % Tablet */
 @media (max-width: 1023px){
     .hide-on-mobile-tablet{
         display: none
     }
     .header__navbar-mobile-bars{
         display: inline-block;
+    }
+    .header__navbar-cart-list{
+        right: -10px;
     }
 }
 

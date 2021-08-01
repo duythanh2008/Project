@@ -83,10 +83,37 @@
                             </li>
                         </ul>
                         <div class="header__navbar-cart">
-                            <a href="?controller=giohang" class="header__navbar-cart-link">
-                                <i class="header__navbar-cart-icon fas fa-shopping-cart"></i>
-                                Giỏ hàng
-                            </a>
+                            <div class="header__navbar-cart-wrap">
+                                    <a href="?controller=giohang" class="header__navbar-cart-link">
+                                        <i class="header__navbar-cart-icon fas fa-shopping-cart"></i>
+                                        Giỏ hàng
+                                    </a>
+                                    <div class="header__navbar-cart-list">
+                                        <h4 class="header__navbar-cart-heading">Sản phẩm đã thêm</h4>
+                                        <ul class="header__navbar-cart-list-item">
+                                            <li class="header__navbar-cart-item">
+                                                <img src="./Assets/Img/product-1.jpg" alt="" class="header__navbar-cart-img">
+                                                <div class="header__navbar-cart-item-info">
+                                                    <div class="header__navbar-cart-item-head">
+                                                        <h5 class="header__navbar-cart-item-name">Áo khoác đỏ</h5>
+                                                        <div class="header__navbar-cart-item-price-wrap">
+                                                            <span class="header__navbar-cart-item-price">2.000.000đ</span>
+                                                            <span class="header__navbar-cart-item-multiply">x</span>
+                                                            <span class="header__navbar-cart-item-quantity">2</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="header__navbar-cart-item-body">
+                                                        <span class="header__navbar-cart-item-desc">
+                                                            Size: S
+                                                        </span>
+                                                        <span class="header__navbar-cart-item-remove">Xóa</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <a href="?controller=giohang" class="header__navbar-cart-item-cart header__navbar-cart-item-cart-btn">Xem giỏ hàng</a>
+                                        </ul>
+                                    </div>
+                                </div>
                             <label for="nav__mobile-input" class="header__navbar-mobile-bars">       
                                 <i class="fas fa-bars"></i>
                             </label>
@@ -161,15 +188,21 @@
                         <div class="account__heading">Đăng nhập tài khoản</div>
                         <div class="row">
                             <div class="col l-6 m-6 c-12">
-                                <form action="#" method="post">
+                                <form action="?controller=dangnhap" method="post">
                                 <div class="account__login">
                                     <div class="account__login-item">
                                         <label for="login-username" class="account__login-input-label">Tên đăng nhập</label>
-                                        <input type="text" class="account__login-input" id="login-username" placeholder="Tên đăng nhập">
+                                        <input type="text" name="user" class="account__login-input" id="login-username" placeholder="Tên đăng nhập">
+                                        <?php if(isset($error['username'])){?>
+                                            <p style=" font-size: 14px; color: red;"><?php echo $error['username'] ?></p>
+                                        <?php } ?>
                                     </div>
                                     <div class="account__login-item">
                                         <label for="login-password" class="account__login-input-label">Mật khẩu</label>
-                                        <input type="password" class="account__login-input" id="login-username" placeholder="Mật khẩu">
+                                        <input type="password" name="pass" class="account__login-input" id="login-username" placeholder="Mật khẩu">
+                                        <?php if(isset($error['password'])){?>
+                                            <p style=" font-size: 14px; color: red;"><?php echo $error['password'] ?></p>
+                                        <?php } ?>
                                     </div>
                                     <div class="account__login-item">
                                         <a style="text-decoration:none;
@@ -177,7 +210,7 @@
                                                   margin-bottom: 10px;
                                                   color: var(--primary-color);
                                                     " href="#">Quên mật khẩu ?</a>
-                                        <input type="submit" class="account__login-submit" value="Đăng nhập" id="login-username">
+                                        <input type="submit" class="account__login-submit" name="dangnhap" value="Đăng nhập" id="login-username">
                                     </div>
                                     <div class="account__login-item">
                                         <a class="account__login-item-link" href="#">Đăng nhập với tư cách Quản trị viên</a>
@@ -205,6 +238,9 @@
                             <ul class="footer__list">
                                 <li class="footer__list-item">
                                     <p class="footer__list-item-link">Địa chỉ: Số 1 Hoàng Đạo Thúy, Nhân Chính, Thanh Xuân, Hà Nội</p>
+                                </li>
+                                <li class="footer__list-item">
+                                    <p class="footer__list-item-link">Mail: contact@fashiongenz.com</p>
                                 </li>
                                 <li class="footer__list-item">
                                     <p class="footer__list-item-link">Hotline: 0987654321</p>

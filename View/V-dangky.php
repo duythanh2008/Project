@@ -83,10 +83,37 @@
                             </li>
                         </ul>
                         <div class="header__navbar-cart">
-                            <a href="?controller=giohang" class="header__navbar-cart-link">
-                                <i class="header__navbar-cart-icon fas fa-shopping-cart"></i>
-                                Giỏ hàng
-                            </a>
+                            <div class="header__navbar-cart-wrap">
+                                <a href="?controller=giohang" class="header__navbar-cart-link">
+                                    <i class="header__navbar-cart-icon fas fa-shopping-cart"></i>
+                                    Giỏ hàng
+                                </a>
+                                <div class="header__navbar-cart-list">
+                                    <h4 class="header__navbar-cart-heading">Sản phẩm đã thêm</h4>
+                                    <ul class="header__navbar-cart-list-item">
+                                        <li class="header__navbar-cart-item">
+                                            <img src="./Assets/Img/product-1.jpg" alt="" class="header__navbar-cart-img">
+                                            <div class="header__navbar-cart-item-info">
+                                                <div class="header__navbar-cart-item-head">
+                                                    <h5 class="header__navbar-cart-item-name">Áo khoác đỏ</h5>
+                                                    <div class="header__navbar-cart-item-price-wrap">
+                                                        <span class="header__navbar-cart-item-price">2.000.000đ</span>
+                                                        <span class="header__navbar-cart-item-multiply">x</span>
+                                                        <span class="header__navbar-cart-item-quantity">2</span>
+                                                    </div>
+                                                </div>
+                                                <div class="header__navbar-cart-item-body">
+                                                    <span class="header__navbar-cart-item-desc">
+                                                        Size: S
+                                                    </span>
+                                                    <span class="header__navbar-cart-item-remove">Xóa</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <a href="?controller=giohang" class="header__navbar-cart-item-cart header__navbar-cart-item-cart-btn">Xem giỏ hàng</a>
+                                    </ul>
+                                </div>
+                            </div>
                             <label for="nav__mobile-input" class="header__navbar-mobile-bars">       
                                 <i class="fas fa-bars"></i>
                             </label>
@@ -162,18 +189,24 @@
                         <div class="account__register">
                             <div class="row">
                                 <div class="col l-12 m-12 c-12">
-                                    <form action="#" method="post">
+                                    <form action="?controller=dangky" method="post">
                                         <div class="row">
                                             <div class="col l-6 m-12 c-12">
                                                 <div class="account__register-item">
-                                                    <label for="register-fullname" class="account__register-input-label">Họ và tên</label>
-                                                    <input type="text" class="account__register-input" id="register-fullname" placeholder="Họ và tên">
+                                                    <label for="register-fullname" class="account__register-input-label">Tên đăng nhập</label>
+                                                    <input type="text" name="user" class="account__register-input" id="register-fullname" placeholder="Tên đăng nhập">
+                                                    <?php if(isset($error['username'])){?>
+                                                        <p style=" font-size: 14px; color: red;"><?php echo $error['username'] ?></p>
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                             <div class="col l-6 m-12 c-12">
                                                 <div class="account__register-item">
                                                     <label for="register-phone" class="account__register-input-label">Số điện thoại</label>
-                                                    <input type="text" class="account__register-input" id="register-phone" placeholder="Số điện thoại">
+                                                    <input type="text" name="phone" class="account__register-input" id="register-phone" placeholder="Số điện thoại">
+                                                    <?php if(isset($error['phone'])){?>
+                                                        <p style=" font-size: 14px; color: red;"><?php echo $error['phone'] ?></p>
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -181,19 +214,25 @@
                                             <div class="col l-6 m-12 c-12">
                                                 <div class="account__register-item">
                                                     <label for="register-email" class="account__register-input-label">Email</label>
-                                                    <input type="text" class="account__register-input" id="register-email" placeholder="Email">
+                                                    <input type="text" name="email" class="account__register-input" id="register-email" placeholder="Email">
+                                                    <?php if(isset($error['email'])){?>
+                                                        <p style=" font-size: 14px; color: red;"><?php echo $error['email'] ?></p>
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                             <div class="col l-6 m-12 c-12">
                                                 <div class="account__register-item">
                                                     <label for="register-password" class="account__register-input-label">Mật khẩu</label>
-                                                    <input type="password" class="account__register-input" id="register-password" placeholder="Mật khẩu">
+                                                    <input type="password" name="pass" class="account__register-input" id="register-password" placeholder="Mật khẩu">
+                                                    <?php if(isset($error['password'])){?>
+                                                        <p style=" font-size: 14px; color: red;"><?php echo $error['password'] ?></p>
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col l-6 m-12 c-12">
-                                                <input type="submit" class="account__register-submit" value="Đăng ký" id="login-username">
+                                                <input type="submit" class="account__register-submit" value="Đăng ký" name="dangky" id="login-username">
                                             </div>
                                         </div>
                                     </form>
@@ -211,6 +250,9 @@
                             <ul class="footer__list">
                                 <li class="footer__list-item">
                                     <p class="footer__list-item-link">Địa chỉ: Số 1 Hoàng Đạo Thúy, Nhân Chính, Thanh Xuân, Hà Nội</p>
+                                </li>
+                                <li class="footer__list-item">
+                                    <p class="footer__list-item-link">Mail: contact@fashiongenz.com</p>
                                 </li>
                                 <li class="footer__list-item">
                                     <p class="footer__list-item-link">Hotline: 0987654321</p>
