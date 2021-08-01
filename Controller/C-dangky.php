@@ -19,11 +19,11 @@
         }
         if (!$error){
             $admin_creat1 = $database->get('user_info',array('username'=>$username));
-            if (!$admin_creat1){
+            if (count($admin_creat1) > 0){
                 $error['username']= "Username have already exists";
             }
             $admin_creat2 = $database->get('user_info',array('email'=>$email));
-            if (!$admin_creat2){
+            if (count($admin_creat2) > 0){
                 $error['email']= "Email have already exists";
             }
         }
