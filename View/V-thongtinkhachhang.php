@@ -76,44 +76,56 @@
                                     Đơn hàng
                                 </a>
                             </li>
+                            <?php
+                                if(isset($_SESSION['customer']) && $_SESSION['customer'] != NULL){
+                            ?>
+                            <li class="header__navbar-item">
+                               <a href="?controller=thongtinkhachhang" style="margin-left: 12px;
+                                                  text-decoration: none;
+                                                  padding: 0 6px;
+                                                  font-size: 1.5rem;
+                                                  color: var(--white-color);"> <?php echo $user[0]['username']?></a><a href="?controller=dangxuat" style="margin-left: 1px;" class="header__navbar-link">Thoát</a>
+                            </li>
+                            <?php }else{ ?>
                             <li class="header__navbar-item">
                                 <a href="?controller=dangnhap" class="header__navbar-link">
                                     Tài khoản
                                 </a>
                             </li>
+                            <?php } ?>
                         </ul>
                         <div class="header__navbar-cart">
                             <div class="header__navbar-cart-wrap">
-                                    <a href="?controller=giohang" class="header__navbar-cart-link">
-                                        <i class="header__navbar-cart-icon fas fa-shopping-cart"></i>
-                                        Giỏ hàng
-                                    </a>
-                                    <div class="header__navbar-cart-list">
-                                        <h4 class="header__navbar-cart-heading">Sản phẩm đã thêm</h4>
-                                        <ul class="header__navbar-cart-list-item">
-                                            <li class="header__navbar-cart-item">
-                                                <img src="./Assets/Img/product-1.jpg" alt="" class="header__navbar-cart-img">
-                                                <div class="header__navbar-cart-item-info">
-                                                    <div class="header__navbar-cart-item-head">
-                                                        <h5 class="header__navbar-cart-item-name">Áo khoác đỏ</h5>
-                                                        <div class="header__navbar-cart-item-price-wrap">
-                                                            <span class="header__navbar-cart-item-price">2.000.000đ</span>
-                                                            <span class="header__navbar-cart-item-multiply">x</span>
-                                                            <span class="header__navbar-cart-item-quantity">2</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="header__navbar-cart-item-body">
-                                                        <span class="header__navbar-cart-item-desc">
-                                                            Size: S
-                                                        </span>
-                                                        <span class="header__navbar-cart-item-remove">Xóa</span>
+                                <a href="?controller=giohang" class="header__navbar-cart-link">
+                                    <i class="header__navbar-cart-icon fas fa-shopping-cart"></i>
+                                    Giỏ hàng
+                                </a>
+                                <div class="header__navbar-cart-list">
+                                    <h4 class="header__navbar-cart-heading">Sản phẩm đã thêm</h4>
+                                    <ul class="header__navbar-cart-list-item">
+                                        <li class="header__navbar-cart-item">
+                                            <img src="./Assets/Img/product-1.jpg" alt="" class="header__navbar-cart-img">
+                                            <div class="header__navbar-cart-item-info">
+                                                <div class="header__navbar-cart-item-head">
+                                                    <h5 class="header__navbar-cart-item-name">Áo khoác đỏ</h5>
+                                                    <div class="header__navbar-cart-item-price-wrap">
+                                                        <span class="header__navbar-cart-item-price">2.000.000đ</span>
+                                                        <span class="header__navbar-cart-item-multiply">x</span>
+                                                        <span class="header__navbar-cart-item-quantity">2</span>
                                                     </div>
                                                 </div>
-                                            </li>
-                                            <a href="?controller=giohang" class="header__navbar-cart-item-cart header__navbar-cart-item-cart-btn">Xem giỏ hàng</a>
-                                        </ul>
-                                    </div>
+                                                <div class="header__navbar-cart-item-body">
+                                                    <span class="header__navbar-cart-item-desc">
+                                                        Size: S
+                                                    </span>
+                                                    <span class="header__navbar-cart-item-remove">Xóa</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <a href="?controller=giohang" class="header__navbar-cart-item-cart header__navbar-cart-item-cart-btn">Xem giỏ hàng</a>
+                                    </ul>
                                 </div>
+                            </div>
                             <label for="nav__mobile-input" class="header__navbar-mobile-bars">       
                                 <i class="fas fa-bars"></i>
                             </label>
@@ -167,9 +179,20 @@
                     <li>
                         <a href="?controller=donhang" class="header__navbar-mobile-link">Đơn hàng</a>
                     </li>
+                    <?php
+                        if(isset($_SESSION['customer']) && $_SESSION['customer'] != NULL){
+                    ?>
                     <li>
-                        <a href="?controller=dangnhap" class="header__navbar-mobile-link">Tài khoản</a>
+                       <a href="?controller=thongtinkhachhang" class="header__navbar-mobile-link-account" style="margin-right: 10px"> <?php echo $user[0]['username']?></a>
+                       <a href="?controller=dangxuat" class="header__navbar-mobile-link-account">Thoát</a>
                     </li>
+                    <?php }else{ ?>
+                    <li>
+                        <a href="?controller=dangnhap" class="header__navbar-mobile-link">
+                            Tài khoản
+                        </a>
+                    </li>
+                    <?php } ?>
                 </ul>
             </nav>
             <div class="content">
@@ -180,50 +203,57 @@
                                 <a class="accout__location-home" href="?controller=trangchu">Trang chủ</a>
                             </div>
                             <div>
-                                <p class="accout__location-current"> > &nbsp;&nbsp;&nbsp; Đăng nhập</p>
+                                <p class="accout__location-current"> > &nbsp;&nbsp;&nbsp; Hồ sơ khách hàng</p>
                             </div>
                         </div>
                     </div>
                     <div class="grid wide">
-                        <div class="account__heading">Đăng nhập tài khoản</div>
-                        <div class="row">
-                            <div class="col l-6 m-6 c-12">
-                                <form action="?controller=dangnhap" method="post">
-                                <div class="account__login">
-                                    <div class="account__login-item">
-                                        <label for="login-username" class="account__login-input-label">Tên đăng nhập</label>
-                                        <input type="text" name="user" class="account__login-input" id="login-username" placeholder="Tên đăng nhập">
-                                        <?php if(isset($error['username'])){?>
-                                            <p style=" font-size: 14px; color: red;"><?php echo $error['username'] ?></p>
-                                        <?php } ?>
-                                    </div>
-                                    <div class="account__login-item">
-                                        <label for="login-password" class="account__login-input-label">Mật khẩu</label>
-                                        <input type="password" name="pass" class="account__login-input" id="login-username" placeholder="Mật khẩu">
-                                        <?php if(isset($error['password'])){?>
-                                            <p style=" font-size: 14px; color: red;"><?php echo $error['password'] ?></p>
-                                        <?php } ?>
-                                    </div>
-                                    <div class="account__login-item">
-                                        <a style="text-decoration:none;
-                                                  font-size: 1.4rem;
-                                                  margin-bottom: 10px;
-                                                  color: var(--primary-color);
-                                                    " href="#">Quên mật khẩu ?</a>
-                                        <input type="submit" class="account__login-submit" name="dangnhap" value="Đăng nhập" id="login-username">
-                                    </div>
-                                    <div class="account__login-item">
-                                        <a class="account__login-item-link" href="#">Đăng nhập với tư cách Quản trị viên</a>
+                        <div class="account__heading">Hồ sơ khách hàng </div>
+                        <div class="account__info">
+                            <div class="row sm-gutter">
+                                <div class="col l-2 m-12 c-12">
+                                    <div class="account__section">
+                                        <ul class="account-info__list">
+                                            <li class="account-info__item">
+                                                <a style="font-weight: 500; color: var(--primary-color);" href="?controller=thongtinkhachhang" class="account-info__link">Thông tin tài khoản</a>
+                                            </li>
+                                            <li class="account-info__item">
+                                                <a href="?controller=doimatkhaukhachhang" class="account-info__link">Đổi mật khẩu</a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
-                                </form>
-                            </div>
-                            <div class="col l-6 m-6 c-12">
-                                <div class="account-link-register">
-                                    <h3 class="account-link-register__heading">
-                                        Chưa có tài khoản
-                                    </h3>
-                                    <a href="?controller=dangky" class="account-link-register__btn">Đăng ký ngay !</a>
+                                <div class="col l-10 m-12 c-12">
+                                    <div class="account-info__edit">
+                                        <h3 class="account-info__heading">Thông tin tài khoản</h3>
+                                        <?php foreach ($user as $key => $value){?>
+                                        <form action="#" method="post">
+                                            <div class="row">
+                                                <div class="col l-6 m-12 c-12">
+                                                    <div class="account-info__form">
+                                                        <label for="fullname" class="account-info__label">Họ và tên</label>
+                                                        <input type="text" name="fullname" id="fullname" value="<?php echo $value['fullname']; ?>" class="account-info__input" placeholder="Họ và tên" class="account-info__input">
+                                                    </div>
+                                                    <div class="account-info__form">
+                                                        <label for="phone" class="account-info__label">Số điện thoại</label>
+                                                        <input type="text" name="phone" id="phone" value="<?php echo $value['phone']; ?>" placeholder="Số điện thoại" class="account-info__input" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col l-6 m-12 c-12">
+                                                    <div class="account-info__form">
+                                                        <label for="address" class="account-info__label">Địa chỉ</label>
+                                                        <input type="text" name="address" id="address" value="<?php echo $value['address']; ?>" placeholder="Địa chỉ" class="account-info__input">
+                                                    </div>
+                                                    <div class="account-info__form">
+                                                        <label for="email" class="account-info__label">Email</label>
+                                                        <input type="email" name="email" id="email" value="<?php echo $value['email']; ?>" placeholder="Email" class="account-info__input" required>
+                                                    </div>
+                                                </div>
+                                                <input type="submit" class="account-info__submit" name="edit" value="Thay đổi">
+                                            </div>
+                                        </form>
+                                        <?php } ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>

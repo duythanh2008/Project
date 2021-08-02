@@ -8,11 +8,17 @@
         if ($username == ''){
             $error['username']= "Vui lòng nhập tên đăng nhập";
         }
+        if (strlen($username) < 6){
+            $error['username']= "Tên đăng nhập phải có ít nhất 6 kí tự";
+        }
         if ($email == ''){
             $error['email']= "Vui lòng nhập email";
         }
         if ($password == ''){
             $error['password']= "Vui lòng nhập mật khẩu";
+        }
+        if (strlen($password) < 8){
+            $error['password']= "Mật khẩu phải có ít nhất 8 kí tự";
         }
         if ($phone == ''){
             $error['phone']= "Vui lòng nhập số điện thoại";
@@ -20,11 +26,11 @@
         if (!$error){
             $admin_creat1 = $database->get('user_info',array('username'=>$username));
             if (count($admin_creat1) > 0){
-                $error['username']= "Username have already exists";
+                $error['username']= "Tên đăng nhập đã tồn tại";
             }
             $admin_creat2 = $database->get('user_info',array('email'=>$email));
             if (count($admin_creat2) > 0){
-                $error['email']= "Email have already exists";
+                $error['email']= "Email đã được đăng ký bởi tài khoản khác";
             }
         }
         if (!$error){

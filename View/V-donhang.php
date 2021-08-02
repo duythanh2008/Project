@@ -51,12 +51,12 @@
                                     </li>
                                     <li class="header__navbar-category-item">
                                         <a href="" class="header__navbar-category-link">
-                                            Quần âu
+                                            Quần dài
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
                                         <a href="" class="header__navbar-category-link">
-                                            Quần đùi
+                                            Quần short
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
@@ -76,11 +76,23 @@
                                     Đơn hàng
                                 </a>
                             </li>
+                            <?php
+                                if(isset($_SESSION['customer']) && $_SESSION['customer'] != NULL){
+                            ?>
+                            <li class="header__navbar-item">
+                               <a href="?controller=thongtinkhachhang" style="margin-left: 12px;
+                                                  text-decoration: none;
+                                                  padding: 0 6px;
+                                                  font-size: 1.5rem;
+                                                  color: var(--white-color);"> <?php echo $user[0]['username']?></a><a href="?controller=dangxuat" style="margin-left: 1px;" class="header__navbar-link">Thoát</a>
+                            </li>
+                            <?php }else{ ?>
                             <li class="header__navbar-item">
                                 <a href="?controller=dangnhap" class="header__navbar-link">
                                     Tài khoản
                                 </a>
                             </li>
+                            <?php } ?>
                         </ul>
                         <div class="header__navbar-cart">
                             <div class="header__navbar-cart-wrap">
@@ -146,12 +158,12 @@
                                     </li>
                                     <li class="header__navbar-category-item-mobile">
                                         <a href="" class="header__navbar-category-link-mobile">
-                                            Quần âu
+                                            Quần dài
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item-mobile">
                                         <a href="" class="header__navbar-category-link-mobile">
-                                            Quần đùi
+                                            Quần short
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item-mobile">
@@ -168,8 +180,23 @@
                         <a href="?controller=donhang" class="header__navbar-mobile-link">Đơn hàng</a>
                     </li>
                     <li>
-                        <a href="?controller=dangnhap" class="header__navbar-mobile-link">Tài khoản</a>
+                       <a href="?controller=thongtinkhachhang" class="header__navbar-mobile-link-account" style="margin-right: 10px"> <?php echo $user[0]['username']?></a>
+                       <a href="?controller=dangxuat" class="header__navbar-mobile-link-account">Thoát</a>
                     </li>
+                    <?php
+                        if(isset($_SESSION['customer']) && $_SESSION['customer'] != NULL){
+                    ?>
+                    <li>
+                       <a href="#" class="header__navbar-mobile-link-account" style="margin-right: 10px"> <?php echo $user[0]['username']?></a>
+                       <a href="?controller=dangxuat" class="header__navbar-mobile-link-account">Thoát</a>
+                    </li>
+                    <?php }else{ ?>
+                    <li>
+                        <a href="?controller=dangnhap" class="header__navbar-mobile-link">
+                            Tài khoản
+                        </a>
+                    </li>
+                    <?php } ?>
                 </ul>
             </nav>
             <div class="content">
@@ -262,10 +289,10 @@
                                     <a href="#" class="footer__list-item-link">Áo khoác</a>
                                 </li>
                                 <li class="footer__list-item">
-                                    <a href="#" class="footer__list-item-link">Quần đùi</a>
+                                    <a href="#" class="footer__list-item-link">Quần short</a>
                                 </li>
                                 <li class="footer__list-item">
-                                    <a href="#" class="footer__list-item-link">Quần âu</a>
+                                    <a href="#" class="footer__list-item-link">Quần dài</a>
                                 </li>
                                 <li class="footer__list-item">
                                     <a href="#" class="footer__list-item-link">Giày, dép</a>

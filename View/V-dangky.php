@@ -51,12 +51,12 @@
                                     </li>
                                     <li class="header__navbar-category-item">
                                         <a href="" class="header__navbar-category-link">
-                                            Quần âu
+                                            Quần dài
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
                                         <a href="" class="header__navbar-category-link">
-                                            Quần đùi
+                                            Quần short
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
@@ -146,12 +146,12 @@
                                     </li>
                                     <li class="header__navbar-category-item-mobile">
                                         <a href="" class="header__navbar-category-link-mobile">
-                                            Quần âu
+                                            Quần dài
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item-mobile">
                                         <a href="" class="header__navbar-category-link-mobile">
-                                            Quần đùi
+                                            Quần short
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item-mobile">
@@ -294,10 +294,10 @@
                                     <a href="#" class="footer__list-item-link">Áo khoác</a>
                                 </li>
                                 <li class="footer__list-item">
-                                    <a href="#" class="footer__list-item-link">Quần đùi</a>
+                                    <a href="#" class="footer__list-item-link">Quần short</a>
                                 </li>
                                 <li class="footer__list-item">
-                                    <a href="#" class="footer__list-item-link">Quần âu</a>
+                                    <a href="#" class="footer__list-item-link">Quần dài</a>
                                 </li>
                                 <li class="footer__list-item">
                                     <a href="#" class="footer__list-item-link">Giày, dép</a>

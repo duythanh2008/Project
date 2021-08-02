@@ -19,6 +19,12 @@
         case 'dangky':
             require_once './Controller/C-dangky.php';
             break;
+        case 'thongtinkhachhang':
+            require_once './Controller/C-thongtinkhachhang.php';
+            break;
+        case 'doimatkhaukhachhang':
+            require_once './Controller/C-doimatkhaukhachhang.php';
+            break;
         case 'dangxuat':
             require_once './Controller/C-dangxuat.php';
             break;

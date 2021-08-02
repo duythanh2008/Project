@@ -51,12 +51,12 @@
                                     </li>
                                     <li class="header__navbar-category-item">
                                         <a href="" class="header__navbar-category-link">
-                                            Quần âu
+                                            Quần dài
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
                                         <a href="" class="header__navbar-category-link">
-                                            Quần đùi
+                                            Quần short
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
@@ -80,7 +80,7 @@
                                 if(isset($_SESSION['customer']) && $_SESSION['customer'] != NULL){
                             ?>
                             <li class="header__navbar-item">
-                               <a href="#" style="margin-left: 12px;
+                               <a href="?controller=thongtinkhachhang" style="margin-left: 12px;
                                                   text-decoration: none;
                                                   padding: 0 6px;
                                                   font-size: 1.5rem;
@@ -158,12 +158,12 @@
                                     </li>
                                     <li class="header__navbar-category-item-mobile">
                                         <a href="" class="header__navbar-category-link-mobile">
-                                            Quần âu
+                                            Quần dài
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item-mobile">
                                         <a href="" class="header__navbar-category-link-mobile">
-                                            Quần đùi
+                                            Quần short
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item-mobile">
@@ -183,7 +183,7 @@
                         if(isset($_SESSION['customer']) && $_SESSION['customer'] != NULL){
                     ?>
                     <li>
-                       <a href="#" class="header__navbar-mobile-link-account" style="margin-right: 10px"> <?php echo $user[0]['username']?></a>
+                       <a href="?controller=thongtinkhachhang" class="header__navbar-mobile-link-account" style="margin-right: 10px"> <?php echo $user[0]['username']?></a>
                        <a href="?controller=dangxuat" class="header__navbar-mobile-link-account">Thoát</a>
                     </li>
                     <?php }else{ ?>
@@ -205,6 +205,9 @@
                         <div class="mySlider fade">
                             <img src="./Assets/Img/slide2.jpg" style="width:100%" />
                         </div>
+                        <div class="mySlider fade">
+                            <img src="./Assets/Img/slide3.jpg" style="width:100%" />
+                        </div>
                         <a class="prev" onclick="plusDivs(-1)">&#10094;</a>
                         <a class="next" onclick="plusDivs(1)">&#10095;</a>
                         </div>
@@ -219,6 +222,18 @@
                 </div>
                 <div class="home-product">
                     <div class="grid wide">
+                    <form>
+                        <input type="hidden" name="controller" value="trangchu">
+                        <input
+                            style="     width: 97%;
+                                        height:45px;
+                                        margin: 20px 0 0 1.5%;
+                                        padding-left: 16px;
+                                        font-size: 18px;
+                                        font-weight:bold;
+                                        border: 2px solid var(--primary-color);"
+                        type="search" name="keyword" placeholder="Tìm sản phẩm ... "  value="<?php echo (isset($_GET['keyword'])) ? $_GET['keyword'] : '' ?>">
+                    </form>
                         <h3 class="home-product__heading">
                             Sản phẩm nổi bật
                         </h3>
@@ -494,10 +509,10 @@
                             Áo khoác
                         </div>
                         <div class="tab-item">
-                            Quần đùi
+                            Quần short
                         </div>
                         <div class="tab-item">
-                            Quần âu
+                            Quần dài
                         </div>
                         <div class="tab-item">
                             Giày, dép
@@ -907,10 +922,10 @@
                                     <a href="#" class="footer__list-item-link">Áo khoác</a>
                                 </li>
                                 <li class="footer__list-item">
-                                    <a href="#" class="footer__list-item-link">Quần đùi</a>
+                                    <a href="#" class="footer__list-item-link">Quần short</a>
                                 </li>
                                 <li class="footer__list-item">
-                                    <a href="#" class="footer__list-item-link">Quần âu</a>
+                                    <a href="#" class="footer__list-item-link">Quần dài</a>
                                 </li>
                                 <li class="footer__list-item">
                                     <a href="#" class="footer__list-item-link">Giày, dép</a>
