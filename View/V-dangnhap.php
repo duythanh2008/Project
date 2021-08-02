@@ -72,7 +72,7 @@
                                 </a>
                             </li>
                             <li class="header__navbar-item">
-                                <a href="" class="header__navbar-link">
+                                <a href="?controller=donhang" class="header__navbar-link">
                                     Đơn hàng
                                 </a>
                             </li>
@@ -165,7 +165,7 @@
                         <a href="?controller=lienhe" class="header__navbar-mobile-link">Liên hệ</a>
                     </li>
                     <li>
-                        <a href="" class="header__navbar-mobile-link">Đơn hàng</a>
+                        <a href="?controller=donhang" class="header__navbar-mobile-link">Đơn hàng</a>
                     </li>
                     <li>
                         <a href="?controller=dangnhap" class="header__navbar-mobile-link">Tài khoản</a>
@@ -319,7 +319,23 @@
         </div>
 
 
-
+        <script>
+                                                    window.fbAsyncInit = function() {
+                                                        FB.init({
+                                                            appId: "1784956665094089",
+                                                            xfbml: true,
+                                                            version: "v2.6"
+                                                        });
+                                                    };
+                                                    (function(d, s, id){
+                                                        var js, fjs = d.getElementsByTagName(s)[0];
+                                                        if (d.getElementById(id)) { return; }
+                                                        js = d.createElement(s); js.id = id;
+                                                        js.src = "//connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js";
+                                                        fjs.parentNode.insertBefore(js, fjs);
+                                                    }(document, 'script', 'facebook-jssdk'));
+                                                </script>
+                                                <div class="fb-customerchat" page_id="138799094994489"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </body>
 </html>

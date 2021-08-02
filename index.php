@@ -28,6 +28,9 @@
         case 'lienhe':
             require_once './Controller/C-lienhe.php';
             break;
+        case 'donhang':
+            require_once './Controller/C-donhang.php';
+            break;
         case 'giohang':
             require_once './Controller/C-giohang.php';
             break;

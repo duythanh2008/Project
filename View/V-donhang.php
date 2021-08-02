@@ -76,56 +76,44 @@
                                     Đơn hàng
                                 </a>
                             </li>
-                            <?php
-                                if(isset($_SESSION['customer']) && $_SESSION['customer'] != NULL){
-                            ?>
-                            <li class="header__navbar-item">
-                               <a href="#" style="margin-left: 12px;
-                                                  text-decoration: none;
-                                                  padding: 0 6px;
-                                                  font-size: 1.5rem;
-                                                  color: var(--white-color);"> <?php echo $user[0]['username']?></a><a href="?controller=dangxuat" style="margin-left: 1px;" class="header__navbar-link">Thoát</a>
-                            </li>
-                            <?php }else{ ?>
                             <li class="header__navbar-item">
                                 <a href="?controller=dangnhap" class="header__navbar-link">
                                     Tài khoản
                                 </a>
                             </li>
-                            <?php } ?>
                         </ul>
                         <div class="header__navbar-cart">
                             <div class="header__navbar-cart-wrap">
-                                    <a href="?controller=giohang" class="header__navbar-cart-link">
-                                        <i class="header__navbar-cart-icon fas fa-shopping-cart"></i>
-                                        Giỏ hàng
-                                    </a>
-                                    <div class="header__navbar-cart-list">
-                                        <h4 class="header__navbar-cart-heading">Sản phẩm đã thêm</h4>
-                                        <ul class="header__navbar-cart-list-item">
-                                            <li class="header__navbar-cart-item">
-                                                <img src="./Assets/Img/product-1.jpg" alt="" class="header__navbar-cart-img">
-                                                <div class="header__navbar-cart-item-info">
-                                                    <div class="header__navbar-cart-item-head">
-                                                        <h5 class="header__navbar-cart-item-name">Áo khoác đỏ</h5>
-                                                        <div class="header__navbar-cart-item-price-wrap">
-                                                            <span class="header__navbar-cart-item-price">2.000.000đ</span>
-                                                            <span class="header__navbar-cart-item-multiply">x</span>
-                                                            <span class="header__navbar-cart-item-quantity">2</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="header__navbar-cart-item-body">
-                                                        <span class="header__navbar-cart-item-desc">
-                                                            Size: S
-                                                        </span>
-                                                        <span class="header__navbar-cart-item-remove">Xóa</span>
+                                <a href="?controller=giohang" class="header__navbar-cart-link">
+                                    <i class="header__navbar-cart-icon fas fa-shopping-cart"></i>
+                                    Giỏ hàng
+                                </a>
+                                <div class="header__navbar-cart-list">
+                                    <h4 class="header__navbar-cart-heading">Sản phẩm đã thêm</h4>
+                                    <ul class="header__navbar-cart-list-item">
+                                        <li class="header__navbar-cart-item">
+                                            <img src="./Assets/Img/product-1.jpg" alt="" class="header__navbar-cart-img">
+                                            <div class="header__navbar-cart-item-info">
+                                                <div class="header__navbar-cart-item-head">
+                                                    <h5 class="header__navbar-cart-item-name">Áo khoác đỏ</h5>
+                                                    <div class="header__navbar-cart-item-price-wrap">
+                                                        <span class="header__navbar-cart-item-price">2.000.000đ</span>
+                                                        <span class="header__navbar-cart-item-multiply">x</span>
+                                                        <span class="header__navbar-cart-item-quantity">2</span>
                                                     </div>
                                                 </div>
-                                            </li>
-                                            <a href="?controller=giohang" class="header__navbar-cart-item-cart header__navbar-cart-item-cart-btn">Xem giỏ hàng</a>
-                                        </ul>
-                                    </div>
+                                                <div class="header__navbar-cart-item-body">
+                                                    <span class="header__navbar-cart-item-desc">
+                                                        Size: S
+                                                    </span>
+                                                    <span class="header__navbar-cart-item-remove">Xóa</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <a href="?controller=giohang" class="header__navbar-cart-item-cart header__navbar-cart-item-cart-btn">Xem giỏ hàng</a>
+                                    </ul>
                                 </div>
+                            </div>
                             <label for="nav__mobile-input" class="header__navbar-mobile-bars">       
                                 <i class="fas fa-bars"></i>
                             </label>
@@ -174,64 +162,48 @@
                                 </ul>
                     </li>
                     <li>
-                        <a href="" class="header__navbar-mobile-link">Liên hệ</a>
+                        <a href="?controller=lienhe" class="header__navbar-mobile-link">Liên hệ</a>
                     </li>
                     <li>
                         <a href="?controller=donhang" class="header__navbar-mobile-link">Đơn hàng</a>
                     </li>
-                    <?php
-                        if(isset($_SESSION['customer']) && $_SESSION['customer'] != NULL){
-                    ?>
                     <li>
-                       <a href="#" class="header__navbar-mobile-link-account" style="margin-right: 10px"> <?php echo $user[0]['username']?></a>
-                       <a href="?controller=dangxuat" class="header__navbar-mobile-link-account">Thoát</a>
+                        <a href="?controller=dangnhap" class="header__navbar-mobile-link">Tài khoản</a>
                     </li>
-                    <?php }else{ ?>
-                    <li>
-                        <a href="?controller=dangnhap" class="header__navbar-mobile-link">
-                            Tài khoản
-                        </a>
-                    </li>
-                    <?php } ?>
                 </ul>
             </nav>
             <div class="content">
-                <div class="contact">
+                <div class="account">
                     <div class="grid">
                         <div class="account__location">
                             <div>
                                 <a class="accout__location-home" href="?controller=trangchu">Trang chủ</a>
                             </div>
                             <div>
-                                <p class="accout__location-current"> > &nbsp;&nbsp;&nbsp; Liên hệ</p>
+                                <p class="accout__location-current"> > &nbsp;&nbsp;&nbsp; Đơn hàng</p>
                             </div>
                         </div>
                     </div>
                     <div class="grid wide">
-                        <div class="row">
-                            <div class="col l-6 m-12 c-12">
-                                <div class="contact-form">
-                                    <h3 class="contact-form__heading">Liên hệ với chúng tôi</h3>
-                                    <form action="#" method="post">
-                                        <div class="contact-form__item">
-                                            <input type="text" class="contact-form__item-input" placeholder="Họ và tên">
+                        <div class="account__heading">Kiểm tra đơn hàng</div>
+                        <div style="margin: 100px 0 150px 0;" class="account__register">
+                            <div class="row">
+                                <div class="col l-12 m-12 c-12">
+                                    <form action="?controller=dangky" method="post">
+                                        <div class="row">
+                                            <div class="col l-6 l-o-3 m-10 m-o-1 c-12">
+                                                <form action="#" method="post">
+                                                    <div class="check__delivery-item">
+                                                        <label for="login-username" class="check__delivery-input-label">Nhập mã đơn hàng</label>
+                                                        <input type="text" name="" placeholder="Mã đơn hàng"  class="check__delivery-input">
+                                                    </div>
+                                                    <div class="check__delivery-item">
+                                                        <input type="submit" class="check__delivery-submit" name="checksubmit" value="Tìm kiếm">
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
-                                        <div class="contact-form__item">
-                                            <input type="text" class="contact-form__item-input" placeholder="Email">
-                                        </div>
-                                        <div class="contact-form__item">
-                                            <textarea name="" id="" cols="30" rows="10" class="contact-form__item-textarea" placeholder="Nội dung"></textarea>
-                                        </div>
-                                        <input type="submit" value="Gửi liên hệ" class="contact-form__item-submit">
                                     </form>
-                                </div>
-                            </div>
-                            <div class="col l-6 m-12 c-12">
-                                <div class="contact-info">
-                                    <h3 class="contact-info__address">Địa chỉ: Số 1, Hoàng Đạo Thúy, Phường Nhân Chính, Quận Thanh Xuân, Hà Nội</h3>
-                                    <h3 class="contact-info__phone">Hotline: <a href="tel: 0987654321" class="contact-info__phone-link">0987654321</a> </h3>
-                                    <h3 class="contact-info__mail">Mail: contact@fashiongenz.com</h3>
-                                    <iframe class="contact-info__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6768648167285!2d105.80168511531349!3d21.005586293944056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aca1f608e5d5%3A0x1a8159d717fd1eff!2zMSBIb8OgbmcgxJDhuqFvIFRow7p5LCBOaMOibiBDaMOtbmgsIFRoYW5oIFh1w6JuLCBIw6AgTuG7mWkgMTIwNjM4LCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1627629310954!5m2!1svi!2s" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                                 </div>
                             </div>
                         </div>
