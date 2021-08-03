@@ -268,7 +268,7 @@
           return $query;
      }
      public function sendMail($title,$content,$nTo,$mTo,$diachicc){
-          $nFrom = 'Zed Shop';
+          $nFrom = 'Fashion GenZ';
           $mFrom = 'thanhnguyen15022008@gmail.com';
           $mPass = 'Duythanh2008';
           $mail = new PHPMailer();
@@ -294,7 +294,7 @@
           $mail->msgHTML($body);
           $address= $mTo;
           $mail->addAddress($address,$nTo);
-          $mail->addReplyTo('thanhnguyen15022008@gmail.com','Zed Shop');
+          $mail->addReplyTo('thanhnguyen15022008@gmail.com','Fashion GenZ');
           if(!$mail->send()){
                return 0;
           } else{

@@ -231,7 +231,8 @@
                                         padding-left: 16px;
                                         font-size: 18px;
                                         font-weight:bold;
-                                        border: 2px solid var(--primary-color);"
+                                        border: 2px solid var(--primary-color);
+                                        outline: none;"
                         type="search" name="keyword" placeholder="Tìm sản phẩm ... "  value="<?php echo (isset($_GET['keyword'])) ? $_GET['keyword'] : '' ?>">
                     </form>
                         <h3 class="home-product__heading">
@@ -498,6 +499,9 @@
                 </div>
                 <!-- Tab items -->
                 <div class="grid wide">
+                    <div class="banner__img">
+                            <img style="filter: brightness(180%)" src="./Assets/Img/banner2.jpg" alt="" class="banner__img-link">
+                        </div>
                     <h3 class="home-catalog__heading">
                             Danh mục sản phẩm
                     </h3>

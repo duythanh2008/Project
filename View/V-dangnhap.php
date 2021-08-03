@@ -207,9 +207,9 @@
                                     <div class="account__login-item">
                                         <a style="text-decoration:none;
                                                   font-size: 1.4rem;
-                                                  margin-bottom: 10px;
+                                                  margin-bottom: 15px;
                                                   color: var(--primary-color);
-                                                    " href="#">Quên mật khẩu ?</a>
+                                                    " href="?controller=quenmatkhau">Quên mật khẩu ?</a>
                                         <input type="submit" class="account__login-submit" name="dangnhap" value="Đăng nhập" id="login-username">
                                     </div>
                                     <div class="account__login-item">

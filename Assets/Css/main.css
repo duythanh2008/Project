@@ -44,7 +44,7 @@
 .header__navbar-category-product{
     position: absolute;
     list-style: none;
-    top: 100%;
+    top: calc(100% + 15px);
     right: -50%;
     z-index: 1;
     background-color: var(--white-color);
@@ -53,6 +53,15 @@
     border-radius: 3px;
     display: none;
     animation: fadeIn linear 0.2s;
+}
+
+.header__navbar-category-product::before{
+    position: absolute;
+    content: '';
+    top: -15px;
+    width: 70%;
+    height: 20px;
+    background-color: transparent;
 }
 
 @keyframes fadeIn{
@@ -600,7 +609,7 @@
     height: 6px;
     border-radius: 15px;
     background-color: var(--primary-color);
-    transition: all 0.2s ease;
+    transition: all 0.5s ease;
   }
   .tab-item {
     min-width: 80px;
@@ -974,6 +983,20 @@
     font-size: 1.6rem;
     color: var(--text-color);
     margin-bottom: 10px;
+}
+
+.check__delivery-input-heading{
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.check__delivery-input-content{
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin: 0;
+    text-align: center;
 }
 
 .check__delivery-input{

@@ -203,27 +203,36 @@
                                 <a class="accout__location-home" href="?controller=trangchu">Trang chủ</a>
                             </div>
                             <div>
-                                <p class="accout__location-current"> > &nbsp;&nbsp;&nbsp; Đơn hàng</p>
+                                <p class="accout__location-current"> > &nbsp;&nbsp;&nbsp; Quên mật khẩu</p>
                             </div>
                         </div>
                     </div>
                     <div class="grid wide">
-                        <div class="account__heading">Kiểm tra đơn hàng</div>
-                        <div style="margin: 100px 0 150px 0;" class="account__register">
+                        <div class="account__heading">Quên mật khẩu</div>
+                        <div style="margin: 80px 0 150px 0;" class="account__register">
                             <div class="row">
                                 <div class="col l-12 m-12 c-12">
-                                    <form action="?controller=dangky" method="post">
+                                    <form action="?controller=laylaimatkhau" method="post">
                                         <div class="row">
                                             <div class="col l-6 l-o-3 m-10 m-o-1 c-12">
-                                                <form action="#" method="post">
-                                                    <div class="check__delivery-item">
-                                                        <label for="login-username" class="check__delivery-input-label">Nhập mã đơn hàng</label>
-                                                        <input type="text" name="" placeholder="Mã đơn hàng"  class="check__delivery-input">
-                                                    </div>
-                                                    <div class="check__delivery-item">
-                                                        <input type="submit" class="check__delivery-submit" name="checksubmit" value="Tìm kiếm">
-                                                    </div>
-                                                </form>
+                                                <div class="check__delivery-item">
+                                                    <label for="email-input" class="check__delivery-input-label">Nhập mật khẩu mới</label>
+                                                    <input type="hidden" name="id" value="<?php echo $id ?>">
+                                                    <input type="password" name="newpass" id="email-input" placeholder="Mật khẩu mới"  class="check__delivery-input">
+                                                    <?php if(isset($error['newpass'])){?>
+                                                        <p style=" font-size: 14px; color: red;"><?php echo $error['newpass'] ?></p>
+                                                    <?php } ?>
+                                                </div>
+                                                <div class="check__delivery-item">
+                                                    <label for="email-input" class="check__delivery-input-label">Xác nhận lại mật khẩu</label>
+                                                    <input type="password" name="confirmpass" id="email-input" placeholder="Xác nhận mật khẩu"  class="check__delivery-input">
+                                                    <?php if(isset($error['confirmpass'])){?>
+                                                        <p style=" font-size: 14px; color: red;"><?php echo $error['confirmpass'] ?></p>
+                                                    <?php } ?>
+                                                </div>
+                                                <div class="check__delivery-item">
+                                                    <input type="submit" class="check__delivery-submit" name="change" value="Xác nhận">
+                                                </div>
                                             </div>
                                         </div>
                                     </form>

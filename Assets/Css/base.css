@@ -8,6 +8,7 @@
 }
 *{
     box-sizing: inherit;
+    scroll-behavior: smooth;
 }
 
 *::-webkit-scrollbar{

@@ -203,27 +203,28 @@
                                 <a class="accout__location-home" href="?controller=trangchu">Trang chủ</a>
                             </div>
                             <div>
-                                <p class="accout__location-current"> > &nbsp;&nbsp;&nbsp; Đơn hàng</p>
+                                <p class="accout__location-current"> > &nbsp;&nbsp;&nbsp; Quên mật khẩu</p>
                             </div>
                         </div>
                     </div>
                     <div class="grid wide">
-                        <div class="account__heading">Kiểm tra đơn hàng</div>
+                        <div class="account__heading">Quên mật khẩu</div>
                         <div style="margin: 100px 0 150px 0;" class="account__register">
                             <div class="row">
                                 <div class="col l-12 m-12 c-12">
-                                    <form action="?controller=dangky" method="post">
+                                    <form action="?controller=quenmatkhau" method="post">
                                         <div class="row">
                                             <div class="col l-6 l-o-3 m-10 m-o-1 c-12">
-                                                <form action="#" method="post">
-                                                    <div class="check__delivery-item">
-                                                        <label for="login-username" class="check__delivery-input-label">Nhập mã đơn hàng</label>
-                                                        <input type="text" name="" placeholder="Mã đơn hàng"  class="check__delivery-input">
-                                                    </div>
-                                                    <div class="check__delivery-item">
-                                                        <input type="submit" class="check__delivery-submit" name="checksubmit" value="Tìm kiếm">
-                                                    </div>
-                                                </form>
+                                                <div class="check__delivery-item">
+                                                    <label for="email-input" class="check__delivery-input-label">Nhập địa chỉ email</label>
+                                                    <input type="text" name="email" id="email-input" placeholder="Nhập địa chỉ email"  class="check__delivery-input">
+                                                    <?php if(isset($error)){?>
+                                                        <p style=" font-size: 14px; color: red;"><?php echo $error ?></p>
+                                                    <?php } ?>
+                                                </div>
+                                                <div class="check__delivery-item">
+                                                    <input type="submit" class="check__delivery-submit" name="find" value="Xác nhận">
+                                                </div>
                                             </div>
                                         </div>
                                     </form>
