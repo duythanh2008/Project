@@ -43,6 +43,9 @@
         case 'dangxuat':
             require_once './Controller/C-dangxuat.php';
             break;
+        case 'chitietsanpham':
+            require_once './Controller/C-chitietsanpham.php';
+            break;
         case 'sanpham':
             require_once './Controller/C-sanpham.php';
             break;

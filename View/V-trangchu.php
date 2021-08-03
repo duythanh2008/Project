@@ -101,7 +101,7 @@
                                         Giỏ hàng
                                     </a>
                                     <div class="header__navbar-cart-list">
-                                        <h4 class="header__navbar-cart-heading">Sản phẩm đã thêm</h4>
+                                        <!-- <h4 class="header__navbar-cart-heading">Sản phẩm đã thêm</h4>
                                         <ul class="header__navbar-cart-list-item">
                                             <li class="header__navbar-cart-item">
                                                 <img src="./Assets/Img/product-1.jpg" alt="" class="header__navbar-cart-img">
@@ -123,7 +123,11 @@
                                                 </div>
                                             </li>
                                             <a href="?controller=giohang" class="header__navbar-cart-item-cart header__navbar-cart-item-cart-btn">Xem giỏ hàng</a>
-                                        </ul>
+                                        </ul> -->
+                                        <div class="header__navbar-no-cart-item">
+                                            <img src="./Assets/Img/no_cart.png" alt="" class="header__navbar-cart-no-cart-img">
+                                            <h3 class="header__navbar-cart-no-cart-content">Chưa có sản phẩm</h3>
+                                        </div>
                                     </div>
                                 </div>
                             <label for="nav__mobile-input" class="header__navbar-mobile-bars">       
@@ -241,8 +245,8 @@
                         <div class="row sm-gutter">
                             <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product-item">
-                                    <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-1.jpg');"></div>
+                                    <a href="?controller=chitietsanpham" class="home-product-item__link">
+                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
                                         <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
                                         <div class="hone-product-item__price">
                                             <span class="home-product-item__price-current">
@@ -259,7 +263,7 @@
                             <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product-item">
                                     <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-1.jpg');"></div>
+                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
                                         <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
                                         <div class="hone-product-item__price">
                                             <span class="home-product-item__price-current">
@@ -276,7 +280,7 @@
                             <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product-item">
                                     <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-1.jpg');"></div>
+                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
                                         <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
                                         <div class="hone-product-item__price">
                                             <span class="home-product-item__price-current">
@@ -293,7 +297,7 @@
                             <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product-item">
                                     <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-1.jpg');"></div>
+                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
                                         <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
                                         <div class="hone-product-item__price">
                                             <span class="home-product-item__price-current">
@@ -310,7 +314,7 @@
                             <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product-item">
                                     <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-1.jpg');"></div>
+                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
                                         <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
                                         <div class="hone-product-item__price">
                                             <span class="home-product-item__price-current">
@@ -327,7 +331,7 @@
                             <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product-item">
                                     <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-1.jpg');"></div>
+                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
                                         <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
                                         <div class="hone-product-item__price">
                                             <span class="home-product-item__price-current">
@@ -344,7 +348,7 @@
                             <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product-item">
                                     <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-1.jpg');"></div>
+                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
                                         <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
                                         <div class="hone-product-item__price">
                                             <span class="home-product-item__price-current">
@@ -361,7 +365,7 @@
                             <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product-item">
                                     <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-1.jpg');"></div>
+                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
                                         <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
                                         <div class="hone-product-item__price">
                                             <span class="home-product-item__price-current">
@@ -378,7 +382,7 @@
                             <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product-item">
                                     <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-1.jpg');"></div>
+                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
                                         <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
                                         <div class="hone-product-item__price">
                                             <span class="home-product-item__price-current">
@@ -395,7 +399,7 @@
                             <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product-item">
                                     <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-1.jpg');"></div>
+                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
                                         <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
                                         <div class="hone-product-item__price">
                                             <span class="home-product-item__price-current">
@@ -412,7 +416,7 @@
                             <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product-item">
                                     <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-1.jpg');"></div>
+                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
                                         <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
                                         <div class="hone-product-item__price">
                                             <span class="home-product-item__price-current">
@@ -429,7 +433,7 @@
                             <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product-item">
                                     <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-1.jpg');"></div>
+                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
                                         <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
                                         <div class="hone-product-item__price">
                                             <span class="home-product-item__price-current">
@@ -446,7 +450,7 @@
                             <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product-item">
                                     <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-1.jpg');"></div>
+                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
                                         <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
                                         <div class="hone-product-item__price">
                                             <span class="home-product-item__price-current">
@@ -463,7 +467,7 @@
                             <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product-item">
                                     <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-1.jpg');"></div>
+                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
                                         <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
                                         <div class="hone-product-item__price">
                                             <span class="home-product-item__price-current">
@@ -480,7 +484,7 @@
                             <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product-item">
                                     <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-1.jpg');"></div>
+                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
                                         <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
                                         <div class="hone-product-item__price">
                                             <span class="home-product-item__price-current">
@@ -500,7 +504,7 @@
                 <!-- Tab items -->
                 <div class="grid wide">
                     <div class="banner__img">
-                            <img style="filter: brightness(180%)" src="./Assets/Img/banner2.jpg" alt="" class="banner__img-link">
+                            <img style="filter: brightness(180%); margin-top: 25px" src="./Assets/Img/banner2.jpg" alt="" class="banner__img-link">
                         </div>
                     <h3 class="home-catalog__heading">
                             Danh mục sản phẩm

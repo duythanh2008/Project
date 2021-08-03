@@ -101,7 +101,7 @@
                                         Giỏ hàng
                                     </a>
                                     <div class="header__navbar-cart-list">
-                                        <h4 class="header__navbar-cart-heading">Sản phẩm đã thêm</h4>
+                                        <!-- <h4 class="header__navbar-cart-heading">Sản phẩm đã thêm</h4>
                                         <ul class="header__navbar-cart-list-item">
                                             <li class="header__navbar-cart-item">
                                                 <img src="./Assets/Img/product-1.jpg" alt="" class="header__navbar-cart-img">
@@ -123,7 +123,11 @@
                                                 </div>
                                             </li>
                                             <a href="?controller=giohang" class="header__navbar-cart-item-cart header__navbar-cart-item-cart-btn">Xem giỏ hàng</a>
-                                        </ul>
+                                        </ul> -->
+                                        <div class="header__navbar-no-cart-item">
+                                            <img src="./Assets/Img/no_cart.png" alt="" class="header__navbar-cart-no-cart-img">
+                                            <h3 class="header__navbar-cart-no-cart-content">Chưa có sản phẩm</h3>
+                                        </div>
                                     </div>
                                 </div>
                             <label for="nav__mobile-input" class="header__navbar-mobile-bars">       
@@ -208,7 +212,17 @@
                         </div>
                     </div>
                     <div class="grid wide">
-                        
+                        <div style="margin: 80px 0 120px 0;" class="account__register">
+                            <div class="row">
+                                <div class="col l-12 m-12 c-12">
+                                    <div class="cart__info">
+                                        <img src="./Assets/Img/no_cart.png" alt="" class="cart__info-no-cart-img">
+                                        <h3 class="cart__info-no-cart-content">Chưa có sản phẩm</h3>
+                                    </div>
+                                    <a href="?controller=trangchu" class="cart__info-no-cart-btn">Quay lại trang chủ</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
