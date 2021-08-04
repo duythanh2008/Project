@@ -965,6 +965,7 @@
                 </div>
             </footer>
         </div>
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
 
         <script>
@@ -986,5 +987,6 @@
                                                 <div class="fb-customerchat" page_id="138799094994489"></div>
         <script type="text/javascript" src="./Assets/JS/tabs.js"></script>
         <script type="text/javascript" src="./Assets/JS/slide.js"></script>
+        <script type="text/javascript" src="./Assets/JS/topbtn.js"></script>
 </body>
 </html>
