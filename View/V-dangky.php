@@ -40,27 +40,27 @@
                                 </a>
                                 <ul class="header__navbar-category-product">
                                     <li class="header__navbar-category-item">
-                                        <a href="" class="header__navbar-category-link">
+                                        <a href="?controller=sanpham&id=1" class="header__navbar-category-link">
                                             Áo khoác
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
-                                        <a href="" class="header__navbar-category-link">
+                                        <a href="?controller=sanpham&id=2" class="header__navbar-category-link">
                                             Áo phông
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
-                                        <a href="" class="header__navbar-category-link">
+                                        <a href="?controller=sanpham&id=3" class="header__navbar-category-link">
                                             Quần dài
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
-                                        <a href="" class="header__navbar-category-link">
+                                        <a href="?controller=sanpham&id=4" class="header__navbar-category-link">
                                             Quần short
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
-                                        <a href="" class="header__navbar-category-link">
+                                        <a href="?controller=sanpham&id=5" class="header__navbar-category-link">
                                             Giày, dép
                                         </a>
                                     </li>
@@ -89,29 +89,32 @@
                                     Giỏ hàng
                                 </a>
                                 <div class="header__navbar-cart-list">
+                                    <?php if (isset($_SESSION['cart'])){?>
                                     <h4 class="header__navbar-cart-heading">Sản phẩm đã thêm</h4>
                                     <ul class="header__navbar-cart-list-item">
+                                        <?php foreach ($_SESSION['cart'] as $key => $value){?>
                                         <li class="header__navbar-cart-item">
-                                            <img src="./Assets/Img/product-1.jpg" alt="" class="header__navbar-cart-img">
+                                            <img src="<?php echo $value['img-link'] ?>" alt="" class="header__navbar-cart-img">
                                             <div class="header__navbar-cart-item-info">
                                                 <div class="header__navbar-cart-item-head">
-                                                    <h5 class="header__navbar-cart-item-name">Áo khoác đỏ</h5>
+                                                    <h5 class="header__navbar-cart-item-name"><?php echo $value['name'] ?></h5>
                                                     <div class="header__navbar-cart-item-price-wrap">
-                                                        <span class="header__navbar-cart-item-price">2.000.000đ</span>
+                                                        <span class="header__navbar-cart-item-price"><?php echo number_format($value['price']) ?>đ</span>
                                                         <span class="header__navbar-cart-item-multiply">x</span>
-                                                        <span class="header__navbar-cart-item-quantity">2</span>
+                                                        <span class="header__navbar-cart-item-quantity"><?php echo $value['sl'] ?></span>
                                                     </div>
-                                                </div>
-                                                <div class="header__navbar-cart-item-body">
-                                                    <span class="header__navbar-cart-item-desc">
-                                                        Size: S
-                                                    </span>
-                                                    <span class="header__navbar-cart-item-remove">Xóa</span>
                                                 </div>
                                             </div>
                                         </li>
-                                        <a href="?controller=giohang" class="header__navbar-cart-item-cart header__navbar-cart-item-cart-btn">Xem giỏ hàng</a>
+                                        <?php } ?>
                                     </ul>
+                                    <a href="?controller=giohang" class="header__navbar-cart-item-cart header__navbar-cart-item-cart-btn">Xem giỏ hàng</a>
+                                    <?php }else{ ?>
+                                    <div class="header__navbar-no-cart-item">
+                                        <img src="./Assets/Img/no_cart.png" alt="" class="header__navbar-cart-no-cart-img">
+                                        <h3 class="header__navbar-cart-no-cart-content">Chưa có sản phẩm</h3>
+                                    </div>
+                                    <?php } ?>
                                 </div>
                             </div>
                             <label for="nav__mobile-input" class="header__navbar-mobile-bars">       
@@ -135,27 +138,27 @@
                         <a href="?controller=sanpham" class="header__navbar-mobile-link">Sản phẩm</a>
                         <ul class="header__navbar-category-product-mobile">
                                     <li class="header__navbar-category-item-mobile">
-                                        <a href="" class="header__navbar-category-link-mobile">
+                                        <a href="?controller=sanpham&id=1" class="header__navbar-category-link-mobile">
                                             Áo khoác
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item-mobile">
-                                        <a href="" class="header__navbar-category-link-mobile">
+                                        <a href="?controller=sanpham&id=2" class="header__navbar-category-link-mobile">
                                             Áo phông
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item-mobile">
-                                        <a href="" class="header__navbar-category-link-mobile">
+                                        <a href="?controller=sanpham&id=3" class="header__navbar-category-link-mobile">
                                             Quần dài
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item-mobile">
-                                        <a href="" class="header__navbar-category-link-mobile">
+                                        <a href="?controller=sanpham&id=4" class="header__navbar-category-link-mobile">
                                             Quần short
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item-mobile">
-                                        <a href="" class="header__navbar-category-link-mobile">
+                                        <a href="?controller=sanpham&id=5" class="header__navbar-category-link-mobile">
                                             Giày, dép
                                         </a>
                                     </li>

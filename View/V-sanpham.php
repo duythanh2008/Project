@@ -40,27 +40,27 @@
                                 </a>
                                 <ul class="header__navbar-category-product">
                                     <li class="header__navbar-category-item">
-                                        <a href="" class="header__navbar-category-link">
+                                        <a href="?controller=sanpham&id=1" class="header__navbar-category-link">
                                             Áo khoác
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
-                                        <a href="" class="header__navbar-category-link">
+                                        <a href="?controller=sanpham&id=2" class="header__navbar-category-link">
                                             Áo phông
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
-                                        <a href="" class="header__navbar-category-link">
+                                        <a href="?controller=sanpham&id=3" class="header__navbar-category-link">
                                             Quần dài
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
-                                        <a href="" class="header__navbar-category-link">
+                                        <a href="?controller=sanpham&id=4" class="header__navbar-category-link">
                                             Quần short
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
-                                        <a href="" class="header__navbar-category-link">
+                                        <a href="?controller=sanpham&id=5" class="header__navbar-category-link">
                                             Giày, dép
                                         </a>
                                     </li>
@@ -96,36 +96,39 @@
                         </ul>
                         <div class="header__navbar-cart">
                             <div class="header__navbar-cart-wrap">
-                                    <a href="?controller=giohang" class="header__navbar-cart-link">
-                                        <i class="header__navbar-cart-icon fas fa-shopping-cart"></i>
-                                        Giỏ hàng
-                                    </a>
-                                    <div class="header__navbar-cart-list">
-                                        <h4 class="header__navbar-cart-heading">Sản phẩm đã thêm</h4>
-                                        <ul class="header__navbar-cart-list-item">
-                                            <li class="header__navbar-cart-item">
-                                                <img src="./Assets/Img/product-1.jpg" alt="" class="header__navbar-cart-img">
-                                                <div class="header__navbar-cart-item-info">
-                                                    <div class="header__navbar-cart-item-head">
-                                                        <h5 class="header__navbar-cart-item-name">Áo khoác đỏ</h5>
-                                                        <div class="header__navbar-cart-item-price-wrap">
-                                                            <span class="header__navbar-cart-item-price">2.000.000đ</span>
-                                                            <span class="header__navbar-cart-item-multiply">x</span>
-                                                            <span class="header__navbar-cart-item-quantity">2</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="header__navbar-cart-item-body">
-                                                        <span class="header__navbar-cart-item-desc">
-                                                            Size: S
-                                                        </span>
-                                                        <span class="header__navbar-cart-item-remove">Xóa</span>
+                                <a href="?controller=giohang" class="header__navbar-cart-link">
+                                    <i class="header__navbar-cart-icon fas fa-shopping-cart"></i>
+                                    Giỏ hàng
+                                </a>
+                                <div class="header__navbar-cart-list">
+                                    <?php if (isset($_SESSION['cart'])){?>
+                                    <h4 class="header__navbar-cart-heading">Sản phẩm đã thêm</h4>
+                                    <ul class="header__navbar-cart-list-item">
+                                        <?php foreach ($_SESSION['cart'] as $key => $value){?>
+                                        <li class="header__navbar-cart-item">
+                                            <img src="<?php echo $value['img-link'] ?>" alt="" class="header__navbar-cart-img">
+                                            <div class="header__navbar-cart-item-info">
+                                                <div class="header__navbar-cart-item-head">
+                                                    <h5 class="header__navbar-cart-item-name"><?php echo $value['name'] ?></h5>
+                                                    <div class="header__navbar-cart-item-price-wrap">
+                                                        <span class="header__navbar-cart-item-price"><?php echo number_format($value['price']) ?>đ</span>
+                                                        <span class="header__navbar-cart-item-multiply">x</span>
+                                                        <span class="header__navbar-cart-item-quantity"><?php echo $value['sl'] ?></span>
                                                     </div>
                                                 </div>
-                                            </li>
-                                            <a href="?controller=giohang" class="header__navbar-cart-item-cart header__navbar-cart-item-cart-btn">Xem giỏ hàng</a>
-                                        </ul>
+                                            </div>
+                                        </li>
+                                        <?php } ?>
+                                    </ul>
+                                    <a href="?controller=giohang" class="header__navbar-cart-item-cart header__navbar-cart-item-cart-btn">Xem giỏ hàng</a>
+                                    <?php }else{ ?>
+                                    <div class="header__navbar-no-cart-item">
+                                        <img src="./Assets/Img/no_cart.png" alt="" class="header__navbar-cart-no-cart-img">
+                                        <h3 class="header__navbar-cart-no-cart-content">Chưa có sản phẩm</h3>
                                     </div>
+                                    <?php } ?>
                                 </div>
+                            </div>
                             <label for="nav__mobile-input" class="header__navbar-mobile-bars">       
                                 <i class="fas fa-bars"></i>
                             </label>
@@ -147,27 +150,27 @@
                         <a href="?controller=sanpham" class="header__navbar-mobile-link">Sản phẩm</a>
                         <ul class="header__navbar-category-product-mobile">
                                     <li class="header__navbar-category-item-mobile">
-                                        <a href="" class="header__navbar-category-link-mobile">
+                                        <a href="?controller=sanpham&id=1" class="header__navbar-category-link-mobile">
                                             Áo khoác
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item-mobile">
-                                        <a href="" class="header__navbar-category-link-mobile">
+                                        <a href="?controller=sanpham&id=2" class="header__navbar-category-link-mobile">
                                             Áo phông
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item-mobile">
-                                        <a href="" class="header__navbar-category-link-mobile">
+                                        <a href="?controller=sanpham&id=3" class="header__navbar-category-link-mobile">
                                             Quần dài
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item-mobile">
-                                        <a href="" class="header__navbar-category-link-mobile">
+                                        <a href="?controller=sanpham&id=4" class="header__navbar-category-link-mobile">
                                             Quần short
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item-mobile">
-                                        <a href="" class="header__navbar-category-link-mobile">
+                                        <a href="?controller=sanpham&id=5" class="header__navbar-category-link-mobile">
                                             Giày, dép
                                         </a>
                                     </li>
@@ -213,39 +216,72 @@
                                 <nav class="catalog">
                                     <h3 class="catalog__heading">Bộ lọc</h3>
                                     <form action="?controller=sanpham" method="post">
-                                    <p style="font-size: 17px; font-weight: 600; color: black">Danh mục</p>
+                                    <p style="font-size: 17px; font-weight: 600; color: var(--text-color); margin-left: 20px;">Danh mục</p>
                                     <ul class="catalog__list">
                                         <?php foreach ($catalog as $key => $value){ ?>
                                             <li class="catalog__item">
-                                                <input class="find" type="checkbox" class="find" name="catalog[]" value="<?php echo $value['id'] ?>" <?php if(isset($catalog_id) && ($catalog_id == $value['id'])){ echo "checked"; } ?> ><?php echo $value['name'] ?>
+                                                <input class="find" type="checkbox" class="find" name="catalog[]" value="<?php echo $value['id'] ?>" <?php if(isset($catalog_id) && ($catalog_id == $value['id'])){ echo "checked"; } ?> > &nbsp;<?php echo $value['name'] ?>
                                             </li>
                                         <?php } ?>
                                     </ul>
-                                    <p style="font-size: 17px; font-weight: 600; color: black">Giá</p>
+                                    <p style="font-size: 17px; font-weight: 600; color: var(--text-color); margin-left: 20px;">Giá</p>
                                     <ul class="catalog__list">
                                         <li class="catalog__item">
-                                            <input class="find" type="radio" value="1" <?php if (isset($_POST['price']) && $_POST['price']==1): ?>checked='checked'<?php endif; ?> name="price">Under 200k
+                                            <input class="find" type="radio" value="1" <?php if (isset($_POST['price']) && $_POST['price']==1): ?>checked='checked'<?php endif; ?> name="price">&nbsp;Dưới 200k
                                         </li>
                                         <li class="catalog__item">
-                                            <input class="find" type="radio" value="2" <?php if (isset($_POST['price']) && $_POST['price']==2): ?>checked='checked'<?php endif; ?> name="price">200k-400k
+                                            <input class="find" type="radio" value="2" <?php if (isset($_POST['price']) && $_POST['price']==2): ?>checked='checked'<?php endif; ?> name="price">&nbsp;200k-400k
                                         </li>
                                         <li class="catalog__item">
-                                            <input class="find" type="radio" value="3" <?php if (isset($_POST['price']) && $_POST['price']==3): ?>checked='checked'<?php endif; ?> name="price">400k-600k
+                                            <input class="find" type="radio" value="3" <?php if (isset($_POST['price']) && $_POST['price']==3): ?>checked='checked'<?php endif; ?> name="price">&nbsp;400k-600k
                                         </li>
                                         <li class="catalog__item">
-                                            <input class="find" type="radio" value="4" <?php if (isset($_POST['price']) && $_POST['price']==4): ?>checked='checked'<?php endif; ?> name="price">600k-800k
+                                            <input class="find" type="radio" value="4" <?php if (isset($_POST['price']) && $_POST['price']==4): ?>checked='checked'<?php endif; ?> name="price">&nbsp;600k-800k
                                         </li>
                                         <li class="catalog__item">
-                                            <input class="find" type="radio" value="5" <?php if (isset($_POST['price']) && $_POST['price']==5): ?>checked='checked'<?php endif; ?> name="price">800k & above <br>
+                                            <input class="find" type="radio" value="5" <?php if (isset($_POST['price']) && $_POST['price']==5): ?>checked='checked'<?php endif; ?> name="price">&nbsp;Trên 800k<br>
                                         </li>
                                     </ul>
-                                        <input type="submit" name="search" value="Lọc">
-                                        <a href="?controller=sanpham">Xóa</a>
+                                    <input type="submit" class="catalog_search-btn" name="search" value="Lọc">
+                                    <a style="text-decoration: none; font-size: 1.2rem;" href="?controller=sanpham">Xóa</a>
                                     </form>
                                 </nav>
                             </div>
                             <div class="col l-10 m-12 c-12">
                                 <div class="row sm-gutter">
+                                    <div class="col l-0 m-12 c-12">
+                                        <h3 class="catalog__heading">Bộ lọc</h3>
+                                        <form action="?controller=sanpham" method="post">
+                                        <p style="font-size: 17px; font-weight: 600; color: var(--text-color); margin-left: 20px;">Danh mục</p>
+                                        <ul class="catalog__list">
+                                            <?php foreach ($catalog as $key => $value){ ?>
+                                                <li class="catalog__item">
+                                                    <input class="find" type="checkbox" class="find" name="catalog[]" value="<?php echo $value['id'] ?>" <?php if(isset($catalog_id) && ($catalog_id == $value['id'])){ echo "checked"; } ?> > &nbsp;<?php echo $value['name'] ?>
+                                                </li>
+                                            <?php } ?>
+                                        </ul>
+                                        <p style="font-size: 17px; font-weight: 600; color: var(--text-color); margin-left: 20px;">Giá</p>
+                                        <ul class="catalog__list">
+                                            <li class="catalog__item">
+                                                <input class="find" type="radio" value="1" <?php if (isset($_POST['price']) && $_POST['price']==1): ?>checked='checked'<?php endif; ?> name="price">&nbsp;Dưới 200k
+                                            </li>
+                                            <li class="catalog__item">
+                                                <input class="find" type="radio" value="2" <?php if (isset($_POST['price']) && $_POST['price']==2): ?>checked='checked'<?php endif; ?> name="price">&nbsp;200k-400k
+                                            </li>
+                                            <li class="catalog__item">
+                                                <input class="find" type="radio" value="3" <?php if (isset($_POST['price']) && $_POST['price']==3): ?>checked='checked'<?php endif; ?> name="price">&nbsp;400k-600k
+                                            </li>
+                                            <li class="catalog__item">
+                                                <input class="find" type="radio" value="4" <?php if (isset($_POST['price']) && $_POST['price']==4): ?>checked='checked'<?php endif; ?> name="price">&nbsp;600k-800k
+                                            </li>
+                                            <li class="catalog__item">
+                                                <input class="find" type="radio" value="5" <?php if (isset($_POST['price']) && $_POST['price']==5): ?>checked='checked'<?php endif; ?> name="price">&nbsp;Trên 800k<br>
+                                            </li>
+                                        </ul>
+                                        <input type="submit" class="catalog_search-btn" name="search" value="Lọc">
+                                        <a style="text-decoration: none; font-size: 1.2rem;" href="?controller=sanpham">Xóa</a>
+                                        </form>
+                                    </div>
                                     <?php
                                         $num=0;
                                     foreach ($product as $key => $value){

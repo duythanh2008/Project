@@ -58,6 +58,12 @@
         case 'giohang':
             require_once './Controller/C-giohang.php';
             break;
+        case 'themgiohang':
+            require_once './Controller/C-themgiohang.php';
+            break;
+        case 'xuligiohang':
+            require_once './Controller/C-xuligiohang.php';
+            break;
         case 'dangnhapquantri':
             require_once './Controller/C-dangnhapquantri.php';
             break;

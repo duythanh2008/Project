@@ -181,7 +181,7 @@
     padding-left: 0;
     list-style: none;
     overflow: hidden auto;
-    max-height: 50vh;
+    max-height: 35vh;
 }
 
 .header__navbar-cart-item{
@@ -294,7 +294,7 @@
     justify-content: center;
     align-items: center;
     background-color: var(--primary-color);
-    margin-top: 10px;
+    margin-bottom: 10px;
     transition: all linear 0.2s;
 }
 
@@ -682,10 +682,12 @@
     align-items: flex-start;
     justify-content: space-between;
     list-style: none;
+    padding-left: 20px;
 }
 
 .catalog__item{
     font-size: 1.2rem;
+    margin: 2px;
 }
 
 
@@ -1828,6 +1830,146 @@
 	color: var(--text-color);
 }
 
+.catalog_search-btn{
+    min-width: 55px;
+    height: 35px;
+    border: none;
+    text-decoration: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0 12px;
+    outline: none;
+    color: var(--white-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    transition: all linear 0.2s;
+    margin: 12px;
+}
+
+.catalog_search-btn:hover{
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+/* Cart */
+
+.cart-table table{
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 1.4rem;
+    text-align: left;
+}
+
+.cart-table table thead{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.cart-table table th,td{
+    border: 1px solid var(--border-color);
+    padding: 5px 10px;
+}
+
+.cart-product{
+    display: flex;
+    align-items: center;
+}
+
+.cart-product__img{
+    width: 75px;
+}
+
+.cart-product__info{
+    margin-left: 20px;
+}
+
+.cart-product__info-name{
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin: 6px 0;
+}
+
+.cart-product__info-price{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 6px 0;
+}
+
+.cart-product__info-remove{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.cart-product__qty-btn{
+    text-decoration: none;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    font-size: 1.4rem;
+    padding: 1px 5px;
+    border-radius: 3px;
+}
+
+.cart-product__qty-info{
+    display: inline;
+}
+
+.cart-product__total{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 6px 0;
+}
+
+.cart-product__total-price{
+    margin-top: 10px;
+    border-top: 5px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cart-product__total-price-heading{
+    font-size: 1.8rem;
+    margin: 6px 0;
+}
+
+.cart-product__total-price-money{
+    margin: 6px 0;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.cart-product__total-price-pay{
+    min-width: 55px;
+    height: 35px;
+    border: none;
+    text-decoration: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0 12px;
+    outline: none;
+    color: var(--white-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    transition: all linear 0.2s;
+    margin-top: 10px;
+}
+
+.cart-product__total-price-pay:hover{
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
 /* Footer */
 .footer{
     padding-top: 16px;
@@ -1979,6 +2121,11 @@
     }
     .small-img-col:last-child{
         padding-bottom: 0;
+    }
+    .catalog__list{
+        justify-content: space-around;
+        flex-direction: row;
+        padding-left: 0;
     }
     .product-detail__info{
         margin: 0 12px;
@@ -2159,5 +2306,21 @@
     }
     .admin-content{
         margin-top: 60px;
+    }
+    .cart-product__img {
+        width: 50px;
+    }
+    .cart-product__total,
+    .cart-product__qty-info,
+    .cart-product__qty-btn,
+    .cart-product__info-remove,
+    .cart-product__info-price,
+    .cart-product__info-name{
+        font-size: 1.2rem;
+    }
+    .cart-product__total-price-pay,
+    .cart-product__total-price-money,
+    .cart-product__total-price-heading{
+        font-size: 1.3rem;
     }
 }
