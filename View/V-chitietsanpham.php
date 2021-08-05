@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./Assets/Css/responsive.css">
     <link rel="stylesheet" href="./Assets/Css/main.css">
     <link rel="stylesheet" href="./Assets/Css/base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -200,19 +201,19 @@
                     <div class="row">
                         <div class="col l-6 m-12 c-12">
                             <div class="product-detail__img">
-                                <img src="./Assets/Img/gallery-1.jpg" class="product-detail__img-link" id="productImg">
+                                <img src="<?php echo $product[0]['image'] ?>" class="product-detail__img-link" id="productImg">
                                 <div class="small-img-row">
                                     <div class="small-img-col">
-                                        <img src="./Assets/Img/gallery-1.jpg" width="100%" class="small-img">
+                                        <img src="<?php echo $product[0]['image'] ?>" width="100%" class="small-img">
                                     </div>
                                     <div class="small-img-col">
-                                        <img src="./Assets/Img/gallery-2.jpg" width="100%" class="small-img">
+                                        <img src="<?php echo $product[0]['image2'] ?>" width="100%" class="small-img">
                                     </div>
                                     <div class="small-img-col">
-                                        <img src="./Assets/Img/gallery-3.jpg" width="100%" class="small-img">
+                                        <img src="<?php echo $product[0]['image3'] ?>" width="100%" class="small-img">
                                     </div>
                                     <div class="small-img-col">
-                                        <img src="./Assets/Img/gallery-4.jpg" width="100%" class="small-img">
+                                        <img src="<?php echo $product[0]['image4'] ?>" width="100%" class="small-img">
                                     </div>
                               </div> 
                             </div>
@@ -224,25 +225,38 @@
                                     <a href="?controller=sanpham" class="product-detail__info-link-pre2">Sản phẩm</a> <p style="display: inline-block; font-size: 1.6rem;"> > &nbsp;&nbsp; </p>
                                 </div>
                                 <h3 class="product-detail__info-name">
-                                    Áo khoác đỏ
+                                    <?php echo $product[0]['name'] ?>
                                 </h3>
                                 <div class="product-detail__info-catalog">
                                     <h4 class="product-detail__info-catalog-heading">Danh mục: </h4>
-                                    <a href="#" class="product-detail__info-catalog-name">Áo khoác</a>
+                                    <a href="#" class="product-detail__info-catalog-name"><?php echo $catalog[0]['name'] ?></a>
                                 </div>
                                 <div class="product-detail__info-status">
                                     <h4 class="product-detail__info-status-check">Tình trạng: </h4>
-                                    <p class="product-detail__info-status-checkname">Còn hàng</p>
+                                    <?php if ($product[0]['qty'] >0 ){ ?>
+                                        <p class="product-detail__info-status-checkname">Còn hàng</p>
+                                    <?php }else{?>
+                                        <p style="color: red" class="product-detail__info-status-checkname">Hết hàng</p>
+                                    <?php } ?>
                                 </div>
-                                <p class="product-detail__info-price">1.000.000đ</p>
+                                <p class="product-detail__info-price"><?php echo number_format($product[0]['price']) ?>đ</p>
                                 
                                 <div class="product-detail__info-add-to-cart">
                                     <form action="#" method="post">
                                         <label for="qty" class="product-detail__info-qty-label">Số lượng: </label>
-                                        <input type="number" name="qty" id="qty" class="product-detail__info-qty"><br>
+                                        <button type="button" class="product-detail__info-qty-adjust" onclick="decrease()"><i class="fas fa-minus"></i></button>
+                                        <input type="text" id="text" class="product-detail__info-qty" value="1">
+                                        <button type="button" class="product-detail__info-qty-adjust" onclick="increase()"><i class="fas fa-plus"></i></button>
+                                        <br>
                                         <input type="submit" value="Thêm vào giỏ hàng" class="product-detail__info-btn">
                                     </form>
                                 </div>
+                                <h3 class="product-detail__desc-heading">
+                                    Mô tả sản phẩm
+                                </h3>
+                                <h3 class="product-detail__desc">
+                                    <?php echo $product[0]['description'] ?>
+                                </h3>
                             </div>
                         </div>
                     </div>
@@ -250,114 +264,57 @@
                 <div style="margin-top: 20px" class="grid wide">
                     <div class="row">
                         <div class="col l-9 m-12 c-12">
-                            <div class="tabs">
-                                <div class="tab-item active">
-                                    Mô tả
-                                </div>
-                                <div class="tab-item">
-                                    Đánh giá
-                                </div>
-                                <div class="line"></div>
-                            </div>
-                            <div class="tab-content">
-                                <div class="tab-pane active">
-                                    <h3 class="product-detail__desc">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eleifend consequat mauris at blandit. Suspendisse ullamcorper arcu id elit ornare finibus. Nunc vel interdum tortor, vel feugiat odio. Aenean lobortis erat rutrum pretium lobortis. Sed tempus est et velit placerat, nec facilisis ex sagittis. Curabitur eget turpis eget turpis porttitor tincidunt vitae cursus dolor. In nulla ante, pellentesque at dapibus in, finibus sit amet felis. Vivamus fringilla urna enim, sed sodales lorem ornare ut. Vestibulum pulvinar mauris odio, tristique convallis augue blandit ullamcorper. In eget placerat ex. Quisque ut fermentum tellus, in pellentesque odio. Aliquam justo turpis, tincidunt sit amet nisi a, facilisis fringilla erat. Donec vulputate tempor sem, vel tincidunt nibh consequat a. Integer aliquet, purus in fringilla tincidunt, turpis libero tempus dolor, et faucibus nisl justo eget mauris.
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eleifend consequat mauris at blandit. Suspendisse ullamcorper arcu id elit ornare finibus. Nunc vel interdum tortor, vel feugiat odio. Aenean lobortis erat rutrum pretium lobortis. Sed tempus est et velit placerat, nec facilisis ex sagittis. Curabitur eget turpis eget turpis porttitor tincidunt vitae cursus dolor. In nulla ante, pellentesque at dapibus in, finibus sit amet felis. Vivamus fringilla urna enim, sed sodales lorem ornare ut. Vestibulum pulvinar mauris odio, tristique convallis augue blandit ullamcorper. In eget placerat ex. Quisque ut fermentum tellus, in pellentesque odio. Aliquam justo turpis, tincidunt sit amet nisi a, facilisis fringilla erat. Donec vulputate tempor sem, vel tincidunt nibh consequat a. Integer aliquet, purus in fringilla tincidunt, turpis libero tempus dolor, et faucibus nisl justo eget mauris.
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eleifend consequat mauris at blandit. Suspendisse ullamcorper arcu id elit ornare finibus. Nunc vel interdum tortor, vel feugiat odio. Aenean lobortis erat rutrum pretium lobortis. Sed tempus est et velit placerat, nec facilisis ex sagittis. Curabitur eget turpis eget turpis porttitor tincidunt vitae cursus dolor. In nulla ante, pellentesque at dapibus in, finibus sit amet felis. Vivamus fringilla urna enim, sed sodales lorem ornare ut. Vestibulum pulvinar mauris odio, tristique convallis augue blandit ullamcorper. In eget placerat ex. Quisque ut fermentum tellus, in pellentesque odio. Aliquam justo turpis, tincidunt sit amet nisi a, facilisis fringilla erat. Donec vulputate tempor sem, vel tincidunt nibh consequat a. Integer aliquet, purus in fringilla tincidunt, turpis libero tempus dolor, et faucibus nisl justo eget mauris.
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eleifend consequat mauris at blandit. Suspendisse ullamcorper arcu id elit ornare finibus. Nunc vel interdum tortor, vel feugiat odio. Aenean lobortis erat rutrum pretium lobortis. Sed tempus est et velit placerat, nec facilisis ex sagittis. Curabitur eget turpis eget turpis porttitor tincidunt vitae cursus dolor. In nulla ante, pellentesque at dapibus in, finibus sit amet felis. Vivamus fringilla urna enim, sed sodales lorem ornare ut. Vestibulum pulvinar mauris odio, tristique convallis augue blandit ullamcorper. In eget placerat ex. Quisque ut fermentum tellus, in pellentesque odio. Aliquam justo turpis, tincidunt sit amet nisi a, facilisis fringilla erat. Donec vulputate tempor sem, vel tincidunt nibh consequat a. Integer aliquet, purus in fringilla tincidunt, turpis libero tempus dolor, et faucibus nisl justo eget mauris.
-                                    </h3>
-                                </div>
-                            <div class="tab-pane">
-                                <div class="product-detail__rating">
-                                    <form action="#" method="post">
-                                        <div class="product-detail__rating-item">
-                                            <label for="fullname" class="product-detail__rating-label">Họ và tên</label>
-                                            <input type="text" name="" id="fullname" placeholder="Họ và tên" class="product-detail__rating-input">
+                            
+                            <h3 class="product-detail__rating-heading">
+                                Đánh giá
+                            </h3>
+                            <div class="product-detail__rating">
+                                <form action="#" method="post">
+                                    <div class="product-detail__rating-item">
+                                        <label for="fullname" class="product-detail__rating-label">Họ và tên</label>
+                                        <input type="text" name="" id="fullname" placeholder="Họ và tên" class="product-detail__rating-input">
+                                    </div>
+                                    <div class="product-detail__rating-item">
+                                        <label for="email" class="product-detail__rating-label">Email</label>
+                                        <input type="email" name="" id="email" placeholder="Email" class="product-detail__rating-input">
+                                    </div>
+                                    <div class="product-detail__rating-item">
+                                        <label for="content" class="product-detail__rating-label">Nội dung</label>
+                                        <textarea type="email" name="" id="content" placeholder="Nội dung" class="product-detail__rating-textarea"></textarea>
+                                    </div>
+                                    <div class="product-detail__rating-item">
+                                        <div class="rateyo" id="rating"
+                                        data-rateyo-rating="0"
+                                        data-rateyo-num-stars="5"
+                                        data-rateyo-score="3">
                                         </div>
-                                        <div class="product-detail__rating-item">
-                                            <label for="email" class="product-detail__rating-label">Email</label>
-                                            <input type="email" name="" id="email" placeholder="Email" class="product-detail__rating-input">
-                                        </div>
-                                        <div class="product-detail__rating-item">
-                                            <label for="content" class="product-detail__rating-label">Nội dung</label>
-                                            <textarea type="email" name="" id="email" placeholder="Nội dung" class="product-detail__rating-textarea"></textarea>
-                                        </div>
-                                        <input type="submit" value="Gửi đánh giá" class="product-detail__rating-submit">
-                                    </form>
-                                </div>
-                            </div>
+
+                                        <span style="font-size: 1.4rem; margin-top: 6px" class='result'></span>
+                                        <input type="hidden" name="rating">
+                                    </div>
+                                    <input type="submit" value="Gửi đánh giá" class="product-detail__rating-submit">
+                                </form>
                             </div>
                         </div>
                         <div class="col l-3 m-12 c-12">
                             <div class="product-relative">
                                 <h3 class="product-relative__heading">Sản phẩm liên quan</h3>
                                 <ul class="product-relative__list">
-                                    <li class="product-relative__item">
-                                        <a href="#" class="product-relative__item-link">
-                                            <img src="./Assets/Img/gallery-1.jpg" alt="" class="product-relative__item-img">
+                                    <?php foreach ($product_relative as $key => $value){?>
+                                        <li class="product-relative__item">
+                                        <a href="?controller=chitietsanpham&id=<?php echo $value['id']; ?>" class="product-relative__item-link">
+                                            <img src="<?php echo $value['image']; ?>" alt="" class="product-relative__item-img">
                                             <div class="product-relative__item-info">
                                                 <h3 class="product-relative__item-name">
-                                                    Áo khoác đỏ
+                                                    <?php echo $value['name']; ?>
                                                 </h3>
                                                 <h3 class="product-relative__item-price">
-                                                    1.000.000đ
+                                                    <?php echo number_format($value['price']); ?>đ
                                                 </h3>
                                             </div>
                                         </a>
                                     </li>
-                                    <li class="product-relative__item">
-                                        <a href="#" class="product-relative__item-link">
-                                            <img src="./Assets/Img/gallery-1.jpg" alt="" class="product-relative__item-img">
-                                            <div class="product-relative__item-info">
-                                                <h3 class="product-relative__item-name">
-                                                    Áo khoác đỏ
-                                                </h3>
-                                                <h3 class="product-relative__item-price">
-                                                    1.000.000đ
-                                                </h3>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="product-relative__item">
-                                        <a href="#" class="product-relative__item-link">
-                                            <img src="./Assets/Img/gallery-1.jpg" alt="" class="product-relative__item-img">
-                                            <div class="product-relative__item-info">
-                                                <h3 class="product-relative__item-name">
-                                                    Áo khoác đỏ
-                                                </h3>
-                                                <h3 class="product-relative__item-price">
-                                                    1.000.000đ
-                                                </h3>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="product-relative__item">
-                                        <a href="#" class="product-relative__item-link">
-                                            <img src="./Assets/Img/gallery-1.jpg" alt="" class="product-relative__item-img">
-                                            <div class="product-relative__item-info">
-                                                <h3 class="product-relative__item-name">
-                                                    Áo khoác đỏ
-                                                </h3>
-                                                <h3 class="product-relative__item-price">
-                                                    1.000.000đ
-                                                </h3>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="product-relative__item">
-                                        <a href="#" class="product-relative__item-link">
-                                            <img src="./Assets/Img/gallery-1.jpg" alt="" class="product-relative__item-img">
-                                            <div class="product-relative__item-info">
-                                                <h3 class="product-relative__item-name">
-                                                    Áo khoác đỏ
-                                                </h3>
-                                                <h3 class="product-relative__item-price">
-                                                    1.000.000đ
-                                                </h3>
-                                            </div>
-                                        </a>
-                                    </li>
+                                    <?php } ?>
                                 </ul>
                             </div>
                         </div>
@@ -471,9 +428,20 @@
                                                     }(document, 'script', 'facebook-jssdk'));
                                                 </script>
                                                 <div class="fb-customerchat" page_id="138799094994489"></div>
-    <script type="text/javascript" src="./Assets/JS/product.js"></script>
-    <script type="text/javascript" src="./Assets/JS/tabs.js"></script>
+                                                <script type="text/javascript" src="./Assets/JS/product.js"></script>
+    <script type="text/javascript" src="./Assets/JS/quantity.js"></script>
     <script type="text/javascript" src="./Assets/JS/topbtn.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+    <script>
+        $(function () {
+        $(".rateyo").rateYo().on("rateyo.change", function (e, data) {
+            var rating = data.rating;
+            $(this).parent().find('.score').text('score :'+ $(this).attr('data-rateyo-score'));
+            $(this).parent().find('.result').text('Đánh giá: '+ rating + ' sao');
+            $(this).parent().find('input[name=rating]').val(rating); //add rating value to input field
+        });
+    });
+    </script>
 </body>
 </html>

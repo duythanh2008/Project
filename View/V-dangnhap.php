@@ -213,7 +213,7 @@
                                         <input type="submit" class="account__login-submit" name="dangnhap" value="Đăng nhập" id="login-username">
                                     </div>
                                     <div class="account__login-item">
-                                        <a class="account__login-item-link" href="#">Đăng nhập với tư cách Quản trị viên</a>
+                                        <a class="account__login-item-link" href="?controller=dangnhapquantri">Đăng nhập với tư cách Quản trị viên</a>
                                     </div>
                                 </div>
                                 </form>

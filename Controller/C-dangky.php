@@ -7,18 +7,20 @@
         $error = array();
         if ($username == ''){
             $error['username']= "Vui lòng nhập tên đăng nhập";
-        }
-        if (strlen($username) < 6){
-            $error['username']= "Tên đăng nhập phải có ít nhất 6 kí tự";
+        }else{
+            if (strlen($username) < 6){
+                $error['username']= "Tên đăng nhập phải có ít nhất 6 kí tự";
+            }
         }
         if ($email == ''){
             $error['email']= "Vui lòng nhập email";
         }
         if ($password == ''){
             $error['password']= "Vui lòng nhập mật khẩu";
-        }
-        if (strlen($password) < 8){
-            $error['password']= "Mật khẩu phải có ít nhất 8 kí tự";
+        }else{
+            if (strlen($password) < 8){
+                $error['password']= "Mật khẩu phải có ít nhất 8 kí tự";
+            }
         }
         if ($phone == ''){
             $error['phone']= "Vui lòng nhập số điện thoại";

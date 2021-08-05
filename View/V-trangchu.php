@@ -40,27 +40,27 @@
                                 </a>
                                 <ul class="header__navbar-category-product">
                                     <li class="header__navbar-category-item">
-                                        <a href="" class="header__navbar-category-link">
+                                        <a href="?controller=sanpham&id=1" class="header__navbar-category-link">
                                             Áo khoác
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
-                                        <a href="" class="header__navbar-category-link">
+                                        <a href="?controller=sanpham&id=2" class="header__navbar-category-link">
                                             Áo phông
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
-                                        <a href="" class="header__navbar-category-link">
+                                        <a href="?controller=sanpham&id=3" class="header__navbar-category-link">
                                             Quần dài
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
-                                        <a href="" class="header__navbar-category-link">
+                                        <a href="?controller=sanpham&id=4" class="header__navbar-category-link">
                                             Quần short
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
-                                        <a href="" class="header__navbar-category-link">
+                                        <a href="?controller=sanpham&id=5" class="header__navbar-category-link">
                                             Giày, dép
                                         </a>
                                     </li>
@@ -243,14 +243,15 @@
                             Sản phẩm nổi bật
                         </h3>
                         <div class="row sm-gutter">
+                            <?php foreach ($product1 as $key => $value){ ?>
                             <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product-item">
-                                    <a href="?controller=chitietsanpham" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
-                                        <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
+                                    <a href="?controller=chitietsanpham&id=<?php echo $value['id'] ?>" class="home-product-item__link">
+                                        <div class="home-product-item__img" style="background-image: url('<?php echo $value['image'] ?>');"></div>
+                                        <h4 class="home-product-item__name"><?php echo $value['name'] ?></h4>
                                         <div class="hone-product-item__price">
                                             <span class="home-product-item__price-current">
-                                                1.000.000đ
+                                            <?php echo number_format($value['price']) ?>đ
                                             </span>
                                         </div>
                                         <div class="home-product-item__favourite">
@@ -260,14 +261,16 @@
                                     </a>
                                 </div>
                             </div>
+                            <?php } ?>
+                            <?php foreach ($product2 as $key => $value){ ?>
                             <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product-item">
-                                    <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
-                                        <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
+                                    <a href="?controller=chitietsanpham&id=<?php echo $value['id'] ?>" class="home-product-item__link">
+                                        <div class="home-product-item__img" style="background-image: url('<?php echo $value['image'] ?>');"></div>
+                                        <h4 class="home-product-item__name"><?php echo $value['name'] ?></h4>
                                         <div class="hone-product-item__price">
                                             <span class="home-product-item__price-current">
-                                                1.000.000đ
+                                            <?php echo number_format($value['price']) ?>đ
                                             </span>
                                         </div>
                                         <div class="home-product-item__favourite">
@@ -277,14 +280,16 @@
                                     </a>
                                 </div>
                             </div>
+                            <?php } ?>
+                            <?php foreach ($product3 as $key => $value){ ?>
                             <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product-item">
-                                    <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
-                                        <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
+                                    <a href="?controller=chitietsanpham&id=<?php echo $value['id'] ?>" class="home-product-item__link">
+                                        <div class="home-product-item__img" style="background-image: url('<?php echo $value['image'] ?>');"></div>
+                                        <h4 class="home-product-item__name"><?php echo $value['name'] ?></h4>
                                         <div class="hone-product-item__price">
                                             <span class="home-product-item__price-current">
-                                                1.000.000đ
+                                            <?php echo number_format($value['price']) ?>đ
                                             </span>
                                         </div>
                                         <div class="home-product-item__favourite">
@@ -294,210 +299,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <div class="home-product-item">
-                                    <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
-                                        <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                        <div class="hone-product-item__price">
-                                            <span class="home-product-item__price-current">
-                                                1.000.000đ
-                                            </span>
-                                        </div>
-                                        <div class="home-product-item__favourite">
-                                                <i class="fas fa-check"></i>
-                                                <span>Yêu thích</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <div class="home-product-item">
-                                    <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
-                                        <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                        <div class="hone-product-item__price">
-                                            <span class="home-product-item__price-current">
-                                                1.000.000đ
-                                            </span>
-                                        </div>
-                                        <div class="home-product-item__favourite">
-                                                <i class="fas fa-check"></i>
-                                                <span>Yêu thích</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <div class="home-product-item">
-                                    <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
-                                        <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                        <div class="hone-product-item__price">
-                                            <span class="home-product-item__price-current">
-                                                1.000.000đ
-                                            </span>
-                                        </div>
-                                        <div class="home-product-item__favourite">
-                                                <i class="fas fa-check"></i>
-                                                <span>Yêu thích</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <div class="home-product-item">
-                                    <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
-                                        <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                        <div class="hone-product-item__price">
-                                            <span class="home-product-item__price-current">
-                                                1.000.000đ
-                                            </span>
-                                        </div>
-                                        <div class="home-product-item__favourite">
-                                                <i class="fas fa-check"></i>
-                                                <span>Yêu thích</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <div class="home-product-item">
-                                    <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
-                                        <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                        <div class="hone-product-item__price">
-                                            <span class="home-product-item__price-current">
-                                                1.000.000đ
-                                            </span>
-                                        </div>
-                                        <div class="home-product-item__favourite">
-                                                <i class="fas fa-check"></i>
-                                                <span>Yêu thích</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <div class="home-product-item">
-                                    <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
-                                        <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                        <div class="hone-product-item__price">
-                                            <span class="home-product-item__price-current">
-                                                1.000.000đ
-                                            </span>
-                                        </div>
-                                        <div class="home-product-item__favourite">
-                                                <i class="fas fa-check"></i>
-                                                <span>Yêu thích</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <div class="home-product-item">
-                                    <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
-                                        <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                        <div class="hone-product-item__price">
-                                            <span class="home-product-item__price-current">
-                                                1.000.000đ
-                                            </span>
-                                        </div>
-                                        <div class="home-product-item__favourite">
-                                                <i class="fas fa-check"></i>
-                                                <span>Yêu thích</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <div class="home-product-item">
-                                    <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
-                                        <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                        <div class="hone-product-item__price">
-                                            <span class="home-product-item__price-current">
-                                                1.000.000đ
-                                            </span>
-                                        </div>
-                                        <div class="home-product-item__favourite">
-                                                <i class="fas fa-check"></i>
-                                                <span>Yêu thích</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <div class="home-product-item">
-                                    <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
-                                        <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                        <div class="hone-product-item__price">
-                                            <span class="home-product-item__price-current">
-                                                1.000.000đ
-                                            </span>
-                                        </div>
-                                        <div class="home-product-item__favourite">
-                                                <i class="fas fa-check"></i>
-                                                <span>Yêu thích</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <div class="home-product-item">
-                                    <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
-                                        <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                        <div class="hone-product-item__price">
-                                            <span class="home-product-item__price-current">
-                                                1.000.000đ
-                                            </span>
-                                        </div>
-                                        <div class="home-product-item__favourite">
-                                                <i class="fas fa-check"></i>
-                                                <span>Yêu thích</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <div class="home-product-item">
-                                    <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
-                                        <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                        <div class="hone-product-item__price">
-                                            <span class="home-product-item__price-current">
-                                                1.000.000đ
-                                            </span>
-                                        </div>
-                                        <div class="home-product-item__favourite">
-                                                <i class="fas fa-check"></i>
-                                                <span>Yêu thích</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <div class="home-product-item">
-                                    <a href="" class="home-product-item__link">
-                                        <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-12.jpg');"></div>
-                                        <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                        <div class="hone-product-item__price">
-                                            <span class="home-product-item__price-current">
-                                                1.000.000đ
-                                            </span>
-                                        </div>
-                                        <div class="home-product-item__favourite">
-                                                <i class="fas fa-check"></i>
-                                                <span>Yêu thích</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -509,373 +311,114 @@
                     <h3 class="home-catalog__heading">
                             Danh mục sản phẩm
                     </h3>
-                    <div class="tabs">
-                        <div class="tab-item active">
-                            Áo phông
+                    
+                    <div class="tab">
+                        <button class="tablinks active" onclick="catalog(event, 'Aokhoac')">Áo khoác</button>
+                        <button class="tablinks" onclick="catalog(event, 'Aophong')">Áo phông</button>
+                        <button class="tablinks" onclick="catalog(event, 'Quandai')">Quần dài</button>
+                        <button class="tablinks" onclick="catalog(event, 'Quanshort')">Quần short</button>
+                        <button class="tablinks" onclick="catalog(event, 'Giaydep')">Giày, dép</button>
                         </div>
-                        <div class="tab-item">
-                            Áo khoác
-                        </div>
-                        <div class="tab-item">
-                            Quần short
-                        </div>
-                        <div class="tab-item">
-                            Quần dài
-                        </div>
-                        <div class="tab-item">
-                            Giày, dép
-                        </div>
-                        <div class="line"></div>
-                    </div>
 
-                    <!-- Tab content -->
-                    <div class="tab-content">
-                        <div class="tab-pane active">
-                            <div class="row sm-gutter">
-                                <div class="col l-2-4 m-4 c-6">
+                        <div id="Aokhoac" class="tabcontent active">
+                            <div class="row">
+                                <?php foreach ($product4 as $key => $value){ ?>
+                                    <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-9.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
+                                        <a href="?controller=chitietsanpham&id=<?php echo $value['id'] ?>" class="home-product-item__link">
+                                            <div class="home-product-item__img" style="background-image: url('<?php echo $value['image'] ?>');"></div>
+                                            <h4 class="home-product-item__name"><?php echo $value['name'] ?></h4>
                                             <div class="hone-product-item__price">
                                                 <span class="home-product-item__price-current">
-                                                    1.000.000đ
+                                                 <?php echo number_format($value['price']) ?>
                                                 </span>
                                             </div>
                                         </a>
                                     </div>
                                 </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-9.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-9.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-9.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-9.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
+                                <?php } ?>
                             </div>
                         </div>
-                        <div class="tab-pane">
-                            <div class="row sm-gutter">
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-7.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
+
+                        <div id="Aophong" class="tabcontent">
+                            <div class="row">
+                                <?php foreach ($product1 as $key => $value){ ?>
+                                    <div class="col l-2-4 m-4 c-6">
+                                        <div class="home-product-item">
+                                            <a href="?controller=chitietsanpham&id=<?php echo $value['id'] ?>" class="home-product-item__link">
+                                                <div class="home-product-item__img" style="background-image: url('<?php echo $value['image'] ?>');"></div>
+                                                <h4 class="home-product-item__name"><?php echo $value['name'] ?></h4>
+                                                <div class="hone-product-item__price">
+                                                    <span class="home-product-item__price-current">
+                                                    <?php echo number_format($value['price']) ?>
+                                                    </span>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-7.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-7.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-7.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-7.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
+                                <?php } ?>
                             </div>
                         </div>
-                        <div class="tab-pane">
-                            <div class="row sm-gutter">
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-2.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
+
+                        <div id="Quandai" class="tabcontent">
+                            <div class="row">
+                                <?php foreach ($product2 as $key => $value){ ?>
+                                    <div class="col l-2-4 m-4 c-6">
+                                        <div class="home-product-item">
+                                            <a href="?controller=chitietsanpham&id=<?php echo $value['id'] ?>" class="home-product-item__link">
+                                                <div class="home-product-item__img" style="background-image: url('<?php echo $value['image'] ?>');"></div>
+                                                <h4 class="home-product-item__name"><?php echo $value['name'] ?></h4>
+                                                <div class="hone-product-item__price">
+                                                    <span class="home-product-item__price-current">
+                                                    <?php echo number_format($value['price']) ?>
+                                                    </span>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-2.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-2.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-2.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-2.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
+                                <?php } ?>
                             </div>
                         </div>
-                        <div class="tab-pane">
-                            <div class="row sm-gutter">
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-4.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
+
+                        <div id="Quanshort" class="tabcontent">
+                            <div class="row">
+                                <?php foreach ($product3 as $key => $value){ ?>
+                                    <div class="col l-2-4 m-4 c-6">
+                                        <div class="home-product-item">
+                                            <a href="?controller=chitietsanpham&id=<?php echo $value['id'] ?>" class="home-product-item__link">
+                                                <div class="home-product-item__img" style="background-image: url('<?php echo $value['image'] ?>');"></div>
+                                                <h4 class="home-product-item__name"><?php echo $value['name'] ?></h4>
+                                                <div class="hone-product-item__price">
+                                                    <span class="home-product-item__price-current">
+                                                    <?php echo number_format($value['price']) ?>
+                                                    </span>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-4.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-4.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-4.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-4.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
+                                <?php } ?>
                             </div>
                         </div>
-                        <div class="tab-pane">
-                        <div class="row sm-gutter">
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-10.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
+
+                        <div id="Giaydep" class="tabcontent">
+                            <div class="row">
+                                <?php foreach ($product5 as $key => $value){ ?>
+                                    <div class="col l-2-4 m-4 c-6">
+                                        <div class="home-product-item">
+                                            <a href="?controller=chitietsanpham&id=<?php echo $value['id'] ?>" class="home-product-item__link">
+                                                <div class="home-product-item__img" style="background-image: url('<?php echo $value['image'] ?>');"></div>
+                                                <h4 class="home-product-item__name"><?php echo $value['name'] ?></h4>
+                                                <div class="hone-product-item__price">
+                                                    <span class="home-product-item__price-current">
+                                                    <?php echo number_format($value['price']) ?>
+                                                    </span>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-10.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-10.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-10.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <div class="home-product-item">
-                                        <a href="" class="home-product-item__link">
-                                            <div class="home-product-item__img" style="background-image: url('./Assets/Img/product-10.jpg');"></div>
-                                            <h4 class="home-product-item__name">Áo khoác Nam đẹp</h4>
-                                            <div class="hone-product-item__price">
-                                                <span class="home-product-item__price-current">
-                                                    1.000.000đ
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
+                                <?php } ?>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
             <footer class="footer">

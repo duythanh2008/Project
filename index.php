@@ -58,5 +58,20 @@
         case 'giohang':
             require_once './Controller/C-giohang.php';
             break;
+        case 'dangnhapquantri':
+            require_once './Controller/C-dangnhapquantri.php';
+            break;
+        case 'dangxuatquantri':
+            require_once './Controller/C-dangxuatquantri.php';
+            break;
+        case 'trangquantri':
+            require_once './Controller/C-trangquantri.php';
+            break;
+        case 'quanlysanpham':
+            require_once './Controller/C-quanlysanpham.php';
+            break;
+        case 'themsanpham':
+            require_once './Controller/C-themsanpham.php';
+            break;
     }
 ?>

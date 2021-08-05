@@ -9,5 +9,10 @@
     else{
             $product = $database->get('product',array());
     }
+    $product1 = $database->get_limit('product',array('catalog'=>2),5);
+    $product2 = $database->get_limit('product',array('catalog'=>3),5);
+    $product3 = $database->get_limit('product',array('catalog'=>4),5);
+    $product4 = $database->get_limit('product',array('catalog'=>1),5);
+    $product5 = $database->get_limit('product',array('catalog'=>5),5);
     require_once './View/V-trangchu.php';
 ?>
