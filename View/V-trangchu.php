@@ -238,6 +238,32 @@
                                         outline: none;"
                         type="search" name="keyword" placeholder="Tìm sản phẩm ... "  value="<?php echo (isset($_GET['keyword'])) ? $_GET['keyword'] : '' ?>">
                     </form>
+                        <?php if (isset($_GET['keyword']) &&  $_GET['keyword'] != ''){?>
+                            <h3 class="home-product__heading-search">
+                                Kết quả tìm kiếm của "<?php echo $_GET['keyword'] ?>"
+                            </h3>
+                            <div class="row sm-gutter">
+                                <?php foreach ($product as $key => $value){ ?>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <div class="home-product-item">
+                                        <a href="?controller=chitietsanpham&id=<?php echo $value['id'] ?>" class="home-product-item__link">
+                                            <div class="home-product-item__img" style="background-image: url('<?php echo $value['image'] ?>');"></div>
+                                            <h4 class="home-product-item__name"><?php echo $value['name'] ?></h4>
+                                            <div class="hone-product-item__price">
+                                                <span class="home-product-item__price-current">
+                                                <?php echo number_format($value['price']) ?>đ
+                                                </span>
+                                            </div>
+                                            <div class="home-product-item__favourite">
+                                                    <i class="fas fa-check"></i>
+                                                    <span>Yêu thích</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <?php } ?>
+                            </div>
+                        <?php }else{?>
                         <h3 class="home-product__heading">
                             Sản phẩm nổi bật
                         </h3>
@@ -300,6 +326,7 @@
                             </div>
                             <?php } ?>
                         </div>
+                        <?php } ?>
                     </div>
                 </div>
                 <!-- Tab items -->

@@ -26,5 +26,5 @@
        }
      }
      echo "<script type='text/javascript'>alert('Thêm vào giỏ thành công');</script>";
-     header('refresh:0.2;url=?controller=chitietsanpham&id='.$id);
+     header('refresh:0.1;url=?controller=chitietsanpham&id='.$id);
 ?>
