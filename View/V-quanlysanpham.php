@@ -73,27 +73,27 @@
                                 <table class="admin__product-table">
                                     <thead>
                                         <tr>
-                                            <th>Mã sản phẩm</th>    
-                                            <th>Hình ảnh</th>
-                                            <th>Tên sản phẩm</th>
-                                            <th>Giá</th>
-                                            <th>Đánh giá</th>
-                                            <th>Tùy chọn</th>
+                                            <th class="admin__product-table-th">Mã sản phẩm</th>    
+                                            <th class="admin__product-table-th">Hình ảnh</th>
+                                            <th class="admin__product-table-th">Tên sản phẩm</th>
+                                            <th class="admin__product-table-th">Giá</th>
+                                            <th class="admin__product-table-th">Đánh giá</th>
+                                            <th class="admin__product-table-th">Tùy chọn</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php foreach($product as $key => $value){ ?>
                                         <tr>
-                                            <td><?php echo $value['id'] ?></td>
-                                            <td><img src="<?php echo $value['image']?>" style="width:70px; height: 70px"></td>
-                                            <td><?php echo $value['name'] ?></td>
-                                            <td><?php echo $value['price'] ?></td>
-                                            <td><?php  if ($value['total_rate'] && $value['rate_times'] != NULL){
+                                            <td class="admin__product-table-td"><?php echo $value['id'] ?></td>
+                                            <td class="admin__product-table-td"><img src="<?php echo $value['image']?>" style="width:70px; height: 70px"></td>
+                                            <td class="admin__product-table-td"><?php echo $value['name'] ?></td>
+                                            <td class="admin__product-table-td"><?php echo $value['price'] ?></td>
+                                            <td class="admin__product-table-td"><?php  if ($value['total_rate'] && $value['rate_times'] != NULL){
                                                 echo ($value['total_rate'] / $value['rate_times'])." / 5 sao";
                                             }else{
                                                 echo "Chưa có đánh giá";
                                             } ?></td>
-                                            <td>
+                                            <td class="admin__product-table-td">
                                                 <input onclick="window.location ='?controller=xuliproduct&method=edit&id=<?php echo $value['id']; ?>'" type="button" class="btn-option" value="Sửa">
                                                 <input type="hidden" name="product-id" value="<?php echo $value['id'] ?>">
                                                 <input onclick="window.location ='?controller=xuliproduct&method=del&id=<?php echo $value['id']; ?>'" type="button" class="btn-option" value="Xóa">
