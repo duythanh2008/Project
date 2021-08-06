@@ -95,16 +95,16 @@
                             <?php } ?>
                         </ul>
                         <div class="header__navbar-cart">
-                         <div class="header__navbar-cart-wrap">
-                                <a href="?controller=giohang" class="header__navbar-cart-link">
-                                    <i class="header__navbar-cart-icon fas fa-shopping-cart"></i>
-                                    Giỏ hàng
-                                </a>
-                                <div class="header__navbar-cart-list">
-                                    <?php if (isset($_SESSION['cart'])){?>
-                                    <h4 class="header__navbar-cart-heading">Sản phẩm đã thêm</h4>
-                                    <ul class="header__navbar-cart-list-item">
-                                        <?php foreach ($_SESSION['cart'] as $key => $value){?>
+                            <div class="header__navbar-cart-wrap">
+                                    <a href="?controller=giohang" class="header__navbar-cart-link">
+                                        <i class="header__navbar-cart-icon fas fa-shopping-cart"></i>
+                                        Giỏ hàng
+                                    </a>
+                                    <div class="header__navbar-cart-list">
+                                        <?php if (isset($_SESSION['cart'])){?>
+                                        <h4 class="header__navbar-cart-heading">Sản phẩm đã thêm</h4>
+                                        <ul class="header__navbar-cart-list-item">
+                                            <?php foreach ($_SESSION['cart'] as $key => $value){?>
                                             <li class="header__navbar-cart-item">
                                                 <a style="text-decoration: none;" href="?controller=chitietsanpham&id=<?php echo $value['id'] ?>">
                                                     <img src="<?php echo $value['img-link'] ?>" alt="" class="header__navbar-cart-img">
@@ -126,17 +126,17 @@
                                                     </div>
                                                 </a>
                                             </li>
+                                            <?php } ?>
+                                        </ul>
+                                        <a href="?controller=giohang" class="header__navbar-cart-item-cart header__navbar-cart-item-cart-btn">Xem giỏ hàng</a>
+                                        <?php }else{ ?>
+                                        <div class="header__navbar-no-cart-item">
+                                            <img src="./Assets/Img/no_cart.png" alt="" class="header__navbar-cart-no-cart-img">
+                                            <h3 class="header__navbar-cart-no-cart-content">Chưa có sản phẩm</h3>
+                                        </div>
                                         <?php } ?>
-                                    </ul>
-                                    <a href="?controller=giohang" class="header__navbar-cart-item-cart header__navbar-cart-item-cart-btn">Xem giỏ hàng</a>
-                                    <?php }else{ ?>
-                                    <div class="header__navbar-no-cart-item">
-                                        <img src="./Assets/Img/no_cart.png" alt="" class="header__navbar-cart-no-cart-img">
-                                        <h3 class="header__navbar-cart-no-cart-content">Chưa có sản phẩm</h3>
                                     </div>
-                                    <?php } ?>
                                 </div>
-                            </div>
                             <label for="nav__mobile-input" class="header__navbar-mobile-bars">       
                                 <i class="fas fa-bars"></i>
                             </label>
@@ -185,7 +185,7 @@
                                 </ul>
                     </li>
                     <li>
-                        <a href="?controller=lienhe" class="header__navbar-mobile-link">Liên hệ</a>
+                        <a href="" class="header__navbar-mobile-link">Liên hệ</a>
                     </li>
                     <li>
                         <a href="?controller=donhang" class="header__navbar-mobile-link">Đơn hàng</a>
@@ -194,7 +194,7 @@
                         if(isset($_SESSION['customer']) && $_SESSION['customer'] != NULL){
                     ?>
                     <li>
-                       <a href="#" class="header__navbar-mobile-link-account" style="margin-right: 10px"> <?php echo $user[0]['username']?></a>
+                       <a href="?controller=thongtinkhachhang" class="header__navbar-mobile-link-account" style="margin-right: 10px"> <?php echo $user[0]['username']?></a>
                        <a href="?controller=dangxuat" class="header__navbar-mobile-link-account">Thoát</a>
                     </li>
                     <?php }else{ ?>
@@ -207,40 +207,115 @@
                 </ul>
             </nav>
             <div class="content">
-                <div class="account">
+                <div class="contact">
                     <div class="grid">
                         <div class="account__location">
                             <div>
                                 <a class="accout__location-home" href="?controller=trangchu">Trang chủ</a>
                             </div>
                             <div>
-                                <p class="accout__location-current"> > &nbsp;&nbsp;&nbsp; Đơn hàng</p>
+                                <p class="accout__location-current"> > &nbsp;&nbsp;&nbsp; Thanh toán</p>
                             </div>
                         </div>
                     </div>
                     <div class="grid wide">
-                        <div class="account__heading">Kiểm tra đơn hàng</div>
-                        <div style="margin: 100px 0 150px 0;" class="account__register">
-                            <div class="row">
-                                <div class="col l-12 m-12 c-12">
-                                    <form action="?controller=donhang" method="post">
-                                        <div class="row">
-                                            <div class="col l-6 l-o-3 m-10 m-o-1 c-12">
-                                                <form action="#" method="post">
-                                                    <div class="check__delivery-item">
-                                                        <label for="login-username" class="check__delivery-input-label">Nhập mã đơn hàng</label>
-                                                        <input type="text" name="code" placeholder="Mã đơn hàng"  class="check__delivery-input">
-                                                    </div>
-                                                    <div class="check__delivery-item">
-                                                        <input type="submit" class="check__delivery-submit" name="checksubmit" value="Tìm kiếm">
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </form>
+                    <?php 
+                        if (isset($_SESSION['cart'])){
+                    ?>
+                        <div class="row">
+                            <div class="col l-10 l-o-1 m-12 c-12">
+                                <div class="cart-table">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Sản phẩm</th>
+                                                <th>Số lượng</th>
+                                                <th>Tổng</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                                $amount=0;
+                                                if(isset($_SESSION['cart'])){
+                                                    foreach ($_SESSION['cart'] as $key => $value){
+                                                    $amount +=$value['sl']*$value['price'];
+                                            ?>
+                                                <tr>
+                                                    <td>
+                                                        <div class="cart-product">
+                                                            <img src="<?php echo $value['img-link'] ?>" alt="" class="cart-product__img">
+                                                            <div class="cart-product__info">
+                                                                <p class="cart-product__info-name"><?php echo $value['name'] ?></p>
+                                                                <p class="cart-product__info-size">Size: <?php echo $value['size'] ?></p>
+                                                                <p class="cart-product__info-price"><?php echo number_format($value['price']) ?>đ</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="cart-product__qty">
+                                                            <p class="cart-product__qty-info"><?php echo $value['sl'] ?></p>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="cart-product__total"><?php echo number_format($value['sl']*$value['price']) ?>đ</p>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                        <?php } ?>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col l-10 l-o-1 m-12 c-12">
+                                <form action="?controller=xulithanhtoan" method="post">
+                                    <div class="cart-product__pay">
+                                        <h3 class="cart-product__pay-heading">Thông tin thanh toán</h3>
+                                        <div class="row">
+                                            <div class="col l-6 m-12 c-12">
+                                                <div class="cart-product__pay-item">
+                                                    <label for="fullname" class="cart-product__pay-item-label">Họ và tên</label>
+                                                    <input type="text" name="fullname" value="<?php if (isset($_SESSION['customer'])){ echo $user[0]['fullname']; }?>" id="fullname" class="cart-product__pay-item-input" required>
+                                                </div>
+                                                <div class="cart-product__pay-item">
+                                                    <label for="email" class="cart-product__pay-item-label">Email</label>
+                                                    <input type="email" name="email" value="<?php if (isset($_SESSION['customer'])){ echo $user[0]['email']; }?>" id="email" class="cart-product__pay-item-input" required>
+                                                </div>
+                                            </div>
+                                            <div class="col l-6 m-12 c-12">
+                                                <div class="cart-product__pay-item">
+                                                    <label for="address" class="cart-product__pay-item-label">Địa chỉ</label>
+                                                    <input type="text" name="address" value="<?php if (isset($_SESSION['customer'])){ echo $user[0]['address']; }?>" id="address" class="cart-product__pay-item-input" required>
+                                                </div>
+                                                <div class="cart-product__pay-item">
+                                                    <label for="phone" class="cart-product__pay-item-label">Số điện thoại</label>
+                                                    <input type="text" name="phone" value="<?php if (isset($_SESSION['customer'])){ echo $user[0]['phone']; }?>" id="phone" class="cart-product__pay-item-input" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cart-product__pay-total-price">
+                                        <h3 class="cart-product__pay-total-price-heading">Tổng thanh toán</h3>
+                                        <p class="cart-product__pay-total-price-money"><?php echo number_format($amount)?>đ</p>
+                                        <input type="submit" name="confirm" value="Thanh toán" class="cart-product__pay-total-price-pay">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    <?php }else{ ?>
+                        <div style="margin: 80px 0 120px 0;" class="account__register">
+                            <div class="row">
+                                <div class="col l-12 m-12 c-12">
+                                    <div class="cart__info">
+                                        <img src="./Assets/Img/no_cart.png" alt="" class="cart__info-no-cart-img">
+                                        <h3 class="cart__info-no-cart-content">Chưa có sản phẩm</h3>
+                                    </div>
+                                    <a href="?controller=trangchu" class="cart__info-no-cart-btn">Quay lại trang chủ</a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>   
                     </div>
                 </div>
             </div>

@@ -275,7 +275,7 @@
                                 <div class="cart-product__total-price">
                                     <h3 class="cart-product__total-price-heading">Tổng thanh toán</h3>
                                     <p class="cart-product__total-price-money"><?php echo number_format($amount)?>đ</p>
-                                    <a href="#" class="cart-product__total-price-pay">Thanh toán</a>
+                                    <a href="?controller=thanhtoan" class="cart-product__total-price-pay">Thanh toán</a>
                                 </div>
                             </div>
                         </div>
