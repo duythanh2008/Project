@@ -281,7 +281,7 @@
                         </div>
                     </div>
                 </div>
-                <div style="margin-top: 20px" class="grid wide">
+                <div style="margin-top: 50px" class="grid wide">
                     <div class="row">
                         <div class="col l-9 m-12 c-12">
                             
@@ -289,18 +289,42 @@
                                 Đánh giá
                             </h3>
                             <div class="product-detail__rating">
-                                <form action="#" method="post">
+                                <?php if ($product[0]['total_rate'] && $product[0]['rate_times'] != ''){ ?>
+                                    <h3 style="font-size: 1.6rem; text-align: center;">Đánh giá trung bình</h3>
+                                    <div class="product-detail_show-rating">
+                                        <div class="product-detail_show-rating-result">
+                                            <div class="rateResult" data-rateyo-rating="<?php echo number_format($product[0]['total_rate'] / $product[0]['rate_times'],1) ?>"></div>
+                                            <h3 class="product-detail__rating-record"><?php echo number_format($product[0]['total_rate'] / $product[0]['rate_times'],1) ?> / 5 sao</h3>
+                                        </div>
+                                    </div>
+                                    <ul class="product-detail__rating-list">
+                                        <?php foreach ($rating as $key => $value){?>
+                                        <li class="product-detail__rating-list-item">
+                                            <div class="product-detal__rating-info">
+                                                <i class="fas fa-user product-detail__rating-user-icon"></i>
+                                                <h3 class="product-detail__rating-user-name"><?php echo $value['fullname'] ?></h3>
+                                            </div>
+                                            <div class="product-detail__rating-user-rating">
+                                                <div class="rateResult" data-rateyo-rating="<?php echo $value['rate'] ?>"></div>
+                                                <h3 class="product-detail__rating-user-rating-content"><?php echo $value['content'] ?></h3>
+                                            </div>
+                                        </li>
+                                        <?php }?>
+                                    </ul>
+                                <?php } ?>
+                                <h3 style="font-size: 1.6rem; text-align: center;">Gửi đánh giá của ban</h3>
+                                <form action="?controller=danhgiasanpham&id=<?php echo $product[0]['id'] ?>" method="post">
                                     <div class="product-detail__rating-item">
                                         <label for="fullname" class="product-detail__rating-label">Họ và tên</label>
-                                        <input type="text" name="" id="fullname" placeholder="Họ và tên" class="product-detail__rating-input">
+                                        <input type="text" name="fullname" id="fullname" value="<?php if (isset($_SESSION['customer'])){ echo $user[0]['fullname']; }?>" placeholder="Họ và tên" class="product-detail__rating-input" required>
                                     </div>
                                     <div class="product-detail__rating-item">
                                         <label for="email" class="product-detail__rating-label">Email</label>
-                                        <input type="email" name="" id="email" placeholder="Email" class="product-detail__rating-input">
+                                        <input type="email" name="email" id="email" value="<?php if (isset($_SESSION['customer'])){ echo $user[0]['email']; }?>" placeholder="Email" class="product-detail__rating-input" required>
                                     </div>
                                     <div class="product-detail__rating-item">
                                         <label for="content" class="product-detail__rating-label">Nội dung</label>
-                                        <textarea type="email" name="" id="content" placeholder="Nội dung" class="product-detail__rating-textarea"></textarea>
+                                        <textarea type="email" name="content" id="content" placeholder="Nội dung" class="product-detail__rating-textarea"></textarea>
                                     </div>
                                     <div class="product-detail__rating-item">
                                         <div class="rateyo" id="rating"
@@ -312,7 +336,7 @@
                                         <span style="font-size: 1.4rem; margin-top: 6px" class='result'></span>
                                         <input type="hidden" name="rating">
                                     </div>
-                                    <input type="submit" value="Gửi đánh giá" class="product-detail__rating-submit">
+                                    <input type="submit" name="submit" value="Gửi đánh giá" class="product-detail__rating-submit">
                                 </form>
                             </div>
                         </div>
@@ -460,7 +484,13 @@
             $(this).parent().find('.result').text('Đánh giá: '+ rating + ' sao');
             $(this).parent().find('input[name=rating]').val(rating); //add rating value to input field
         });
-    });
+        
+        $(function () {
+            $(".rateResult").rateYo({
+                readOnly: true
+            });
+            });
+            });
     </script>
 </body>
 </html>

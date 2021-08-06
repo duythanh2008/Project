@@ -219,105 +219,64 @@
                         </div>
                     </div>
                     <div class="grid wide">
-                        <div class="account__heading">Kiểm tra đơn hàng</div>
-                        <?php
-                                if(isset($_SESSION['customer']) && $_SESSION['customer'] != NULL){
-                        ?>
-                            <div class="package-info">
-                                <table class="package-info__table">
-                                    <thead>
-                                        <tr>
-                                            <th>Mã đơn hàng</th>
-                                            <th>Họ và tên</th>
-                                            <th>Địa chỉ</th>
-                                            <th>Số điện thoại</th>
-                                            <th>Trạng thái</th>
-                                            <th>Ngày đặt</th>
-                                            <th>Tùy chọn</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php foreach($package_user as $key => $value){ ?>
-                                        <tr>
-                                            <td><?php echo $value['id'] ?></td>
-                                            <td><?php echo $value['fullname'] ?></td>
-                                            <td><?php echo $value['address'] ?></td>
-                                            <td><?php echo $value['phone'] ?></td>
-                                            <td>
-                                                <?php if ($value['status'] == 0){ ?>
-                                                    <p class="package-info__status-not-confirm">Chưa xác nhận</p>
-                                                <?php }else if ($value['status'] == 1){ ?>
-                                                    <p class="package-info__status-confirmed">Đã xác nhận</p>
-                                                <?php } ?>
-                                            </td>
-                                            <td><?php echo $value['time_order'] ?></td>
-                                            <td><a class="package-info__detail" href="?controller=chitietdonhang&id=<?php echo $value['id'] ?>">Chi tiết</a></td>
-                                        </tr>   
-                                        <?php } ?>         
-                                    </tbody>
-                                </table>
-                            </div>
-                        <?php }else{ ?>
-                            <?php if (isset($checkcode) && count($checkcode) > 0){ ?>
-                                <div class="row">
-                                    <div class="col l-12 c-12 m-12">
-                                        <div class="package-info">
-                                            <table class="package-info__table">
+                        <div class="row">
+                            <div class="col l-12 m-12 c-12">
+                            <div class="account__heading">Kiểm tra đơn hàng</div>
+                                <div style="margin-top: 20px; margin-bottom: 50px;" class="row">
+                                    <div class="col l-3 m-12 c-12">
+                                        <div class="package__info-user">
+                                            <p class="package__info-user-show">Họ và tên: <?php echo $package[0]['fullname'] ?></p>
+                                            <p class="package__info-user-show">Số điện thoại: <?php echo $package[0]['phone'] ?></p>
+                                            <p class="package__info-user-show">Địa chỉ: <?php echo $package[0]['address'] ?></p>
+                                            <p class="package__info-user-show">Email: <?php echo $package[0]['email'] ?></p>
+                                            <p class="package__info-user-show">Ngày đặt: <?php echo $package[0]['time_order'] ?></p>
+                                            <p class="package__info-user-show">Ngày giao: <?php echo $package[0]['time_delivered'] ?></p>
+                                            <p class="package__info-user-show">Tổng tiền: <?php echo number_format($package[0]['amount']) ?>đ</p>
+                                        </div>
+                                    </div>
+                                    <div class="col l-9 m-12m c-12">
+                                        <div style="margin-top: 20px;" class="cart-table">
+                                            <table>
                                                 <thead>
                                                     <tr>
-                                                        <th>Mã đơn hàng</th>
-                                                        <th>Họ và tên</th>
-                                                        <th>Địa chỉ</th>
-                                                        <th>Số điện thoại</th>
-                                                        <th>Trạng thái</th>
-                                                        <th>Ngày đặt</th>
-                                                        <th>Tùy chọn</th>
+                                                        <th>Sản phẩm</th>
+                                                        <th>Số lượng</th>
+                                                        <th>Tổng</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                        <td><?php echo $checkcode[0]['id'] ?></td>
-                                                        <td><?php echo $checkcode[0]['fullname'] ?></td>
-                                                        <td><?php echo $checkcode[0]['address'] ?></td>
-                                                        <td><?php echo $checkcode[0]['phone'] ?></td>
-                                                        <td>
-                                                            <?php if ($checkcode[0]['status'] == 0){ ?>
-                                                                <p class="package-info__status-not-confirm">Chưa xác nhận</p>
-                                                            <?php }else if ($checkcode[0]['status'] == 1){ ?>
-                                                                <p class="package-info__status-confirmed">Đã xác nhận</p>
-                                                            <?php } ?>
-                                                        </td>
-                                                        <td><?php echo $checkcode[0]['time_order'] ?></td>
-                                                        <td><a class="package-info__detail" href="?controller=chitietdonhang&id=<?php echo $checkcode[0]['id'] ?>">Chi tiết</a></td>
+                                                    <?php
+                                                        foreach ($package_details as $key => $value){
+                                                        $product_detail = $database->get('product',array('id'=>$value['product_id']));
+                                                    ?>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="cart-product">
+                                                                    <img src="<?php echo $product_detail[0]['image'] ?>" alt="" class="cart-product__img">
+                                                                    <div class="cart-product__info">
+                                                                        <p class="cart-product__info-name"><?php echo $product_detail[0]['name'] ?></p>
+                                                                        <p class="cart-product__info-size">Size: <?php echo $value['size'] ?></p>
+                                                                        <p class="cart-product__info-price"><?php echo number_format($value['price']) ?>đ</p>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="cart-product__qty">
+                                                                    <p class="cart-product__qty-info"><?php echo $value['qty'] ?></p>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <p class="cart-product__total"><?php echo number_format($value['amount']) ?>đ</p>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
                                 </div>
-                            <?php }else{ ?> 
-                            <div style="margin: 100px 0 150px 0;" class="account__register">
-                                <div class="row">
-                                    <div class="col l-12 m-12 c-12">
-                                        <div class="row">
-                                            <div class="col l-6 l-o-3 m-10 m-o-1 c-12">
-                                                <form action="?controller=donhang" method="post">
-                                                    <div class="check__delivery-item">
-                                                        <label for="login-username" class="check__delivery-input-label">Nhập mã đơn hàng</label>
-                                                        <input type="text" name="code" placeholder="Mã đơn hàng"  class="check__delivery-input">
-                                                        <?php if(isset($error['code'])){?>
-                                                            <p style=" font-size: 14px; color: red;"><?php echo $error['code'] ?></p>
-                                                        <?php } ?>
-                                                    </div>
-                                                    <div class="check__delivery-item">
-                                                        <input type="submit" class="check__delivery-submit" name="checksubmit" value="Tìm kiếm">
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                            <?php } ?>
-                        <?php } ?>
+                        </div>
                     </div>
                 </div>
             </div>
