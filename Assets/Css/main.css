@@ -1048,6 +1048,11 @@
     font-weight: 500;
 }
 
+.package__info-user-heading{
+    font-size: 1.6rem;
+    color: var(--primary-color);
+}
+
 /* Account Info */
 
 .account__info{
@@ -1519,6 +1524,62 @@
     bottom: 0;
 }
 
+.admin-menu__mobile{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 320px;
+    max-width: 100%;
+    background-color: var(--primary-color);
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all linear 0.2s;
+    will-change: transform opacity;
+    list-style: none;
+    z-index: 10;
+}
+
+.header__navbar-mobile-overlay-admin{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 9;
+    display: none;
+}
+
+.header__navbar-mobile-close-admin{
+    position: absolute;
+    font-size: 2.6rem;
+    color: var(--white-color);
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    z-index: 2;
+    padding: 5px;
+}
+
+.header__navbar-mobile-close:hover{
+    filter: brightness(110%);
+}
+
+.nav__mobile-input-admin{
+    outline: none;
+}
+
+.nav__mobile-input-admin:checked ~ .header__navbar-mobile-overlay-admin{
+    display: block;
+    opacity: 1;
+}
+
+.nav__mobile-input-admin:checked ~ .admin-menu__mobile{
+    transform: translateX(0%);
+    opacity: 1;
+}
+
 .admin-menu__list{
     margin: 0;
     list-style: none;
@@ -1595,13 +1656,6 @@
     display: none;
 }
 
-.admin-menu-icon-search{
-    font-size: 1.6rem;
-    color: var(--text-color);
-    cursor: pointer;
-    display: none;
-}
-
 .admin-header__back-to-website{
     color: var(--text-color);
     text-decoration: none;
@@ -1611,30 +1665,6 @@
 .admin-header__notify-item:hover,
 .admin-header__back-to-website:hover{
     opacity: 0.8;
-}
-
-.admin-header__search-input{
-    background-color: var(--white-color);
-    border: 0.5px solid var(--text-color);
-    outline: none;
-    width: 200px;
-    padding: 10px 12px;
-    line-height: auto;
-    font-size: 1.4rem;
-    border-radius: 5px;
-    margin-right: 24px;
-    transition: all linear 0.3s;
-}
-
-.admin-header__search-input:focus{
-    width: 275px;
-}
-
-.admin-header__notify-item{
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 1.8rem;
-    margin-right: 8px;
 }
 
 .admin-header__admin-info{
@@ -1856,7 +1886,7 @@
 }
 
 .admin__product-table{
-    width: 80%;
+    width: 100%;
     text-align: center;
     border-collapse: collapse;
     margin: 0 auto;
@@ -2274,9 +2304,6 @@
     .admin-menu-icon{
         display: block;
     }
-    .admin-menu-icon-search{
-        display: block;
-    }
     .admin-header__search-input{
         display: none;
     }
@@ -2459,7 +2486,7 @@
         margin: 0 8px;
     }
     .admin-menu-icon{
-        margin-right: 10px;
+        margin-right: 20px;
     }
     .admin-content__heading{
         font-size: 2rem;
@@ -2475,29 +2502,23 @@
         font-size: 1.4rem;
         margin-right: 8px;
     }
-    .admin-content__item-not-confirm,
-    .admin-content__item-sold,
-    .admin-content__profit,
-    .admin-content__all-item{
-        margin: 5px 5px 5px 0;
-    }
     .admin-content__item-not-confirm-img,
     .admin-content__item-sold-img,
     .admin-content__all-item-img,
     .admin-content__profit-img{
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     .admin-content__item-not-confirm-heading,
     .admin-content__item-sold-heading,
     .admin-content__profit-heading,
     .admin-content__all-item-heading{
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
     .admin-content__item-not-confirm-info,
     .admin-content__item-sold-info,
     .admin-content__profit-info,
     .admin-content__all-item-info{
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
     .admin-content{
         margin-top: 60px;

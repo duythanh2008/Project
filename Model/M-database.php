@@ -95,6 +95,21 @@
           $query = mysqli_query($this->conn, $sql);
           return $query;
      }
+     public function del($table,$condition=array()){
+          //B1: tạo cấu trúc lệnh truy vấn
+          $sql= "DELETE FROM $table ";
+          //B2:  kiểm tra xem có điều kiện không và cộng chuỗi tương ứng
+               $sql.="WHERE";
+               foreach ($condition as $key => $value){
+                    $sql.= " $key = '$value' AND";
+               }
+               $sql= rtrim($sql,"AND");
+          //B3: chạy câu lệnh sql
+          $query = mysqli_query($this->conn, $sql);
+          //B4: khởi tạo 1 biến mảng và lặp hết dữ liệu lấy được từ câu truy vấn ở trên và cho vào mảng đó
+          //B5: trả về giá trị
+          return $query;
+     }
      public function get_limit($table, $condition=array(),$limit){
           $sql = "SELECT * FROM $table";
           if (!empty($condition)){

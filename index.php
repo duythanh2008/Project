@@ -91,5 +91,8 @@
         case 'themsanpham':
             require_once './Controller/C-themsanpham.php';
             break;
+        case 'xulisanpham':
+            require_once './Controller/C-xulisanpham.php';
+            break;
     }
 ?>

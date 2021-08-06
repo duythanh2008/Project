@@ -225,6 +225,7 @@
                                 <div style="margin-top: 20px; margin-bottom: 50px;" class="row">
                                     <div class="col l-3 m-12 c-12">
                                         <div class="package__info-user">
+                                            <h3 class="package__info-user-heading">Thông tin khách hàng</h3>
                                             <p class="package__info-user-show">Họ và tên: <?php echo $package[0]['fullname'] ?></p>
                                             <p class="package__info-user-show">Số điện thoại: <?php echo $package[0]['phone'] ?></p>
                                             <p class="package__info-user-show">Địa chỉ: <?php echo $package[0]['address'] ?></p>
@@ -235,7 +236,8 @@
                                         </div>
                                     </div>
                                     <div class="col l-9 m-12m c-12">
-                                        <div style="margin-top: 20px;" class="cart-table">
+                                        <h3 class="package__info-user-heading">Thông tin sản phẩm</h3>
+                                        <div class="cart-table">
                                             <table>
                                                 <thead>
                                                     <tr>

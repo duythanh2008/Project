@@ -48,20 +48,41 @@
             <div class="col l-10 m-12 c-12">
                 <div class="admin-header">
                     <div class="admin-header__sections">
-                        <label for="" class="admin-menu-icon"><i class="fas fa-bars"></i></label>
+                        <label for="nav__mobile-input-admin" class="admin-menu-icon"><i class="fas fa-bars"></i></label>
                         <a href="?controller=trangchu" class="admin-header__back-to-website"><i class="fas fa-backward"></i> Trở về website</a>
-                        <label for="" class="admin-menu-icon-search"><i class="fas fa-search"></i></label>
-                        <div class="admin-header__search">
-                            <input type="search" name="search" placeholder="Tìm kiếm" class="admin-header__search-input">
-                        </div>
-                        <div class="admin-header__notify">
-                            <a href="#" class="admin-header__notify-item"><i class="fas fa-bell"></i></a>
-                            <a href="#" class="admin-header__notify-item"><i class="fas fa-envelope"></i></a>
-                        </div>
                     </div>
                     <div class="admin-header__admin-info">
                         <h3 class="admin-header__admin-name"><?php echo $admin[0]['fullname'] ?></h3>
                         <a href="?controller=dangxuatquantri" class="admin-header__admin-logout">Thoát</a>
+                    </div>
+                    <input type="checkbox" hidden class="nav__mobile-input-admin" id="nav__mobile-input-admin">
+                    <label for="nav__mobile-input-admin" class="header__navbar-mobile-overlay-admin"></label>
+                    <div class="admin-menu__mobile">
+                        <label for="nav__mobile-input-admin" class="header__navbar-mobile-close-admin">                    
+                            <i class="fas fa-times"></i>
+                        </label>
+                        <ul class="admin-menu__list">
+                            <li class="admin-menu__item">
+                                <a href="?controller=trangquantri" class="admin-menu__item-link admin-menu__item-link-has-img">
+                                    <img src="./Assets/Img/logo.png" alt="" class="admin-menu__item-link-img">
+                                </a>
+                            </li>
+                            <li class="admin-menu__item">
+                                <a href="?controller=trangquantri" class="admin-menu__item-link active">Tổng quan</a>
+                            </li>
+                            <li class="admin-menu__item">
+                                <a href="#" class="admin-menu__item-link">Quản lý website</a>
+                            </li>
+                            <li class="admin-menu__item">
+                                <a href="#" class="admin-menu__item-link">Quản lý nhân viên</a>
+                            </li>
+                            <li class="admin-menu__item">
+                                <a href="?controller=quanlysanpham" class="admin-menu__item-link">Quản lý sản phẩm</a>
+                            </li>
+                            <li class="admin-menu__item">
+                                <a href="#" class="admin-menu__item-link">Quản lý bình luận</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div class="admin-content">
@@ -69,38 +90,38 @@
                         <div class="col l-12 m-12 c-12">
                             <h3 class="admin-content__heading">Thống kê</h3><br>
                         </div>
-                        <div class="col l-3 m-6 c-6">
+                        <div class="col l-6 m-12 c-12">
                             <div class="admin-content__profit">
                                 <i class="fas fa-money-bill-wave-alt admin-content__profit-img"></i>
                                 <div class="admin-content__profit-content">
-                                    <h3 class="admin-content__profit-heading">Doanh thu</h3>
+                                    <h3 class="admin-content__profit-heading">Doanh thu cửa hàng tháng này</h3>
                                     <h4 class="admin-content__profit-info">7.950.000đ</h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="col l-3 m-6 c-6">
+                        <div class="col l-6 m-12 c-12">
                             <div class="admin-content__all-item">
                             <i class="fas fa-box admin-content__all-item-img"></i>
                                 <div class="admin-content__all-item-content">
-                                    <h3 class="admin-content__all-item-heading">Tổng đơn hàng</h3>
+                                    <h3 class="admin-content__all-item-heading">Tổng đơn hàng tháng này</h3>
                                     <h4 class="admin-content__all-item-info">122</h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="col l-3 m-6 c-6">
+                        <div class="col l-6 m-12 c-12">
                             <div class="admin-content__item-sold">
                             <i class="fas fa-coins admin-content__item-sold-img"></i>
                                 <div class="admin-content__item-sold-content">
-                                    <h3 class="admin-content__item-sold-heading">Đã bán</h3>
+                                    <h3 class="admin-content__item-sold-heading">Sản phẩm đã bán tháng này</h3>
                                     <h4 class="admin-content__item-sold-info">102</h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="col l-3 m-6 c-6">
+                        <div class="col l-6 m-12 c-12">
                             <div class="admin-content__item-not-confirm">
                             <i class="fas fa-hand-paper admin-content__item-not-confirm-img"></i>
                                 <div class="admin-content__item-not-confirm-content">
-                                    <h3 class="admin-content__item-not-confirm-heading">Chưa xác nhận</h3>
+                                    <h3 class="admin-content__item-not-confirm-heading">Đơn hàng chưa xác nhận</h3>
                                     <h4 class="admin-content__item-not-confirm-info">20</h4>
                                 </div>
                             </div>

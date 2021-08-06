@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="./Assets/Fonts/fontawesome-free-5.15.3-web/css/all.min.css">
     <title>Fashion GenZ</title>
 </head>
-<body style="background-color: #ffc880;">
+<body style="background-color: var(--primary-color);">
     <div class="grid wide">
         <div class="row">
             <div class="col l-6 l-o-3 m-10 m-o-1 c-12">
