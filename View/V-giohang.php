@@ -106,17 +106,25 @@
                                         <ul class="header__navbar-cart-list-item">
                                             <?php foreach ($_SESSION['cart'] as $key => $value){?>
                                             <li class="header__navbar-cart-item">
-                                                <img src="<?php echo $value['img-link'] ?>" alt="" class="header__navbar-cart-img">
-                                                <div class="header__navbar-cart-item-info">
-                                                    <div class="header__navbar-cart-item-head">
-                                                        <h5 class="header__navbar-cart-item-name"><?php echo $value['name'] ?></h5>
-                                                        <div class="header__navbar-cart-item-price-wrap">
-                                                            <span class="header__navbar-cart-item-price"><?php echo number_format($value['price']) ?>đ</span>
-                                                            <span class="header__navbar-cart-item-multiply">x</span>
-                                                            <span class="header__navbar-cart-item-quantity"><?php echo $value['sl'] ?></span>
+                                                <a style="text-decoration: none;" href="?controller=chitietsanpham&id=<?php echo $value['id'] ?>">
+                                                    <img src="<?php echo $value['img-link'] ?>" alt="" class="header__navbar-cart-img">
+                                                    <div class="header__navbar-cart-item-info">
+                                                        <div class="header__navbar-cart-item-head">
+                                                            <h5 class="header__navbar-cart-item-name"><?php echo $value['name'] ?></h5>
+                                                            <div class="header__navbar-cart-item-price-wrap">
+                                                                <span class="header__navbar-cart-item-price"><?php echo number_format($value['price']) ?>đ</span>
+                                                                <span class="header__navbar-cart-item-multiply">x</span>
+                                                                <span class="header__navbar-cart-item-quantity"><?php echo $value['sl'] ?></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="header__navbar-cart-item-body">
+                                                            <span class="header__navbar-cart-item-desc">
+                                                                Size: <?php echo $value['size'] ?>
+                                                            </span>
+                                                            <a href="?controller=xuligiohang&method=delete&id=<?php echo $value['id'] ?>" class="header__navbar-cart-item-remove">Xóa</a>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </a>
                                             </li>
                                             <?php } ?>
                                         </ul>
@@ -235,12 +243,15 @@
                                                 <tr>
                                                     <td>
                                                         <div class="cart-product">
-                                                            <img src="<?php echo $value['img-link'] ?>" alt="" class="cart-product__img">
-                                                            <div class="cart-product__info">
-                                                                <p class="cart-product__info-name"><?php echo $value['name'] ?></p>
-                                                                <p class="cart-product__info-price"><?php echo number_format($value['price']) ?>đ</p>
-                                                                <a href="?controller=xuligiohang&method=delete&id=<?php echo $value['id'] ?>" class="cart-product__info-remove">Xóa</a>
-                                                            </div>
+                                                            <a style="text-decoration: none; color: var(--text-color);" href="?controller=chitietsanpham&id=<?php echo $value['id'] ?>">
+                                                                <img src="<?php echo $value['img-link'] ?>" alt="" class="cart-product__img">
+                                                                <div class="cart-product__info">
+                                                                    <p class="cart-product__info-name"><?php echo $value['name'] ?></p>
+                                                                    <p class="cart-product__info-size">Size: <?php echo $value['size'] ?></p>
+                                                                    <p class="cart-product__info-price"><?php echo number_format($value['price']) ?>đ</p>
+                                                                    <a href="?controller=xuligiohang&method=delete&id=<?php echo $value['id'] ?>" class="cart-product__info-remove">Xóa</a>
+                                                                </div>
+                                                            </a>
                                                         </div>
                                                     </td>
                                                     <td>

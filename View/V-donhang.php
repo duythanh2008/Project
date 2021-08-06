@@ -105,19 +105,27 @@
                                     <h4 class="header__navbar-cart-heading">Sản phẩm đã thêm</h4>
                                     <ul class="header__navbar-cart-list-item">
                                         <?php foreach ($_SESSION['cart'] as $key => $value){?>
-                                        <li class="header__navbar-cart-item">
-                                            <img src="<?php echo $value['img-link'] ?>" alt="" class="header__navbar-cart-img">
-                                            <div class="header__navbar-cart-item-info">
-                                                <div class="header__navbar-cart-item-head">
-                                                    <h5 class="header__navbar-cart-item-name"><?php echo $value['name'] ?></h5>
-                                                    <div class="header__navbar-cart-item-price-wrap">
-                                                        <span class="header__navbar-cart-item-price"><?php echo number_format($value['price']) ?>đ</span>
-                                                        <span class="header__navbar-cart-item-multiply">x</span>
-                                                        <span class="header__navbar-cart-item-quantity"><?php echo $value['sl'] ?></span>
+                                            <li class="header__navbar-cart-item">
+                                                <a style="text-decoration: none;" href="?controller=chitietsanpham&id=<?php echo $value['id'] ?>">
+                                                    <img src="<?php echo $value['img-link'] ?>" alt="" class="header__navbar-cart-img">
+                                                    <div class="header__navbar-cart-item-info">
+                                                        <div class="header__navbar-cart-item-head">
+                                                            <h5 class="header__navbar-cart-item-name"><?php echo $value['name'] ?></h5>
+                                                            <div class="header__navbar-cart-item-price-wrap">
+                                                                <span class="header__navbar-cart-item-price"><?php echo number_format($value['price']) ?>đ</span>
+                                                                <span class="header__navbar-cart-item-multiply">x</span>
+                                                                <span class="header__navbar-cart-item-quantity"><?php echo $value['sl'] ?></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="header__navbar-cart-item-body">
+                                                            <span class="header__navbar-cart-item-desc">
+                                                                Size: <?php echo $value['size'] ?>
+                                                            </span>
+                                                            <a href="?controller=xuligiohang&method=delete&id=<?php echo $value['id'] ?>" class="header__navbar-cart-item-remove">Xóa</a>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </li>
+                                                </a>
+                                            </li>
                                         <?php } ?>
                                     </ul>
                                     <a href="?controller=giohang" class="header__navbar-cart-item-cart header__navbar-cart-item-cart-btn">Xem giỏ hàng</a>

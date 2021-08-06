@@ -10,7 +10,7 @@
           case 'prev':
                // Trừ số lượng sản phẩm đi 1
                $_SESSION['cart'][$id]['sl']-=1;
-               header('location: ?controller=giohang');
+               header('Location: ' . $_SERVER['HTTP_REFERER']);
                //Kiếm tra số lượng của sản phẩm coi có bằng 0 không
                if ($_SESSION['cart'][$id]['sl']==0){
                // Nếu sản phẩm bằng 0 thì xóa sản phẩm
@@ -25,12 +25,12 @@
                // Cộng số lượng sản phẩm đi 1
                $_SESSION['cart'][$id]['sl']+=1;
                //Trở về trang giỏ hàng
-               header('location: ?controller=giohang');
+               header('Location: ' . $_SERVER['HTTP_REFERER']);
                break;
           case 'delete':
                //Xóa sản phẩm có trong giỏ hàng
                unset($_SESSION['cart'][$id]); 
-               header('location: ?controller=giohang');
+               header('Location: ' . $_SERVER['HTTP_REFERER']);
                //Kiểm tra biến $_SESSION['cart'] có rỗng không
                if (empty($_SESSION['cart'])){
                     unset($_SESSION['cart']);

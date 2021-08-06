@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 05, 2021 lúc 02:28 PM
+-- Thời gian đã tạo: Th8 06, 2021 lúc 05:00 AM
 -- Phiên bản máy phục vụ: 10.4.19-MariaDB
 -- Phiên bản PHP: 8.0.7
 
@@ -63,6 +63,26 @@ INSERT INTO `catalog` (`id`, `name`) VALUES
 (3, 'Quần dài'),
 (4, 'Quần short'),
 (5, 'Giày, dép');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL,
+  `fullname` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `content` varchar(5000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `contact`
+--
+
+INSERT INTO `contact` (`id`, `fullname`, `email`, `content`) VALUES
+(8, 'Nguyễn Hữu Duy Thành', 'thanhnguyen15022008@gmail.com', 'Chúng tôi muốn quảng cáo sản phẩm trên website của shop');
 
 -- --------------------------------------------------------
 
@@ -180,7 +200,7 @@ CREATE TABLE `user_info` (
 --
 
 INSERT INTO `user_info` (`id`, `username`, `password`, `fullname`, `email`, `phone`, `address`, `code`) VALUES
-(1, 'duythanh2008', 'Chicho1502', 'Nguyễn Hữu Duy Thành', 'thanhnguyen15022008@gmail.com', '0334758508', 'Phường Quảng Tiến, Số Nhà 24, Ngõ 4, Phố Yết Kiêu', 380452),
+(1, 'duythanh2008', 'Chicho1502', 'Nguyễn Hữu Duy Thành', 'thanhnguyen15022008@gmail.com', '0334758508', 'Sầm Sơn, Thanh Hóa', 380452),
 (6, 'dtnc1112', 'Chicho1502', NULL, 'duythanh20082002@outlook.com', '0333229817', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -213,7 +233,8 @@ CREATE TABLE `user_order_detail` (
   `product_id` int(11) DEFAULT NULL,
   `qty` int(11) DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
-  `amount` int(11) DEFAULT NULL
+  `amount` int(11) DEFAULT NULL,
+  `size` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -230,6 +251,12 @@ ALTER TABLE `admin`
 -- Chỉ mục cho bảng `catalog`
 --
 ALTER TABLE `catalog`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `contact`
+--
+ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -288,6 +315,12 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `catalog`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT cho bảng `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `product`

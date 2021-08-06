@@ -15,6 +15,7 @@
                  $_SESSION['cart'][$id]['price']=$product[0]['price'];
                  $_SESSION['cart'][$id]['img-link']=$product[0]['image'];
                  $_SESSION['cart'][$id]['name']=$product[0]['name'];
+                 $_SESSION['cart'][$id]['size']=$_POST['size'];
             }
        }
        else{
@@ -23,6 +24,7 @@
                  $_SESSION['cart'][$id]['price']=$product[0]['price'];
                  $_SESSION['cart'][$id]['img-link']=$product[0]['image'];
                  $_SESSION['cart'][$id]['name']=$product[0]['name'];
+                 $_SESSION['cart'][$id]['size']=$_POST['size'];
        }
      }
      echo "<script type='text/javascript'>alert('Thêm vào giỏ thành công');</script>";

@@ -64,6 +64,9 @@
         case 'xuligiohang':
             require_once './Controller/C-xuligiohang.php';
             break;
+        case 'thanhtoan':
+            require_once './Controller/C-thanhtoan.php';
+            break;
         case 'dangnhapquantri':
             require_once './Controller/C-dangnhapquantri.php';
             break;

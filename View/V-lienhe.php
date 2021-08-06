@@ -105,19 +105,27 @@
                                     <h4 class="header__navbar-cart-heading">Sản phẩm đã thêm</h4>
                                     <ul class="header__navbar-cart-list-item">
                                         <?php foreach ($_SESSION['cart'] as $key => $value){?>
-                                        <li class="header__navbar-cart-item">
-                                            <img src="<?php echo $value['img-link'] ?>" alt="" class="header__navbar-cart-img">
-                                            <div class="header__navbar-cart-item-info">
-                                                <div class="header__navbar-cart-item-head">
-                                                    <h5 class="header__navbar-cart-item-name"><?php echo $value['name'] ?></h5>
-                                                    <div class="header__navbar-cart-item-price-wrap">
-                                                        <span class="header__navbar-cart-item-price"><?php echo number_format($value['price']) ?>đ</span>
-                                                        <span class="header__navbar-cart-item-multiply">x</span>
-                                                        <span class="header__navbar-cart-item-quantity"><?php echo $value['sl'] ?></span>
+                                            <li class="header__navbar-cart-item">
+                                                <a style="text-decoration: none;" href="?controller=chitietsanpham&id=<?php echo $value['id'] ?>">
+                                                    <img src="<?php echo $value['img-link'] ?>" alt="" class="header__navbar-cart-img">
+                                                    <div class="header__navbar-cart-item-info">
+                                                        <div class="header__navbar-cart-item-head">
+                                                            <h5 class="header__navbar-cart-item-name"><?php echo $value['name'] ?></h5>
+                                                            <div class="header__navbar-cart-item-price-wrap">
+                                                                <span class="header__navbar-cart-item-price"><?php echo number_format($value['price']) ?>đ</span>
+                                                                <span class="header__navbar-cart-item-multiply">x</span>
+                                                                <span class="header__navbar-cart-item-quantity"><?php echo $value['sl'] ?></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="header__navbar-cart-item-body">
+                                                            <span class="header__navbar-cart-item-desc">
+                                                                Size: <?php echo $value['size'] ?>
+                                                            </span>
+                                                            <a href="?controller=xuligiohang&method=delete&id=<?php echo $value['id'] ?>" class="header__navbar-cart-item-remove">Xóa</a>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </li>
+                                                </a>
+                                            </li>
                                         <?php } ?>
                                     </ul>
                                     <a href="?controller=giohang" class="header__navbar-cart-item-cart header__navbar-cart-item-cart-btn">Xem giỏ hàng</a>
@@ -211,21 +219,33 @@
                         </div>
                     </div>
                     <div class="grid wide">
+                        <?php if(isset($notice['message'])){?>
+                            <p style="font-size: 1.9rem; color: #33CC1F; text-align: center;"><?php echo $notice['message'] ?></p>
+                        <?php } ?>
                         <div class="row">
                             <div class="col l-6 m-12 c-12">
                                 <div class="contact-form">
                                     <h3 class="contact-form__heading">Liên hệ với chúng tôi</h3>
-                                    <form action="#" method="post">
+                                    <form action="?controller=lienhe" method="post">
                                         <div class="contact-form__item">
-                                            <input type="text" class="contact-form__item-input" placeholder="Họ và tên">
+                                            <input type="text" name="fullname" class="contact-form__item-input" placeholder="Họ và tên">
+                                            <?php if(isset($error['fullname'])){?>
+                                                <p style=" font-size: 14px; color: red;"><?php echo $error['fullname'] ?></p>
+                                            <?php } ?>
                                         </div>
                                         <div class="contact-form__item">
-                                            <input type="text" class="contact-form__item-input" placeholder="Email">
+                                            <input type="email" name="email" class="contact-form__item-input" placeholder="Email">
+                                            <?php if(isset($error['email'])){?>
+                                                <p style=" font-size: 14px; color: red;"><?php echo $error['email'] ?></p>
+                                            <?php } ?>
                                         </div>
                                         <div class="contact-form__item">
-                                            <textarea name="" id="" cols="30" rows="10" class="contact-form__item-textarea" placeholder="Nội dung"></textarea>
+                                            <textarea name="content" id="" cols="30" rows="10" class="contact-form__item-textarea" placeholder="Nội dung"></textarea>
+                                            <?php if(isset($error['content'])){?>
+                                                <p style=" font-size: 14px; color: red;"><?php echo $error['content'] ?></p>
+                                            <?php } ?>
                                         </div>
-                                        <input type="submit" value="Gửi liên hệ" class="contact-form__item-submit">
+                                        <input type="submit" name="contact" value="Gửi liên hệ" class="contact-form__item-submit">
                                     </form>
                                 </div>
                             </div>

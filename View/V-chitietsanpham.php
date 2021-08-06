@@ -106,19 +106,27 @@
                                     <h4 class="header__navbar-cart-heading">Sản phẩm đã thêm</h4>
                                     <ul class="header__navbar-cart-list-item">
                                         <?php foreach ($_SESSION['cart'] as $key => $value){?>
-                                        <li class="header__navbar-cart-item">
-                                            <img src="<?php echo $value['img-link'] ?>" alt="" class="header__navbar-cart-img">
-                                            <div class="header__navbar-cart-item-info">
-                                                <div class="header__navbar-cart-item-head">
-                                                    <h5 class="header__navbar-cart-item-name"><?php echo $value['name'] ?></h5>
-                                                    <div class="header__navbar-cart-item-price-wrap">
-                                                        <span class="header__navbar-cart-item-price"><?php echo number_format($value['price']) ?>đ</span>
-                                                        <span class="header__navbar-cart-item-multiply">x</span>
-                                                        <span class="header__navbar-cart-item-quantity"><?php echo $value['sl'] ?></span>
+                                            <li class="header__navbar-cart-item">
+                                                <a style="text-decoration: none;" href="?controller=chitietsanpham&id=<?php echo $value['id'] ?>">
+                                                    <img src="<?php echo $value['img-link'] ?>" alt="" class="header__navbar-cart-img">
+                                                    <div class="header__navbar-cart-item-info">
+                                                        <div class="header__navbar-cart-item-head">
+                                                            <h5 class="header__navbar-cart-item-name"><?php echo $value['name'] ?></h5>
+                                                            <div class="header__navbar-cart-item-price-wrap">
+                                                                <span class="header__navbar-cart-item-price"><?php echo number_format($value['price']) ?>đ</span>
+                                                                <span class="header__navbar-cart-item-multiply">x</span>
+                                                                <span class="header__navbar-cart-item-quantity"><?php echo $value['sl'] ?></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="header__navbar-cart-item-body">
+                                                            <span class="header__navbar-cart-item-desc">
+                                                                Size: <?php echo $value['size'] ?>
+                                                            </span>
+                                                            <a href="?controller=xuligiohang&method=delete&id=<?php echo $value['id'] ?>" class="header__navbar-cart-item-remove">Xóa</a>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </li>
+                                                </a>
+                                            </li>
                                         <?php } ?>
                                     </ul>
                                     <a href="?controller=giohang" class="header__navbar-cart-item-cart header__navbar-cart-item-cart-btn">Xem giỏ hàng</a>
@@ -236,7 +244,7 @@
                                 </div>
                                 <div class="product-detail__info-status">
                                     <h4 class="product-detail__info-status-check">Tình trạng: </h4>
-                                    <?php if ($product[0]['qty'] >0 ){ ?>
+                                    <?php if ($product[0]['qty'] > 0 ){ ?>
                                         <p class="product-detail__info-status-checkname">Còn hàng</p>
                                     <?php }else{?>
                                         <p style="color: red" class="product-detail__info-status-checkname">Hết hàng</p>
@@ -247,7 +255,18 @@
                                 <div class="product-detail__info-add-to-cart">
                                     <form action="?controller=themgiohang&id=<?php echo $product[0]['id'] ?>" method="post">
                                         <label for="qty" class="product-detail__info-qty-label">Số lượng: </label>
-                                        <input type="number" id="qty" name="qty" class="product-detail__info-qty" value="1">
+                                        <input type="number" id="qty" name="qty" class="product-detail__info-qty" value="1"><br>
+                                        <label for="size" class="product-detail__info-qty-label">Size</label>
+                                        <select name="size" class="product-detail__info-size" id="size">
+                                            <option value="36">36</option>
+                                            <option value="37">37</option>
+                                            <option value="38">38</option>
+                                            <option value="39">39</option>
+                                            <option value="40">40</option>
+                                            <option value="41">41</option>
+                                            <option value="42">42</option>
+                                            <option value="43">43</option>
+                                        </select>   
                                         <br>
                                         <input type="submit" name="add" value="Thêm vào giỏ hàng" class="product-detail__info-btn">
                                     </form>
