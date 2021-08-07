@@ -15,6 +15,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Assets/Fonts/fontawesome-free-5.15.3-web/css/all.min.css">
     <title>Fashion GenZ</title>
+    <style>
+        <?php if ($admin[0]['lv'] == 2){ ?>
+        #menu1{
+            display: none;
+        }
+        <?php } ?>
+    </style>
 </head>
 <body>
     <div class="grid">
@@ -30,11 +37,11 @@
                         <li class="admin-menu__item">
                             <a href="?controller=trangquantri" class="admin-menu__item-link">Tổng quan</a>
                         </li>
-                        <li class="admin-menu__item">
+                        <li id="menu1" class="admin-menu__item">
                             <a href="#" class="admin-menu__item-link">Quản lý website</a>
                         </li>
-                        <li class="admin-menu__item">
-                            <a href="#" class="admin-menu__item-link">Quản lý nhân viên</a>
+                        <li id="menu1" class="admin-menu__item">
+                            <a href="?controller=quanlynhanvien" class="admin-menu__item-link">Quản lý nhân viên</a>
                         </li>
                         <li class="admin-menu__item">
                             <a href="?controller=quanlysanpham" class="admin-menu__item-link active">Quản lý sản phẩm</a>
@@ -70,11 +77,11 @@
                                 <li class="admin-menu__item">
                                     <a href="?controller=trangquantri" class="admin-menu__item-link">Tổng quan</a>
                                 </li>
-                                <li class="admin-menu__item">
+                                <li id="menu1" class="admin-menu__item">
                                     <a href="#" class="admin-menu__item-link">Quản lý website</a>
                                 </li>
-                                <li class="admin-menu__item">
-                                    <a href="#" class="admin-menu__item-link">Quản lý nhân viên</a>
+                                <li id="menu1" class="admin-menu__item">
+                                    <a href="?controller=quanlynhanvien" class="admin-menu__item-link">Quản lý nhân viên</a>
                                 </li>
                                 <li class="admin-menu__item">
                                     <a href="?controller=quanlysanpham" class="admin-menu__item-link active">Quản lý sản phẩm</a>
@@ -88,7 +95,7 @@
                 <div class="admin-content">
                     <div class="row no-gutters">
                         <div class="col l-12 m-12 c-12">
-                            <h3 class="admin-content__heading">Sửa sản phẩm</h3><br>
+                            <h3 class="admin-content__heading">Sửa thông tin sản phẩm</h3><br>
                         </div>
                         <div class="col l-6 l-o-3 m-12 c-12">
                             <form action="?controller=xulisanpham&method=edit&id=<?php echo $data_product[0]['id'] ?>" method="post" name="addform" enctype="multipart/form-data">

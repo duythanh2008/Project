@@ -41,10 +41,10 @@
                             <a href="#" class="admin-menu__item-link">Quản lý website</a>
                         </li>
                         <li id="menu1" class="admin-menu__item">
-                            <a href="?controller=quanlynhanvien" class="admin-menu__item-link">Quản lý nhân viên</a>
+                            <a href="?controller=quanlynhanvien" class="admin-menu__item-link active">Quản lý nhân viên</a>
                         </li>
                         <li class="admin-menu__item">
-                            <a href="?controller=quanlysanpham" class="admin-menu__item-link active">Quản lý sản phẩm</a>
+                            <a href="?controller=quanlysanpham" class="admin-menu__item-link">Quản lý sản phẩm</a>
                         </li>
                         <li class="admin-menu__item">
                             <a href="#" class="admin-menu__item-link">Quản lý bình luận</a>
@@ -81,10 +81,10 @@
                                     <a href="#" class="admin-menu__item-link">Quản lý website</a>
                                 </li>
                                 <li id="menu1" class="admin-menu__item">
-                                    <a href="?controller=quanlynhanvien" class="admin-menu__item-link">Quản lý nhân viên</a>
+                                    <a href="?controller=quanlynhanvien" class="admin-menu__item-link active">Quản lý nhân viên</a>
                                 </li>
                                 <li class="admin-menu__item">
-                                    <a href="?controller=quanlysanpham" class="admin-menu__item-link active">Quản lý sản phẩm</a>
+                                    <a href="?controller=quanlysanpham" class="admin-menu__item-link">Quản lý sản phẩm</a>
                                 </li>
                                 <li class="admin-menu__item">
                                     <a href="#" class="admin-menu__item-link">Quản lý bình luận</a>
@@ -95,9 +95,9 @@
                 <div class="admin-content">
                     <div class="row no-gutters">
                         <div class="col l-12 m-12 c-12">
-                            <h3 class="admin-content__heading">Quản lý sản phẩm</h3><br>
+                            <h3 class="admin-content__heading">Quản lý nhân viên</h3><br>
                             <form>
-                                <input type="hidden" name="controller" value="quanlysanpham">
+                                <input type="hidden" name="controller" value="quanlynhanvien">
                                 <input
                                     style="     width: 400px;
                                                 max-width: 100%;
@@ -108,37 +108,43 @@
                                                 font-weight:bold;
                                                 border: 2px solid var(--primary-color);
                                                 outline: none;"
-                                type="search" name="keyword" placeholder="Tìm sản phẩm ... "  value="<?php echo (isset($_GET['keyword'])) ? $_GET['keyword'] : '' ?>">
+                                type="search" name="keyword" placeholder="Tìm nhân viên ... "  value="<?php echo (isset($_GET['keyword'])) ? $_GET['keyword'] : '' ?>">
                             </form>
-                            <a href="?controller=themsanpham" class="admin-content__add-product">Thêm sản phẩm</a>
+                            <a href="?controller=themnhanvien" class="admin-content__add-product">Thêm nhân viên</a>
                             <div class="admin__product">
                                 <table class="admin__product-table">
                                     <thead>
                                         <tr>
-                                            <th class="admin__product-table-th">Mã sản phẩm</th>    
-                                            <th class="admin__product-table-th">Hình ảnh</th>
-                                            <th class="admin__product-table-th">Tên sản phẩm</th>
-                                            <th class="admin__product-table-th">Giá</th>
-                                            <th class="admin__product-table-th">Đánh giá</th>
+                                            <th class="admin__product-table-th">Mã / ID</th>    
+                                            <th class="admin__product-table-th">Họ và tên</th>
+                                            <th class="admin__product-table-th">Tên đăng nhập</th>
+                                            <th class="admin__product-table-th">Giới tính</th>
+                                            <th class="admin__product-table-th">Ngày sinh</th>
+                                            <th class="admin__product-table-th">Chức vụ</th>
                                             <th class="admin__product-table-th">Tùy chọn</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach($product as $key => $value){ ?>
+                                        <?php foreach($nhanvien as $key => $value){ ?>
                                         <tr>
                                             <td class="admin__product-table-td"><?php echo $value['id'] ?></td>
-                                            <td class="admin__product-table-td"><img src="<?php echo $value['image']?>" style="width:70px; height: 70px"></td>
-                                            <td class="admin__product-table-td"><?php echo $value['name'] ?></td>
-                                            <td class="admin__product-table-td"><?php echo $value['price'] ?></td>
-                                            <td class="admin__product-table-td"><?php  if ($value['total_rate'] && $value['rate_times'] != NULL){
-                                                echo ($value['total_rate'] / $value['rate_times'])." / 5 sao";
-                                            }else{
-                                                echo "Chưa có đánh giá";
+                                            <td class="admin__product-table-td"><?php echo $value['fullname']?></td>
+                                            <td class="admin__product-table-td"><?php echo $value['username']?></td>
+                                            <td class="admin__product-table-td"><?php  if ($value['gender'] == 1 ){
+                                                                                            echo "Nam";
+                                                                                        }else if ($value['gender'] == 2){
+                                                                                            echo "Nữ";} 
+                                            ?></td>
+                                            <td class="admin__product-table-td"><?php echo $value['date'] ?></td>
+                                            <td class="admin__product-table-td"><?php  if ($value['lv'] == 1 ){
+                                                                                            echo "Quản lý";
+                                                                                        }else{
+                                                                                            echo "Nhân viên";
                                             } ?></td>
                                             <td class="admin__product-table-td">
-                                                <input onclick="window.location ='?controller=xulisanpham&method=edit&id=<?php echo $value['id']; ?>'" type="button" class="btn-option" value="Sửa">
+                                                <input onclick="window.location ='?controller=xulinhanvien&method=edit&id=<?php echo $value['id']; ?>'" type="button" class="btn-option" value="Sửa">
                                                 <input type="hidden" name="product-id" value="<?php echo $value['id'] ?>">
-                                                <input onclick="window.location ='?controller=xulisanpham&method=del&id=<?php echo $value['id']; ?>'" type="button" class="btn-option" value="Xóa">
+                                                <input onclick="window.location ='?controller=xulinhanvien&method=del&id=<?php echo $value['id']; ?>'" type="button" class="btn-option" value="Xóa">
                                             </td>
                                         </tr>
                                         <?php } ?>

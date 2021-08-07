@@ -1880,9 +1880,10 @@
     border: 1px solid var(--primary-color);
 }
 
-.admin__product{
+.admin__product {
     min-width: 100%;
     overflow-x: auto;
+    padding-bottom: 20px;
 }
 
 .admin__product-table{

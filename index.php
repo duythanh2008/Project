@@ -94,5 +94,14 @@
         case 'xulisanpham':
             require_once './Controller/C-xulisanpham.php';
             break;
+        case 'quanlynhanvien':
+            require_once './Controller/C-quanlynhanvien.php';
+            break;
+        case 'themnhanvien':
+            require_once './Controller/C-themnhanvien.php';
+            break;
+        case 'xulinhanvien':
+            require_once './Controller/C-xulinhanvien.php';
+            break;
     }
 ?>

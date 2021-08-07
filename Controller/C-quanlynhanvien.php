@@ -4,9 +4,9 @@
     }
     if (isset($_GET['keyword']) && $_GET['keyword'] != ''){
         $keyword = $_GET['keyword'];
-        $product = $database->get_like('product','name',$keyword);
+        $nhanvien = $database->get_like('admin','fullname',$keyword);
     }else{
-        $product = $database->get('product',array());
+        $nhanvien = $database->get('admin',array());
     }
-    require_once './View/V-quanlysanpham.php';
+    require_once './View/V-quanlynhanvien.php';
 ?>
