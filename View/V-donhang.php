@@ -96,6 +96,7 @@
                         </ul>
                         <div class="header__navbar-cart">
                          <div class="header__navbar-cart-wrap">
+                         <span class="header__navbar-cart-qty"><?php echo $_SESSION['qty'] ?></span>
                                 <a href="?controller=giohang" class="header__navbar-cart-link">
                                     <i class="header__navbar-cart-icon fas fa-shopping-cart"></i>
                                     Giỏ hàng

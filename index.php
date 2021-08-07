@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if (!isset($_SESSION['qty'])){
+        $_SESSION['qty'] = 0;
+    }
     require_once './Model/M-database.php';
     include('./Assets/PHPMailer/class.smtp.php');
     include('./Assets/PHPMailer/class.phpmailer.php');

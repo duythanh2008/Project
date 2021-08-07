@@ -81,6 +81,7 @@
        $diachicc='thanhnguyen15022008@gmail.com';
        $mail = $database->sendMail($title,$content,$nTo,$mTo,$diachicc='');
      unset($_SESSION['cart']);
+     $_SESSION['qty'] = 0;
      echo "<script type='text/javascript'>alert('Mua hàng thành công !');</script>";
      header('refresh:0.1;url=?controller=trangchu');
 ?>

@@ -8,6 +8,7 @@
         if(isset($_SESSION['cart'])){
             if(isset($_SESSION['cart'][$id])){
                  $_SESSION['cart'][$id]['sl']=$_SESSION['cart'][$id]['sl'] + $_POST['qty'];
+                 $_SESSION['qty'] += + $_POST['qty'];
             }
             else{
                  $_SESSION['cart'][$id]['id']=$product[0]['id'];
@@ -16,6 +17,7 @@
                  $_SESSION['cart'][$id]['img-link']=$product[0]['image'];
                  $_SESSION['cart'][$id]['name']=$product[0]['name'];
                  $_SESSION['cart'][$id]['size']=$_POST['size'];
+                 $_SESSION['qty'] += $_SESSION['cart'][$id]['sl'];
             }
        }
        else{
@@ -25,6 +27,7 @@
                  $_SESSION['cart'][$id]['img-link']=$product[0]['image'];
                  $_SESSION['cart'][$id]['name']=$product[0]['name'];
                  $_SESSION['cart'][$id]['size']=$_POST['size'];
+                 $_SESSION['qty'] += $_SESSION['cart'][$id]['sl'];
        }
      }
      echo "<script type='text/javascript'>alert('Thêm vào giỏ thành công');</script>";

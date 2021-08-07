@@ -10,11 +10,13 @@
           case 'prev':
                // Trừ số lượng sản phẩm đi 1
                $_SESSION['cart'][$id]['sl']-=1;
+               $_SESSION['qty'] -=1;
                header('Location: ' . $_SERVER['HTTP_REFERER']);
                //Kiếm tra số lượng của sản phẩm coi có bằng 0 không
                if ($_SESSION['cart'][$id]['sl']==0){
                // Nếu sản phẩm bằng 0 thì xóa sản phẩm
-                    unset($_SESSION['cart'][$id]);       
+                    unset($_SESSION['cart'][$id]);
+                    $_SESSION['qty'] = 0;       
                }
                //Kiểm tra biến $_SESSION['cart'] có rỗng không
                if (empty($_SESSION['cart'])){
@@ -24,16 +26,19 @@
           case 'next':
                // Cộng số lượng sản phẩm đi 1
                $_SESSION['cart'][$id]['sl']+=1;
+               $_SESSION['qty'] +=1;
                //Trở về trang giỏ hàng
                header('Location: ' . $_SERVER['HTTP_REFERER']);
                break;
           case 'delete':
                //Xóa sản phẩm có trong giỏ hàng
-               unset($_SESSION['cart'][$id]); 
+               $_SESSION['qty'] -= $_SESSION['cart'][$id]['sl'];
+               unset($_SESSION['cart'][$id]);
                header('Location: ' . $_SERVER['HTTP_REFERER']);
                //Kiểm tra biến $_SESSION['cart'] có rỗng không
                if (empty($_SESSION['cart'])){
                     unset($_SESSION['cart']);
+                    $_SESSION['qty'] = 0;
                }
           break;
           default:
