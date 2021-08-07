@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 06, 2021 lúc 05:00 AM
+-- Thời gian đã tạo: Th8 06, 2021 lúc 07:29 PM
 -- Phiên bản máy phục vụ: 10.4.19-MariaDB
 -- Phiên bản PHP: 8.0.7
 
@@ -98,7 +98,7 @@ CREATE TABLE `product` (
   `description` varchar(1000) DEFAULT NULL,
   `qty` int(11) DEFAULT NULL,
   `catalog` int(11) DEFAULT NULL,
-  `total_rate` int(11) DEFAULT NULL,
+  `total_rate` float DEFAULT NULL,
   `rate_times` int(11) DEFAULT NULL,
   `image2` varchar(200) DEFAULT NULL,
   `image3` varchar(200) DEFAULT NULL,
@@ -110,7 +110,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `price`, `image`, `description`, `qty`, `catalog`, `total_rate`, `rate_times`, `image2`, `image3`, `image4`) VALUES
-(13, 'Áo phông nam APHTK264', 250000, './Assets/Img/APHTK264-1.jpg', '– Chất liệu: 100% COTTON <br>\n– Đặc tính: <br>\n– Phom: Oversized <br>\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 100, 2, NULL, NULL, './Assets/Img/APHTK264-2.jpg', './Assets/Img/APHTK264-3.jpg', './Assets/Img/APHTK264-4.jpg'),
+(13, 'Áo phông nam APHTK264', 250000, './Assets/Img/APHTK264-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 100, 2, NULL, NULL, './Assets/Img/APHTK264-2.jpg', './Assets/Img/APHTK264-3.jpg', './Assets/Img/APHTK264-4.jpg'),
 (14, 'Áo phông nam APHTK260', 200000, './Assets/Img/APHTK260-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 100, 2, NULL, NULL, './Assets/Img/APHTK260-2.jpg', './Assets/Img/APHTK260-3.jpg', './Assets/Img/APHTK260-4.jpg'),
 (15, 'Áo phông nam APHTK258', 200000, './Assets/Img/APHTK258-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 100, 2, NULL, NULL, './Assets/Img/APHTK258-2.jpg', './Assets/Img/APHTK258-3.jpg', './Assets/Img/APHTK258-4.jpg'),
 (16, 'Áo phông nam APTTK284', 250000, './Assets/Img/APTTK284-QSKTK202-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 100, 2, NULL, NULL, './Assets/Img/APTTK284-QSKTK202-2.jpg', './Assets/Img/APTTK284-QSKTK202-3.jpg', './Assets/Img/APTTK284-QSKTK202-4.jpg'),
@@ -200,7 +200,7 @@ CREATE TABLE `user_info` (
 --
 
 INSERT INTO `user_info` (`id`, `username`, `password`, `fullname`, `email`, `phone`, `address`, `code`) VALUES
-(1, 'duythanh2008', 'Chicho1502', 'Nguyễn Hữu Duy Thành', 'thanhnguyen15022008@gmail.com', '0334758508', 'Sầm Sơn, Thanh Hóa', 380452),
+(1, 'duythanh2008', 'Chicho1502', 'Nguyễn Hữu Duy Thành', 'thanhnguyen15022008@gmail.com', '0334758508', 'Thanh Hóa', 380452),
 (6, 'dtnc1112', 'Chicho1502', NULL, 'duythanh20082002@outlook.com', '0333229817', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -221,6 +221,15 @@ CREATE TABLE `user_order` (
   `time_delivered` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `user_order`
+--
+
+INSERT INTO `user_order` (`id`, `fullname`, `address`, `email`, `phone`, `amount`, `status`, `time_order`, `time_delivered`) VALUES
+(674615, 'Nguyễn Hữu Duy Thành', 'Thanh Hóa', 'thanhnguyen15022008@gmail.com', '0334758508', 250000, 0, '2021-08-06 11:56:35', NULL),
+(859879, 'Nguyễn Hữu Duy Thành', 'Thanh Hóa', 'thanhnguyen15022008@gmail.com', '0334758508', 3670000, 0, '2021-08-06 11:51:05', NULL),
+(942761, 'Nguyễn Hữu Duy Thành', 'Thanh Hóa', 'thanhnguyen15022008@gmail.com', '0334758508', 250000, 0, '2021-08-06 11:55:57', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -236,6 +245,17 @@ CREATE TABLE `user_order_detail` (
   `amount` int(11) DEFAULT NULL,
   `size` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `user_order_detail`
+--
+
+INSERT INTO `user_order_detail` (`id`, `order_id`, `product_id`, `qty`, `price`, `amount`, `size`) VALUES
+(1, 859879, 15, 1, 200000, 200000, '36'),
+(2, 859879, 24, 2, 310000, 620000, '36'),
+(3, 859879, 35, 3, 950000, 2850000, '36'),
+(4, 942761, 16, 1, 250000, 250000, '36'),
+(5, 674615, 13, 1, 250000, 250000, '36');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -332,7 +352,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT cho bảng `rating`
 --
 ALTER TABLE `rating`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT cho bảng `slider_and_banner`
@@ -350,7 +370,7 @@ ALTER TABLE `user_info`
 -- AUTO_INCREMENT cho bảng `user_order_detail`
 --
 ALTER TABLE `user_order_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
