@@ -48,6 +48,9 @@
                             <a href="?controller=quanlysanpham" class="admin-menu__item-link">Quản lý sản phẩm</a>
                         </li>
                         <li class="admin-menu__item">
+                            <a href="?controller=quanlydonhang" class="admin-menu__item-link">Quản lý đơn hàng</a>
+                        </li>
+                        <li class="admin-menu__item">
                             <a href="?controller=quanlydanhgia" class="admin-menu__item-link active">Quản lý đánh giá</a>
                         </li>
                     </ul>
@@ -88,6 +91,9 @@
                                     <a href="?controller=quanlysanpham" class="admin-menu__item-link">Quản lý sản phẩm</a>
                                 </li>
                                 <li class="admin-menu__item">
+                                    <a href="?controller=quanlydonhang" class="admin-menu__item-link">Quản lý đơn hàng</a>
+                                </li>
+                                <li class="admin-menu__item">
                                     <a href="?controller=quanlydanhgia" class="admin-menu__item-link active">Quản lý đánh giá</a>
                                 </li>
                             </ul>
@@ -124,7 +130,7 @@
                                                       echo $product_rating[0]['name'];
                                                 ?>
                                             </td>
-                                            <td class="admin__product-table-td"><div class="rateResult" data-rateyo-rating="<?php echo $value['rate']; ?>"></td>
+                                            <td class="admin__product-table-td"><div class="rateResult" data-rateyo-rating="<?php echo $value['rate']; ?>"></div></td>
                                             <td class="admin__product-table-td"><?php echo $value['time_rate']?></td>
                                             <td class="admin__product-table-td">
                                                 <?php if ($value['status']==0){?>

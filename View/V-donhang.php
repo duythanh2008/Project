@@ -223,40 +223,46 @@
                         <?php
                                 if(isset($_SESSION['customer']) && $_SESSION['customer'] != NULL){
                         ?>
-                            <div class="package-info">
-                                <table class="package-info__table">
-                                    <thead>
-                                        <tr>
-                                            <th>Mã đơn hàng</th>
-                                            <th>Họ và tên</th>
-                                            <th>Địa chỉ</th>
-                                            <th>Số điện thoại</th>
-                                            <th>Trạng thái</th>
-                                            <th>Ngày đặt</th>
-                                            <th>Tùy chọn</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php foreach($package_user as $key => $value){ ?>
-                                        <tr>
-                                            <td><?php echo $value['id'] ?></td>
-                                            <td><?php echo $value['fullname'] ?></td>
-                                            <td><?php echo $value['address'] ?></td>
-                                            <td><?php echo $value['phone'] ?></td>
-                                            <td>
-                                                <?php if ($value['status'] == 0){ ?>
-                                                    <p class="package-info__status-not-confirm">Chưa xác nhận</p>
-                                                <?php }else if ($value['status'] == 1){ ?>
-                                                    <p class="package-info__status-confirmed">Đã xác nhận</p>
-                                                <?php } ?>
-                                            </td>
-                                            <td><?php echo $value['time_order'] ?></td>
-                                            <td><a class="package-info__detail" href="?controller=chitietdonhang&id=<?php echo $value['id'] ?>">Chi tiết</a></td>
-                                        </tr>   
-                                        <?php } ?>         
-                                    </tbody>
-                                </table>
-                            </div>
+                            <?php if($package_user){ ?>
+                                <div class="package-info">
+                                    <table class="package-info__table">
+                                        <thead>
+                                            <tr>
+                                                <th>Mã đơn hàng</th>
+                                                <th>Họ và tên</th>
+                                                <th>Địa chỉ</th>
+                                                <th>Số điện thoại</th>
+                                                <th>Tổng tiền</th>
+                                                <th>Trạng thái</th>
+                                                <th>Ngày đặt</th>
+                                                <th>Tùy chọn</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php foreach($package_user as $key => $value){ ?>
+                                            <tr>
+                                                <td><?php echo $value['id'] ?></td>
+                                                <td><?php echo $value['fullname'] ?></td>
+                                                <td><?php echo $value['address'] ?></td>
+                                                <td><?php echo $value['phone'] ?></td>
+                                                <td><?php echo number_format($value['amount']); ?>đ</td>
+                                                <td>
+                                                    <?php if ($value['status'] == 0){ ?>
+                                                        <p class="package-info__status-not-confirm">Chưa xác nhận</p>
+                                                    <?php }else if ($value['status'] == 1){ ?>
+                                                        <p class="package-info__status-confirmed">Đã xác nhận</p>
+                                                    <?php } ?>
+                                                </td>
+                                                <td><?php echo $value['time_order'] ?></td>
+                                                <td><a class="package-info__detail" href="?controller=chitietdonhang&id=<?php echo $value['id'] ?>">Chi tiết</a></td>
+                                            </tr>   
+                                            <?php } ?>         
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <?php } else { ?>
+                                        <h3 style="font-size: 1.8rem; text-align: center; margin: 180px 0 260px 0;">Quý khách chưa đặt đơn hàng nào, nếu quý khách đã đặt hàng, thông tin đơn hàng sẽ xuất hiện ở đây</h3>
+                                <?php } ?>
                         <?php }else{ ?>
                             <?php if (isset($checkcode) && count($checkcode) > 0){ ?>
                                 <div class="row">

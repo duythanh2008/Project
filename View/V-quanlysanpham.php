@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./Assets/Css/responsive.css">
     <link rel="stylesheet" href="./Assets/Css/base.css">
     <link rel="stylesheet" href="./Assets/Css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,6 +46,9 @@
                         </li>
                         <li class="admin-menu__item">
                             <a href="?controller=quanlysanpham" class="admin-menu__item-link active">Quản lý sản phẩm</a>
+                        </li>
+                        <li class="admin-menu__item">
+                            <a href="?controller=quanlydonhang" class="admin-menu__item-link">Quản lý đơn hàng</a>
                         </li>
                         <li class="admin-menu__item">
                             <a href="?controller=quanlydanhgia" class="admin-menu__item-link">Quản lý đánh giá</a>
@@ -87,6 +91,9 @@
                                     <a href="?controller=quanlysanpham" class="admin-menu__item-link active">Quản lý sản phẩm</a>
                                 </li>
                                 <li class="admin-menu__item">
+                                    <a href="?controller=quanlydonhang" class="admin-menu__item-link">Quản lý đơn hàng</a>
+                                </li>
+                                <li class="admin-menu__item">
                                     <a href="?controller=quanlydanhgia" class="admin-menu__item-link">Quản lý đánh giá</a>
                                 </li>
                             </ul>
@@ -119,7 +126,7 @@
                                             <th class="admin__product-table-th">Hình ảnh</th>
                                             <th class="admin__product-table-th">Tên sản phẩm</th>
                                             <th class="admin__product-table-th">Giá</th>
-                                            <th class="admin__product-table-th">Đánh giá</th>
+                                            <th class="admin__product-table-th">Đánh giá trung bình</th>
                                             <th class="admin__product-table-th">Tùy chọn</th>
                                         </tr>
                                     </thead>
@@ -130,11 +137,12 @@
                                             <td class="admin__product-table-td"><img src="<?php echo $value['image']?>" style="width:70px; height: 70px"></td>
                                             <td class="admin__product-table-td"><?php echo $value['name'] ?></td>
                                             <td class="admin__product-table-td"><?php echo $value['price'] ?></td>
-                                            <td class="admin__product-table-td"><?php  if ($value['total_rate'] && $value['rate_times'] != NULL){
-                                                echo ($value['total_rate'] / $value['rate_times'])." / 5 sao";
-                                            }else{
-                                                echo "Chưa có đánh giá";
-                                            } ?></td>
+                                            <td class="admin__product-table-td">
+                                                <?php  if ($value['total_rate'] && $value['rate_times'] != NULL){ ?>
+                                                    <div class="rateResult" data-rateyo-rating="<?php echo number_format($value['total_rate'] / $value['rate_times'],1); ?>"></div>
+                                                <?php }else{ ?>
+                                                <?php  echo "Chưa có đánh giá";} ?>
+                                            </td>
                                             <td class="admin__product-table-td">
                                                 <input onclick="window.location ='?controller=xulisanpham&method=edit&id=<?php echo $value['id']; ?>'" type="button" class="btn-option" value="Sửa">
                                                 <input type="hidden" name="product-id" value="<?php echo $value['id'] ?>">
@@ -151,5 +159,24 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+    <script>
+        $(function () {
+        $(".rateyo").rateYo().on("rateyo.change", function (e, data) {
+            var rating = data.rating;
+            $(this).parent().find('.score').text('score :'+ $(this).attr('data-rateyo-score'));
+            $(this).parent().find('.result').text('Đánh giá: '+ rating + ' sao');
+            $(this).parent().find('input[name=rating]').val(rating); //add rating value to input field
+        });
+        
+        $(function () {
+            $(".rateResult").rateYo({
+                readOnly: true,
+                starWidth: "30px"
+            });
+            });
+            });
+    </script>
 </body>
 </html>

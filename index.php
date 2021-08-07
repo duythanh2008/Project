@@ -109,5 +109,20 @@
         case 'xulidanhgia':
             require_once './Controller/C-xulidanhgia.php';
             break;
+        case 'quanlydonhang':
+            require_once './Controller/C-quanlydonhang.php';
+            break;
+        case 'quanlydonhangchitiet':
+            require_once './Controller/C-quanlydonhangchitiet.php';
+            break;
+        case 'xulidonhang':
+            require_once './Controller/C-xulidonhang.php';
+            break;
+        case 'xulidonhangchitiet':
+            require_once './Controller/C-xulidonhangchitiet.php';
+            break;
+        case 'xoadonhang':
+            require_once './Controller/C-xoadonhang.php';
+            break;
     }
 ?>

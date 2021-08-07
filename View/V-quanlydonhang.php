@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./Assets/Css/responsive.css">
     <link rel="stylesheet" href="./Assets/Css/base.css">
     <link rel="stylesheet" href="./Assets/Css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,13 +42,13 @@
                             <a href="#" class="admin-menu__item-link">Quản lý website</a>
                         </li>
                         <li id="menu1" class="admin-menu__item">
-                            <a href="?controller=quanlynhanvien" class="admin-menu__item-link active">Quản lý nhân viên</a>
+                            <a href="?controller=quanlynhanvien" class="admin-menu__item-link">Quản lý nhân viên</a>
                         </li>
                         <li class="admin-menu__item">
                             <a href="?controller=quanlysanpham" class="admin-menu__item-link">Quản lý sản phẩm</a>
                         </li>
                         <li class="admin-menu__item">
-                            <a href="?controller=quanlydonhang" class="admin-menu__item-link">Quản lý đơn hàng</a>
+                            <a href="?controller=quanlydonhang" class="admin-menu__item-link active">Quản lý đơn hàng</a>
                         </li>
                         <li class="admin-menu__item">
                             <a href="?controller=quanlydanhgia" class="admin-menu__item-link">Quản lý đánh giá</a>
@@ -84,13 +85,13 @@
                                     <a href="#" class="admin-menu__item-link">Quản lý website</a>
                                 </li>
                                 <li id="menu1" class="admin-menu__item">
-                                    <a href="?controller=quanlynhanvien" class="admin-menu__item-link active">Quản lý nhân viên</a>
+                                    <a href="?controller=quanlynhanvien" class="admin-menu__item-link">Quản lý nhân viên</a>
                                 </li>
                                 <li class="admin-menu__item">
                                     <a href="?controller=quanlysanpham" class="admin-menu__item-link">Quản lý sản phẩm</a>
                                 </li>
                                 <li class="admin-menu__item">
-                                    <a href="?controller=quanlydonhang" class="admin-menu__item-link">Quản lý đơn hàng</a>
+                                    <a href="?controller=quanlydonhang" class="admin-menu__item-link active">Quản lý đơn hàng</a>
                                 </li>
                                 <li class="admin-menu__item">
                                     <a href="?controller=quanlydanhgia" class="admin-menu__item-link">Quản lý đánh giá</a>
@@ -101,56 +102,57 @@
                 <div class="admin-content">
                     <div class="row no-gutters">
                         <div class="col l-12 m-12 c-12">
-                            <h3 class="admin-content__heading">Quản lý nhân viên</h3><br>
-                            <form>
-                                <input type="hidden" name="controller" value="quanlynhanvien">
-                                <input
-                                    style="     width: 400px;
-                                                max-width: 100%;
-                                                height:45px;
-                                                padding-left: 16px;
-                                                margin-bottom: 10px;
-                                                font-size: 1.5rem;
-                                                font-weight:bold;
-                                                border: 2px solid var(--primary-color);
-                                                outline: none;"
-                                type="search" name="keyword" placeholder="Tìm nhân viên ... "  value="<?php echo (isset($_GET['keyword'])) ? $_GET['keyword'] : '' ?>">
-                            </form>
-                            <a href="?controller=themnhanvien" class="admin-content__add-product">Thêm nhân viên</a>
+                            <h3 class="admin-content__heading">Quản lý đơn hàng</h3><br>
+                            <div class="result">
+                                <?php if (isset($error['product'])){?> 
+                                            <p><?php echo $error['product']; ?></p>
+                                <?php } ?>
+                                <?php if (isset($error['detail'])){?> 
+                                            <p><?php echo $error['detail']; ?></p>
+                                <?php } ?>
+                            </div>
                             <div class="admin__product">
                                 <table class="admin__product-table">
                                     <thead>
                                         <tr>
                                             <th class="admin__product-table-th">Mã / ID</th>    
                                             <th class="admin__product-table-th">Họ và tên</th>
-                                            <th class="admin__product-table-th">Tên đăng nhập</th>
-                                            <th class="admin__product-table-th">Giới tính</th>
-                                            <th class="admin__product-table-th">Ngày sinh</th>
-                                            <th class="admin__product-table-th">Chức vụ</th>
+                                            <th class="admin__product-table-th">Địa chỉ</th>
+                                            <th class="admin__product-table-th">Số điện thoại</th>
+                                            <th class="admin__product-table-th">Tổng tiền</th>
+                                            <th class="admin__product-table-th">Thời gian đặt hàng</th>
+                                            <th class="admin__product-table-th">Trạng thái</th>
                                             <th class="admin__product-table-th">Tùy chọn</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach($nhanvien as $key => $value){ ?>
+                                        <?php foreach($order_not_confirm as $key => $value){ ?>
                                         <tr>
                                             <td class="admin__product-table-td"><?php echo $value['id'] ?></td>
                                             <td class="admin__product-table-td"><?php echo $value['fullname']?></td>
-                                            <td class="admin__product-table-td"><?php echo $value['username']?></td>
-                                            <td class="admin__product-table-td"><?php  if ($value['gender'] == 1 ){
-                                                                                            echo "Nam";
-                                                                                        }else if ($value['gender'] == 2){
-                                                                                            echo "Nữ";} 
-                                            ?></td>
-                                            <td class="admin__product-table-td"><?php echo $value['date'] ?></td>
-                                            <td class="admin__product-table-td"><?php  if ($value['lv'] == 1 ){
-                                                                                            echo "Quản lý";
-                                                                                        }else{
-                                                                                            echo "Nhân viên";
-                                            } ?></td>
+                                            <td class="admin__product-table-td"><?php echo $value['address']?></td>
+                                            <td class="admin__product-table-td"><?php echo $value['phone']?></td>
+                                            <td class="admin__product-table-td"><?php echo number_format($value['amount']) ?>đ</td>
+                                            <td class="admin__product-table-td"><?php echo $value['time_order']?></td>
+                                            <td class="admin__product-table-td" style="color: red">Chưa xác nhận</td>
                                             <td class="admin__product-table-td">
-                                                <input onclick="window.location ='?controller=xulinhanvien&method=edit&id=<?php echo $value['id']; ?>'" type="button" class="btn-option" value="Sửa">
-                                                <input type="hidden" name="product-id" value="<?php echo $value['id'] ?>">
-                                                <input onclick="window.location ='?controller=xulinhanvien&method=del&id=<?php echo $value['id']; ?>'" type="button" class="btn-option" value="Xóa">
+                                                <input onclick="window.location ='?controller=xulidonhang&id=<?php echo $value['id']; ?>'" type="button" class="btn-option" value="Duyệt">
+                                                <input onclick="window.location ='?controller=quanlydonhangchitiet&id=<?php echo $value['id']; ?>'" type="button" class="btn-option" value="Chi tiết">
+                                                <input onclick="window.location ='?controller=xoadonhang&id=<?php echo $value['id']; ?>'" type="button" class="btn-option" value="Xóa">
+                                            </td>
+                                        </tr>
+                                        <?php } ?>
+                                        <?php foreach($order_confirmed as $key => $value){ ?>
+                                        <tr>
+                                            <td class="admin__product-table-td"><?php echo $value['id'] ?></td>
+                                            <td class="admin__product-table-td"><?php echo $value['fullname']?></td>
+                                            <td class="admin__product-table-td"><?php echo $value['address']?></td>
+                                            <td class="admin__product-table-td"><?php echo $value['phone']?></td>
+                                            <td class="admin__product-table-td"><?php echo number_format($value['amount']) ?>đ</td>
+                                            <td class="admin__product-table-td"><?php echo $value['time_order']?></td>
+                                            <td class="admin__product-table-td" style="color: #33CC1F">Đã xác nhận</td>
+                                            <td class="admin__product-table-td">
+                                                <input onclick="window.location ='?controller=quanlydonhangchitiet&id=<?php echo $value['id']; ?>'" type="button" class="btn-option" value="Chi tiết">
                                             </td>
                                         </tr>
                                         <?php } ?>
@@ -163,5 +165,23 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+    <script>
+        $(function () {
+        $(".rateyo").rateYo().on("rateyo.change", function (e, data) {
+            var rating = data.rating;
+            $(this).parent().find('.score').text('score :'+ $(this).attr('data-rateyo-score'));
+            $(this).parent().find('.result').text('Đánh giá: '+ rating + ' sao');
+            $(this).parent().find('input[name=rating]').val(rating); //add rating value to input field
+        });
+        
+        $(function () {
+            $(".rateResult").rateYo({
+                readOnly: true
+            });
+            });
+            });
+    </script>
 </body>
 </html>

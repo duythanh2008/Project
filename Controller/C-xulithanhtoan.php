@@ -25,7 +25,8 @@
         'email'=>$email,
         'amount'=>$amount,
         'status'=>0,
-        'time_order'=>$date
+        'time_order'=>$date,
+        'user_id'=>$user[0]['id']
     ));
 
      foreach ($_SESSION['cart'] as $key => $value){
@@ -54,7 +55,7 @@
 		$content.= '<p style="margin: 5px 0">Địa chỉ: '.$address.'</p>';
         $content.= '<p style="margin: 5px 0">Mã đơn hàng: '.$oder_id.'</p>';
 		$content.= '<p style="margin: 5px 0">Tổng tiền: '.number_format($amount).'đ</p>';
-		$content.= '<table style="text-align:left" cellpadding="5">
+		$content.= '<table style="text-align:left" cellpadding="10">
 					<thead>
 						<tr>	
 							<th>Sản phẩm</th>
