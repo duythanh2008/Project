@@ -47,7 +47,7 @@
                             <a href="?controller=quanlysanpham" class="admin-menu__item-link">Quản lý sản phẩm</a>
                         </li>
                         <li class="admin-menu__item">
-                            <a href="#" class="admin-menu__item-link">Quản lý bình luận</a>
+                            <a href="?controller=quanlydanhgia" class="admin-menu__item-link">Quản lý đánh giá</a>
                         </li>
                     </ul>
                 </div>
@@ -87,7 +87,7 @@
                                     <a href="?controller=quanlysanpham" class="admin-menu__item-link">Quản lý sản phẩm</a>
                                 </li>
                                 <li class="admin-menu__item">
-                                    <a href="#" class="admin-menu__item-link">Quản lý bình luận</a>
+                                    <a href="?controller=quanlydanhgia" class="admin-menu__item-link">Quản lý đánh giá</a>
                                 </li>
                             </ul>
                         </div>

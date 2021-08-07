@@ -103,5 +103,11 @@
         case 'xulinhanvien':
             require_once './Controller/C-xulinhanvien.php';
             break;
+        case 'quanlydanhgia':
+            require_once './Controller/C-quanlydanhgia.php';
+            break;
+        case 'xulidanhgia':
+            require_once './Controller/C-xulidanhgia.php';
+            break;
     }
 ?>

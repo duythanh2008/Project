@@ -24,10 +24,6 @@
                 'user_id'=>$_SESSION['customer'],
                 'status'=>0
             ));
-            // $database->update('product',array(
-            //     'total_rate'=>$product[0]['total_rate'] + $rating,
-            //     'rate_times'=>$product[0]['rate_times'] + 1
-            // ),array('id'=>$id));
             echo "<script type='text/javascript'>alert('Đánh giá thành công');</script>";
             header('refresh:0.1;url=?controller=chitietsanpham&id='.$id);
         }else{
