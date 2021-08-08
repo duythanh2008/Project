@@ -38,6 +38,57 @@
           //B5: trả về giá trị
           return $result;
      }
+     public function get_all_month($table,$condition=array()){
+          //B1: tạo cấu trúc lệnh truy vấn
+          $sql= "SELECT * FROM $table ";
+          //B2:  kiểm tra xem có điều kiện không và cộng chuỗi tương ứng
+          if(!empty($condition)){
+               $sql.="WHERE";
+               foreach ($condition as $key => $value){
+                    $sql.= " MONTH($key) = '$value' AND";
+               }
+               $sql= trim($sql,"AND");
+          }
+          //B3: chạy câu lệnh sql
+          $query = mysqli_query($this->conn, $sql);
+          //B4: khởi tạo 1 biến mảng và lặp hết dữ liệu lấy được từ câu truy vấn ở trên và cho vào mảng đó
+          $result=array();
+          if ($query){
+               while ($row= mysqli_fetch_assoc($query)){
+                    $result[]=$row;
+               }
+          }
+          //B5: trả về giá trị
+          return $result;
+     }
+     public function get_all_month2($table,$condition=array(),$condition2=array()){
+          //B1: tạo cấu trúc lệnh truy vấn
+          $sql= "SELECT * FROM $table ";
+          //B2:  kiểm tra xem có điều kiện không và cộng chuỗi tương ứng
+          if(!empty($condition)){
+               $sql.="WHERE";
+               foreach ($condition as $key => $value){
+                    $sql.= " $key = '$value' AND";
+               }
+          }
+          if(!empty($condition2)){
+               foreach ($condition2 as $keys => $values){
+                    $sql.= " MONTH($keys) = '$values' AND";
+               }
+               $sql= trim($sql,"AND");
+          }
+          //B3: chạy câu lệnh sql
+          $query = mysqli_query($this->conn, $sql);
+          //B4: khởi tạo 1 biến mảng và lặp hết dữ liệu lấy được từ câu truy vấn ở trên và cho vào mảng đó
+          $result=array();
+          if ($query){
+               while ($row= mysqli_fetch_assoc($query)){
+                    $result[]=$row;
+               }
+          }
+          //B5: trả về giá trị
+          return $result;
+     }
      public function get_like($table,$column,$value){
           //B1: Khởi tạo cấu trúc truy vấn sql
           $sql = "SELECT * FROM $table ";

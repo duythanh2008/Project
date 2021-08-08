@@ -98,22 +98,6 @@
                         </ul>
                     </div>
                 </div>
-                <?php 
-                    $profit = 0;
-                    foreach ($user_order_confirmed as $key => $value){
-                        $profit += $value['amount'];
-                    }
-                    $all_product = 0;
-                    foreach ($user_order_detail as $key => $value){
-                        $all_product += $value['qty'];
-                    }
-                    $ex_product = 0;
-                    foreach ($user_order_not_confirmed as $key => $value){
-                        foreach ($database->get('user_order_detail',array('order_id'=>$value['id'])) as $key => $values){
-                            $ex_product += $values['qty'];
-                        }
-                    }
-                ?>
                 <div class="admin-content">
                     <div class="row no-gutters">
                         <div class="col l-12 m-12 c-12">
@@ -124,7 +108,7 @@
                                 <i class="fas fa-money-bill-wave-alt admin-content__profit-img"></i>
                                 <div class="admin-content__profit-content">
                                     <h3 class="admin-content__profit-heading">Doanh thu cửa hàng tháng này</h3>
-                                    <h4 class="admin-content__profit-info"><?php echo number_format($profit) ?>đ</h4>
+                                    <h4 class="admin-content__profit-info"><?php echo number_format($profit_data[0]['profit']) ?>đ</h4>
                                 </div>
                             </div>
                         </div>
@@ -133,7 +117,7 @@
                             <i class="fas fa-box admin-content__all-item-img"></i>
                                 <div class="admin-content__all-item-content">
                                     <h3 class="admin-content__all-item-heading">Tổng đơn hàng tháng này</h3>
-                                    <h4 class="admin-content__all-item-info"><?php echo count($user_order) ?></h4>
+                                    <h4 class="admin-content__all-item-info"><?php echo $profit_data[0]['all_order'] ?></h4>
                                 </div>
                             </div>
                         </div>
@@ -142,7 +126,7 @@
                             <i class="fas fa-coins admin-content__item-sold-img"></i>
                                 <div class="admin-content__item-sold-content">
                                     <h3 class="admin-content__item-sold-heading">Sản phẩm đã bán tháng này</h3>
-                                    <h4 class="admin-content__item-sold-info"><?php echo $all_product - $ex_product ?></h4>
+                                    <h4 class="admin-content__item-sold-info"><?php echo $profit_data[0]['sold_product'] ?></h4>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +135,7 @@
                             <i class="fas fa-hand-paper admin-content__item-not-confirm-img"></i>
                                 <div class="admin-content__item-not-confirm-content">
                                     <h3 class="admin-content__item-not-confirm-heading">Đơn hàng chưa xác nhận</h3>
-                                    <h4 class="admin-content__item-not-confirm-info"><?php echo count($user_order_not_confirmed) ?></h4>
+                                    <h4 class="admin-content__item-not-confirm-info"><?php echo $profit_data[0]['order_not_confirm'] ?></h4>
                                 </div>
                             </div>
                         </div>
