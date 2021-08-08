@@ -1,5 +1,5 @@
 <?php     
-          $admin = $database->get('admin', array('id'=>$_SESSION['admin_nhanvien']));
+          $admin = $database->get('admin', array('id'=>$_SESSION['admin']));
           $order_not_confirm = $database->get('user_order',array('status'=>0));
           $order_confirmed = $database->get('user_order',array('status'=>1));
           $id = $_GET['id'];

@@ -103,7 +103,7 @@
                     <div class="row no-gutters">
                         <div class="col l-12 m-12 c-12">
                             <h3 class="admin-content__heading">Quản lý đơn hàng</h3><br>
-                            <div class="result">
+                            <div class="result-detail">
                                 <?php if (isset($error['product'])){?> 
                                             <p><?php echo $error['product']; ?></p>
                                 <?php } ?>

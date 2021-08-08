@@ -1,8 +1,10 @@
 <?php     
-          $admin = $database->get('admin', array('id'=>$_SESSION['admin_nhanvien']));
+          $id = $_GET['id'];
+          $admin = $database->get('admin', array('id'=>$_SESSION['admin']));
+          $customer = $database->get('user_order',array('id'=>$id));
+          $customer_detail = $database->get('user_order_detail',array('order_id'=>$id));
           $order_not_confirm = $database->get('user_order',array('status'=>0));
           $order_confirmed = $database->get('user_order',array('status'=>1));
-          $id = $_GET['id'];
           $error = array();
           $error['detail'] = "Sản phẩm hết hàng:";
           $count=0;
@@ -40,5 +42,5 @@
                $mail = $database->sendMail($title,$content,$nTo,$mTo,$diachicc='');
                header('location:?controller=quanlydonhang');
           }
-          require_once('./View/V-quanlydonhang.php');
+          require_once('./View/V-quanlydonhangchitiet.php');
 ?>

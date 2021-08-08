@@ -102,6 +102,14 @@
                     <div class="row no-gutters">
                         <div class="col l-12 m-12 c-12">
                             <h3 class="admin-content__heading">Đơn hàng số #<?php echo $id ?></h3><br>
+                            <div class="result-detail">
+                                <?php if (isset($error['product'])){?> 
+                                            <p><?php echo $error['product']; ?></p>
+                                <?php } ?>
+                                <?php if (isset($error['detail'])){?> 
+                                            <p><?php echo $error['detail']; ?></p>
+                                <?php } ?>
+                            </div>
                             <div style="margin: 0 3px;" class="row">
                                 <div class="col l-3 m-12 c-12">
                                     <div class="package__info-user">
