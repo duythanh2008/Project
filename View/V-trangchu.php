@@ -248,9 +248,15 @@
                         type="search" name="keyword" placeholder="Tìm sản phẩm ... "  value="<?php echo (isset($_GET['keyword'])) ? $_GET['keyword'] : '' ?>">
                     </form>
                         <?php if (isset($_GET['keyword']) &&  $_GET['keyword'] != ''){?>
+                            <?php if (count($product) > 0){ ?>
                             <h3 class="home-product__heading-search">
                                 Kết quả tìm kiếm của "<?php echo $_GET['keyword'] ?>"
                             </h3>
+                            <?php } else { ?>
+                            <h3 class="home-product__heading-search">
+                                Không có sản phẩm trùng với từ khóa "<?php echo $_GET['keyword'] ?>"
+                            </h3>
+                            <?php } ?>
                             <div class="row sm-gutter">
                                 <?php foreach ($product as $key => $value){ ?>
                                 <div class="col l-2-4 m-4 c-6">
