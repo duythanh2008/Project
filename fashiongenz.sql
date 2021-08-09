@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 08, 2021 lúc 05:39 AM
+-- Thời gian đã tạo: Th8 09, 2021 lúc 06:08 AM
 -- Phiên bản máy phục vụ: 10.4.19-MariaDB
 -- Phiên bản PHP: 8.0.7
 
@@ -44,7 +44,9 @@ CREATE TABLE `admin` (
 INSERT INTO `admin` (`id`, `username`, `password`, `fullname`, `lv`, `gender`, `date`) VALUES
 (1, 'admin', 'admin', 'Duy Thành', 1, 1, '2002-08-20'),
 (2, 'demo', 'demo', 'Nguyễn Thị B', 2, 2, '2002-02-15'),
-(3, 'nguyenvana', 'nguyenvana', 'Nguyễn Văn A', 2, 1, '2000-08-07');
+(3, 'nguyenvana', 'nguyenvana', 'Nguyễn Văn A', 2, 1, '2000-08-07'),
+(4, 'nguyenthid', 'nguyenthid', 'Nguyễn Thị D', 2, 2, '1999-09-22'),
+(5, 'nvminh123', 'nvminh', 'Nguyễn Văn Minh', 2, 2, '2001-07-16');
 
 -- --------------------------------------------------------
 
@@ -152,10 +154,10 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `price`, `image`, `description`, `qty`, `catalog`, `total_rate`, `rate_times`, `image2`, `image3`, `image4`) VALUES
-(13, 'Áo phông nam APHTK264', 250000, './Assets/Img/APHTK264-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 95, 2, 7.5, 2, './Assets/Img/APHTK264-2.jpg', './Assets/Img/APHTK264-3.jpg', './Assets/Img/APHTK264-4.jpg'),
+(13, 'Áo phông nam APHTK26', 250000, './Assets/Img/APHTK264-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 92, 2, 11.4, 3, './Assets/Img/APHTK264-2.jpg', './Assets/Img/APHTK264-3.jpg', './Assets/Img/APHTK264-4.jpg'),
 (14, 'Áo phông nam APHTK260', 200000, './Assets/Img/APHTK260-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 99, 2, 7.4, 2, './Assets/Img/APHTK260-2.jpg', './Assets/Img/APHTK260-3.jpg', './Assets/Img/APHTK260-4.jpg'),
-(15, 'Áo phông nam APHTK258', 200000, './Assets/Img/APHTK258-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 98, 2, NULL, NULL, './Assets/Img/APHTK258-2.jpg', './Assets/Img/APHTK258-3.jpg', './Assets/Img/APHTK258-4.jpg'),
-(16, 'Áo phông nam APTTK284', 250000, './Assets/Img/APTTK284-QSKTK202-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 98, 2, NULL, NULL, './Assets/Img/APTTK284-QSKTK202-2.jpg', './Assets/Img/APTTK284-QSKTK202-3.jpg', './Assets/Img/APTTK284-QSKTK202-4.jpg'),
+(15, 'Áo phông nam APHTK258', 200000, './Assets/Img/APHTK258-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 97, 2, 5, 1, './Assets/Img/APHTK258-2.jpg', './Assets/Img/APHTK258-3.jpg', './Assets/Img/APHTK258-4.jpg'),
+(16, 'Áo phông nam APTTK284', 250000, './Assets/Img/APTTK284-QSKTK202-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 8, 2, 4.2, 1, './Assets/Img/APTTK284-QSKTK202-2.jpg', './Assets/Img/APTTK284-QSKTK202-3.jpg', './Assets/Img/APTTK284-QSKTK202-4.jpg'),
 (17, 'Áo phông nam APTTK241', 200000, './Assets/Img/APTTK241-QJDTK216-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 100, 2, NULL, NULL, './Assets/Img/APTTK241-QJDTK216-2.jpg', './Assets/Img/APTTK241-QJDTK216-3.jpg', './Assets/Img/APTTK241-QJDTK216-4.jpg'),
 (18, 'Áo phông nam APMTK243', 180000, './Assets/Img/APMTK243-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 100, 2, NULL, NULL, './Assets/Img/APMTK243-2.jpg', './Assets/Img/APMTK243-3.jpg', './Assets/Img/APMTK243-4.jpg'),
 (19, 'Áo khoác nam KNMTK102', 400000, './Assets/Img/KNMTK102-1.jpg', '– Chất liệu: 100% COTTON <br>\n– Đặc tính: <br>\n– Phom: Oversized <br>\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 98, 1, NULL, NULL, './Assets/Img/KNMTK102-2.jpg', './Assets/Img/KNMTK102-3.jpg', './Assets/Img/KNMTK102-4.jpg'),
@@ -163,11 +165,11 @@ INSERT INTO `product` (`id`, `name`, `price`, `image`, `description`, `qty`, `ca
 (21, 'Áo khoác nam AKBCN106', 380000, './Assets/Img/AKBCN106-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 100, 1, NULL, NULL, './Assets/Img/AKBCN106-2.jpg', './Assets/Img/AKBCN106-3.jpg', './Assets/Img/AKBCN106-4.jpg'),
 (22, 'Áo khoác nam AKBCN103', 580000, './Assets/Img/AKBCN103-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 100, 1, NULL, NULL, './Assets/Img/AKBCN103-2.jpg', './Assets/Img/AKBCN103-3.jpg', './Assets/Img/AKBCN103-4.jpg'),
 (24, 'Quần âu nam QACTK203', 310000, './Assets/Img/QACTK203-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 98, 3, NULL, NULL, './Assets/Img/QACTK203-2.jpg', './Assets/Img/QACTK203-3.jpg', './Assets/Img/QACTK203-4.jpg'),
-(25, 'Quần âu nam QAUTK010', 425000, './Assets/Img/QAUTK010-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 100, 3, NULL, NULL, './Assets/Img/QAUTK010-2.jpg', './Assets/Img/QAUTK010-3.jpg', './Assets/Img/QAUTK010-4.jpg'),
-(26, 'Quần jeans nam QJDTK216', 370000, './Assets/Img/QJDTK216-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 99, 3, 4.3, 1, './Assets/Img/QJDTK216-2.jpg', './Assets/Img/QJDTK216-3.jpg', './Assets/Img/QJDTK216-4.jpg'),
-(27, 'Quần jeans nam QJDTK208', 315000, './Assets/Img/QJDTK208-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 100, 3, NULL, NULL, './Assets/Img/QJDTK208-2.jpg', './Assets/Img/QJDTK208-3.jpg', './Assets/Img/QJDTK208-4.jpg'),
+(25, 'Quần âu nam QAUTK010', 425000, './Assets/Img/QAUTK010-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 99, 3, NULL, NULL, './Assets/Img/QAUTK010-2.jpg', './Assets/Img/QAUTK010-3.jpg', './Assets/Img/QAUTK010-4.jpg'),
+(26, 'Quần jeans nam QJDTK216', 370000, './Assets/Img/QJDTK216-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 96, 3, 4.3, 1, './Assets/Img/QJDTK216-2.jpg', './Assets/Img/QJDTK216-3.jpg', './Assets/Img/QJDTK216-4.jpg'),
+(27, 'Quần jeans nam QJDTK208', 315000, './Assets/Img/QJDTK208-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 99, 3, NULL, NULL, './Assets/Img/QJDTK208-2.jpg', './Assets/Img/QJDTK208-3.jpg', './Assets/Img/QJDTK208-4.jpg'),
 (28, 'Quần short nam QSKTK208', 240000, './Assets/Img/QSKTK208-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 99, 4, NULL, NULL, './Assets/Img/QSKTK208-2.jpg', './Assets/Img/QSKTK208-3.jpg', './Assets/Img/QSKTK208-4.jpg'),
-(29, 'Quần short nam QSKTK202', 260000, './Assets/Img/QSKTK202-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 98, 4, NULL, NULL, './Assets/Img/QSKTK202-2.jpg', './Assets/Img/QSKTK202-3.jpg', './Assets/Img/QSKTK202-4.jpg'),
+(29, 'Quần short nam QSKTK202', 260000, './Assets/Img/QSKTK202-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 97, 4, NULL, NULL, './Assets/Img/QSKTK202-2.jpg', './Assets/Img/QSKTK202-3.jpg', './Assets/Img/QSKTK202-4.jpg'),
 (30, 'Quần short nam QSVTK209', 179000, './Assets/Img/QSVTK209-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 100, 4, NULL, NULL, './Assets/Img/QSVTK209-2.jpg', './Assets/Img/QSVTK209-3.jpg', './Assets/Img/QSVTK209-4.jpg'),
 (31, 'Quần short nam QSJCN209', 230000, './Assets/Img/QSJCN209-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 98, 4, NULL, NULL, './Assets/Img/QSJCN209-2.jpg', './Assets/Img/QSJCN209-3.jpg', './Assets/Img/QSJCN209-4.jpg'),
 (32, 'Quần short nam QSJCN202', 230000, './Assets/Img/QSJCN202-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 100, 4, NULL, NULL, './Assets/Img/QSJCN202-2.jpg', './Assets/Img/QSJCN202-3.jpg', './Assets/Img/QSJCN202-4.jpg'),
@@ -210,7 +212,7 @@ CREATE TABLE `profit` (
 --
 
 INSERT INTO `profit` (`id`, `month`, `profit`, `all_order`, `sold_product`, `order_not_confirm`) VALUES
-(1, 8, 10013000, 13, 25, 2);
+(1, 8, 13573000, 17, 37, 1);
 
 -- --------------------------------------------------------
 
@@ -239,7 +241,10 @@ INSERT INTO `rating` (`id`, `product_id`, `rate`, `fullname`, `email`, `content`
 (20, 14, 4, 'Nguyễn Văn A', 'thanhnguyen15022008@gmail.com', 'Sản phẩm tạm ổn, chất vải không mát lắm', '2021-08-07 17:55:22', 1, 1),
 (21, 13, 2.5, 'Nguyễn Văn A', 'nguyenvana@outlook.com', 'Sản phẩm tệ, chất vải nóng, mặc rất khó chịu', '2021-08-07 18:24:26', 8, 1),
 (22, 26, 4.3, 'Nguyễn Văn C', 'thanhnguyen15022008@gmail.com', 'Demo rating', '2021-08-07 22:24:29', 8, 1),
-(23, 14, 3.4, 'Nguyễn Văn C', 'thanhnguyen15022008@gmail.com', 'Demo rating', '2021-08-07 22:24:57', 8, 1);
+(23, 14, 3.4, 'Nguyễn Văn C', 'thanhnguyen15022008@gmail.com', 'Demo rating', '2021-08-07 22:24:57', 8, 1),
+(24, 13, 3.9, 'NGUYEN HUU DUY THANH', 'thanhnguyen15022008@gmail.com', 'Sản phẩm ổn, giá chấp nhận được', '2021-08-08 10:53:17', 1, 1),
+(25, 15, 5, 'Nguyễn Hữu A', 'thanhnguyen15022008@gmail.com', 'Sản phẩm đẹp, giá cả hợp lý', '2021-08-08 11:30:54', 9, 1),
+(26, 16, 4.2, 'Duy Thành', 'duythanh2008@outlook.com', 'Sản phẩm tốt, rất chất lượng, nhưng vận chuyển hơi lâu', '2021-08-08 17:26:01', 10, 1);
 
 -- --------------------------------------------------------
 
@@ -263,9 +268,11 @@ CREATE TABLE `user_info` (
 --
 
 INSERT INTO `user_info` (`id`, `username`, `password`, `fullname`, `email`, `phone`, `address`, `code`) VALUES
-(1, 'duythanh2008', 'duythanh2008', 'Nguyễn Hữu Duy Thành', 'thanhnguyen15022008@gmail.com', '0334758508', 'Thanh Hóa', 380452),
+(1, 'duythanh2008', '20082002', 'NGUYEN HUU DUY THANH', 'thanhnguyen15022008@gmail.com', '0334758508', 'Nhân Chính, Thanh Xuân, Hà Nội', 696517),
 (6, 'dtnc1112', 'dtnc1112', 'Admin', 'duythanh20082002@outlook.com', '0123456789', 'Sầm Sơn, Thanh Hóa', NULL),
-(8, 'nguyenvana', 'nguyenvana', 'Nguyễn Văn C', 'thanhnguyen15022008@gmail.com', '0987654321', 'Sầm Sơn', NULL);
+(8, 'nguyenvana', '20082002', 'Nguyễn Văn C', 'nguyenvana@outlook.com', '0987654321', 'Sầm Sơn', 684602),
+(9, 'demosanpham', 'demosanpham', 'Nguyễn Hữu A', 'thanhnguyen@gmail.com', '0987654321', 'Nhân Chính, Thanh Xuân, Hà Nội', 891691),
+(10, 'duythanh', '20082002', 'Duy Thành', 'duythanh2008@outlook.com', '0987654321', 'Sầm Sơn, Thanh Hóa', NULL);
 
 -- --------------------------------------------------------
 
@@ -292,9 +299,13 @@ CREATE TABLE `user_order` (
 
 INSERT INTO `user_order` (`id`, `fullname`, `address`, `email`, `phone`, `amount`, `status`, `time_order`, `time_delivered`, `user_id`) VALUES
 (171136, 'Nguyễn Văn A', 'Thanh Xuân, Hà Nội', 'nguyenvana@outlook.com', '0987654321', 250000, 1, '2021-08-07 18:24:42', '2021-08-07 21:32:25', 8),
+(184595, 'Duy Thành', 'Sầm Sơn, Thanh Hóa', 'duythanh2008@outlook.com', '0987654321', 500000, 1, '2021-08-08 17:25:07', '2021-08-08 17:27:13', 10),
 (227934, 'Nguyễn Văn B', 'Sầm Sơn', 'thanhnguyen15022008@gmail.com', '0987654321', 1803000, 1, '2021-08-07 21:41:28', '2021-08-07 21:46:32', 8),
-(416984, 'Nguyễn Hữu Duy Thành', 'Thanh Hóa', 'thanhnguyen15022008@gmail.com', '0334758508', 740000, 0, '2021-08-08 10:29:46', NULL, 1),
+(288640, 'Nguyễn Hữu A', 'Nhân Chính, Thanh Xuân, Hà Nội', 'thanhnguyen15022008@gmail.com', '0987654321', 1310000, 1, '2021-08-08 11:30:13', '2021-08-08 11:32:58', 9),
+(416984, 'Nguyễn Hữu Duy Thành', 'Thanh Hóa', 'thanhnguyen15022008@gmail.com', '0334758508', 740000, 1, '2021-08-08 10:29:46', '2021-08-08 11:08:53', 1),
+(543385, 'NGUYEN HUU DUY THANH', 'Nhân Chính, Thanh Xuân, Hà Nội', 'thanhnguyen15022008@gmail.com', '0334758508', 760000, 1, '2021-08-08 10:52:13', '2021-08-08 10:55:31', 1),
 (552905, 'Nguyễn Hữu Duy Thành', 'Thanh Hóa', 'thanhnguyen15022008@gmail.com', '0334758508', 200000, 1, '2021-08-07 23:30:21', '2021-08-08 10:23:45', 1),
+(581745, 'Admin', 'Sầm Sơn, Thanh Hóa', 'duythanh20082002@outlook.com', '0123456789', 250000, 1, '2021-08-08 11:14:40', '2021-08-08 11:14:53', 6),
 (635018, 'Nguyễn Hữu Duy Thành', 'Thanh Hóa', 'thanhnguyen15022008@gmail.com', '0334758508', 950000, 1, '2021-08-07 22:14:06', '2021-08-08 10:28:19', 1),
 (674615, 'Nguyễn Hữu Duy Thành', 'Thanh Hóa', 'thanhnguyen15022008@gmail.com', '0334758508', 250000, 1, '2021-08-06 11:56:35', '2021-08-07 21:47:02', 1),
 (716042, 'Nguyễn Văn C', 'Sầm Sơn', 'thanhnguyen15022008@gmail.com', '0987654321', 370000, 1, '2021-08-07 21:52:56', '2021-08-08 10:27:59', 8),
@@ -349,7 +360,13 @@ INSERT INTO `user_order_detail` (`id`, `order_id`, `product_id`, `qty`, `price`,
 (21, 984768, 16, 11, 250000, 2750000, '36'),
 (22, 552905, 15, 1, 200000, 200000, '36'),
 (23, 416984, 25, 1, 425000, 425000, '36'),
-(24, 416984, 27, 1, 315000, 315000, '36');
+(24, 416984, 27, 1, 315000, 315000, '36'),
+(25, 543385, 13, 2, 250000, 500000, '39'),
+(26, 543385, 29, 1, 260000, 260000, '38'),
+(27, 581745, 13, 1, 250000, 250000, '36'),
+(28, 288640, 15, 1, 200000, 200000, '36'),
+(29, 288640, 26, 3, 370000, 1110000, '39'),
+(30, 184595, 16, 2, 250000, 500000, '43');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -359,7 +376,9 @@ INSERT INTO `user_order_detail` (`id`, `order_id`, `product_id`, `qty`, `price`,
 -- Chỉ mục cho bảng `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `lv` (`lv`),
+  ADD KEY `gender` (`gender`);
 
 --
 -- Chỉ mục cho bảng `catalog`
@@ -434,7 +453,7 @@ ALTER TABLE `user_order_detail`
 -- AUTO_INCREMENT cho bảng `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `catalog`
@@ -476,23 +495,30 @@ ALTER TABLE `profit`
 -- AUTO_INCREMENT cho bảng `rating`
 --
 ALTER TABLE `rating`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT cho bảng `user_info`
 --
 ALTER TABLE `user_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `user_order_detail`
 --
 ALTER TABLE `user_order_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
+
+--
+-- Các ràng buộc cho bảng `admin`
+--
+ALTER TABLE `admin`
+  ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`lv`) REFERENCES `position` (`id`),
+  ADD CONSTRAINT `admin_ibfk_2` FOREIGN KEY (`gender`) REFERENCES `gender` (`id`);
 
 --
 -- Các ràng buộc cho bảng `product`

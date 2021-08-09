@@ -344,7 +344,7 @@
     right: 0;
     left: 0;
     background-color: rgba(0,0,0,0.3);
-    z-index: 1;
+    z-index: 13;
     display: none;
 }
 
@@ -360,7 +360,7 @@
     opacity: 0;
     transition: all linear 0.2s;
     will-change: transform opacity;
-    z-index: 2;
+    z-index: 13;
     list-style: none;
 }
 
@@ -2291,7 +2291,7 @@
     position: fixed;
     bottom: 20px;
     right: 30px;
-    z-index: 99;
+    z-index: 12;
     border: none;
     outline: none;
     background-color: var(--primary-color);
