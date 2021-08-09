@@ -9,7 +9,7 @@
     top: 0;
     right: 0;
     left: 0;
-    z-index: 1;
+    z-index: 12;
 }
 
 .header__navbar{
@@ -420,6 +420,7 @@
     padding: 6px 0;
 }
 .content{
+    min-height: 530px;
     margin-bottom: 100px;
     margin-top: 70px;
 }
@@ -1923,14 +1924,14 @@
 
 .page-btn{
 	text-align: right;
-	margin-top: 15px;
+	margin-top: 20px;
 }
 .page-item{
 	border: 1px solid #ccc;
-	padding: 5px 9px;
+	padding: 5px 10px;
 	color: #000;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 .current-page{
 	background: var(--primary-color);
