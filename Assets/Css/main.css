@@ -1651,6 +1651,7 @@
     height: 70px;
     background-color: #f1f1f1;
     justify-content: space-between;
+    z-index: 1;
 }
 
 .admin-header__sections{
@@ -2207,6 +2208,11 @@
 .product-detail__rating-user-rating-content{
     font-size: 1.5rem;
     font-weight: 400;
+}
+
+.product-detail__rating-user-rating-time{
+    font-size: 1.3rem;
+    font-weight: normal;
 }
 /* Footer */
 .footer{

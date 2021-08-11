@@ -14,6 +14,72 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Assets/Fonts/fontawesome-free-5.15.3-web/css/all.min.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(drawChart2);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Tháng', 'Doanh thu'],
+          ['7', 0],
+          ['8', <?php echo ($profit_data[0]['profit']) ?>],
+          ['9', 0],
+          ['10', 0],
+          ['11', 0],
+          ['12', 0]
+        ]);
+
+        var options = {
+            chart: {
+                title: 'Doanh thu của cửa hàng',
+                subtitle: 'Quý 3 và quý 4'
+            },
+            colors: ['#12ca12'],
+            hAxis: {
+                title: 'Tháng'
+            },
+            vAxis: {
+                title: 'Số tiền'
+            },
+          bars: 'vertical' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+      function drawChart2() {
+        var data = google.visualization.arrayToDataTable([
+          ['Tháng', 'Số đơn hàng', 'Sản phẩm bán ra'],
+          ['7', 0, 0],
+          ['8', <?php echo $profit_data[0]['all_order'] ?>, <?php echo $profit_data[0]['sold_product'] ?>],
+          ['9', 0, 0],
+          ['10', 0, 0],
+          ['11', 0, 0],
+          ['12', 0, 0]
+        ]);
+
+        var options = {
+            chart: {
+                title: 'Số đơn hàng và sản phẩm bán ra của cửa hàng',
+                subtitle: 'Quý 3 và quý 4'
+            },
+            colors: ['#2929ff','#ffe600'],
+            hAxis: {
+                title: 'Tháng'
+            },
+            vAxis: {
+                title: 'Số lượng'
+            },
+            bars: 'vertical' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material1'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
     <title>Fashion GenZ</title>
     <style>
         <?php if ($admin[0]['lv'] == 2){ ?>
@@ -138,6 +204,10 @@
                                     <h4 class="admin-content__item-not-confirm-info"><?php echo $profit_data[0]['order_not_confirm'] ?></h4>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col l-12 m-12 c-12">
+                            <div id="barchart_material" style="width: 100%; height: 500px;padding: 20px"></div>
+                            <div id="barchart_material1" style="width: 100%; height: 500px;padding: 20px"></div>
                         </div>
                     </div>
                 </div>

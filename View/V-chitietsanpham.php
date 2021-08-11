@@ -308,6 +308,7 @@
                                             <div class="product-detail__rating-user-rating">
                                                 <div class="rateResult" data-rateyo-rating="<?php echo $value['rate'] ?>"></div>
                                                 <h3 class="product-detail__rating-user-rating-content"><?php echo $value['content'] ?></h3>
+                                                <h3 class="product-detail__rating-user-rating-time"><?php echo $value['time_rate'] ?></h3>
                                             </div>
                                         </li>
                                         <?php }?>
