@@ -48,7 +48,7 @@
                               break;
                     }
                }
-                    $item_per_page = !empty($_GET['per_page'])?$_GET['per_page']:30;
+                    $item_per_page = !empty($_GET['per_page'])?$_GET['per_page']:40;
                     $current_page = !empty($_GET['page'])?$_GET['page']:1; //Trang hiện tại
                     $offset = ($current_page - 1) * $item_per_page;
                     $product = $database->get_full_results('product',array('catalog'=>$catalog_id),$begin,$end,$item_per_page,$offset);
@@ -83,11 +83,11 @@
                          default:
                               break;
                     }
-                    $item_per_page = !empty($_GET['per_page'])?$_GET['per_page']:30;
+                    $item_per_page = !empty($_GET['per_page'])?$_GET['per_page']:40;
                     $current_page = !empty($_GET['page'])?$_GET['page']:1; //Trang hiện tại
                     $offset = ($current_page - 1) * $item_per_page;
-                    $product = $database->get_find('product',array(),$begin,$end);
-                    $totalRecords = $database->get_find('product',array(),$begin,$end);
+                    $product = $database->get_find2('product',array(),$begin,$end);
+                    $totalRecords = $database->get_find2('product',array(),$begin,$end);
                     $totalRecords = $totalRecords->num_rows;
                     $totalPages = ceil($totalRecords / $item_per_page);
                     require_once('./View/V-sanpham.php');

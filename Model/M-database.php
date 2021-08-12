@@ -252,7 +252,7 @@
           //B5: trả về giá trị
           return $result;
      }
-     public function get_find2($table,$condition=array(),$price1,$price2){
+     public function get_find2($table,$condition=array(),$price1=array(),$price2=array()){
           //B1: tạo cấu trúc lệnh truy vấn
           $sql= "SELECT * FROM $table";
           //B2:  kiểm tra xem có điều kiện không và cộng chuỗi tương ứng
@@ -267,7 +267,10 @@
           }
           $between ='';
           if ($price1 != null && $price2 != null){
-               $between.=" AND price BETWEEN ".$price1." AND ".$price2;
+               if(!empty($condition)){
+                    $between.=" AND";
+               }
+               $between.=" price BETWEEN ".$price1." AND ".$price2;
                $sql .= $between;
           }
           //B3: chạy câu lệnh sql
@@ -333,6 +336,36 @@
           //B5: trả về giá trị
           return $query;
      }
+     public function get_full_results2($table,$condition=array(),$price1=array(),$price2=array(),$item_per_page,$offset){
+          //B1: tạo cấu trúc lệnh truy vấn
+          $sql= "SELECT * FROM $table WHERE";
+          //B2:  kiểm tra xem có điều kiện không và cộng chuỗi tương ứng
+          if(!empty($condition)){
+               foreach ($condition as $key => $value){
+                    $sql .= " $key In(";
+                    foreach ($value as $key => $values){
+                         $sql.= "$values".',';
+                    }
+                    $sql = rtrim($sql,',');
+                    $sql.=")";
+               }
+               $sql.=" AND";
+          }
+          $between ='';
+          if($price1 != null && $price2 != null){
+              $between.= "price BETWEEN ".$price1." AND ".$price2;
+              $sql.= $between;
+          }
+          if (isset($item_per_page)){
+              $sql .=  " ORDER BY `id` ASC  LIMIT " . $item_per_page ;
+         }
+         if (isset($offset)){
+              $sql .= " OFFSET " . $offset;
+         }
+         $query = mysqli_query($this->conn,$sql);
+         //B5: trả về giá trị
+         return $query;
+    }
      public function sendMail($title,$content,$nTo,$mTo,$diachicc){
           $nFrom = 'Fashion GenZ';
           $mFrom = 'thanhnguyen15022008@gmail.com';
