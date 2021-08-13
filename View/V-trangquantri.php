@@ -29,16 +29,32 @@
         ]);
 
         var options = {
+            legend: {
+                alignment: 'center',
+                textStyle: {
+                    fontSize: 16,
+                },
+            },
             chart: {
                 title: 'Doanh thu của cửa hàng',
                 subtitle: 'Năm 2021'
             },
+            titleTextStyle: {
+                color: '#000',
+                fontSize: 18,
+            },
             colors: ['#12ca12'],
             hAxis: {
-                title: 'Tháng'
+                title: 'Tháng',
+                titleTextStyle: {
+                    fontSize: 15,
+                }
             },
             vAxis: {
-                title: 'Số tiền'
+                title: 'Số tiền',
+                titleTextStyle: {
+                    fontSize: 15,
+                }
             },
           bars: 'vertical' // Required for Material Bar Charts.
         };
@@ -55,16 +71,32 @@
         ]);
 
         var options = {
+            legend: {
+                alignment: 'center',
+                textStyle: {
+                    fontSize: 16,
+                }
+            },
             chart: {
                 title: 'Số đơn hàng và sản phẩm bán ra của cửa hàng',
-                subtitle: 'Năm 2021'
+                subtitle: 'Năm 2021',
+            },
+            titleTextStyle: {
+                color: '#000',
+                fontSize: 18,
             },
             colors: ['#2929ff','#ffe600'],
             hAxis: {
-                title: 'Tháng'
+                title: 'Tháng',
+                titleTextStyle: {
+                    fontSize: 15,
+                }
             },
             vAxis: {
-                title: 'Số lượng'
+                title: 'Số lượng',
+                titleTextStyle: {
+                    fontSize: 15,
+                }
             },
             bars: 'vertical' // Required for Material Bar Charts.
         };
@@ -200,6 +232,10 @@
                             </div>
                         </div>
                         <div class="col l-12 m-12 c-12">
+                            <h3 style="
+                                        font-size: 2rem;
+                                        padding: 20px 0 0 20px;
+                                        ">Doanh thu cửa hàng so với tháng trước: <?php echo number_format($profit_current_month[0]['profit'] / $profit_previous_month[0]['profit']*100,1)."%"?></h3>
                             <div id="barchart_material" style="width: 100%; height: 500px;padding: 20px"></div>
                             <div id="barchart_material1" style="width: 100%; height: 500px;padding: 20px"></div>
                         </div>
