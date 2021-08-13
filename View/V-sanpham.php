@@ -258,7 +258,7 @@
                             </div>
                             <div class="col l-10 m-12 c-12">
                                 <div class="row sm-gutter">
-                                    <div class="col l-0 m-12 c-12">
+                                    <div style="background-color: #f5f5f5" class="col l-0 m-12 c-12">
                                         <h3 class="catalog__heading">Bộ lọc</h3>
                                         <form action="?controller=sanpham" method="post">
                                         <p style="font-size: 17px; font-weight: 600; color: var(--text-color); margin-left: 20px;">Danh mục</p>

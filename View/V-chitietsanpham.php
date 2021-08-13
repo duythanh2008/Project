@@ -41,27 +41,27 @@
                                 </a>
                                 <ul class="header__navbar-category-product">
                                     <li class="header__navbar-category-item">
-                                        <a href="" class="header__navbar-category-link">
+                                        <a href="?controller=sanpham&id=1" class="header__navbar-category-link">
                                             Áo khoác
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
-                                        <a href="" class="header__navbar-category-link">
+                                        <a href="?controller=sanpham&id=2" class="header__navbar-category-link">
                                             Áo phông
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
-                                        <a href="" class="header__navbar-category-link">
+                                        <a href="?controller=sanpham&id=3" class="header__navbar-category-link">
                                             Quần dài
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
-                                        <a href="" class="header__navbar-category-link">
+                                        <a href="?controller=sanpham&id=4" class="header__navbar-category-link">
                                             Quần short
                                         </a>
                                     </li>
                                     <li class="header__navbar-category-item">
-                                        <a href="" class="header__navbar-category-link">
+                                        <a href="?controller=sanpham&id=5" class="header__navbar-category-link">
                                             Giày, dép
                                         </a>
                                     </li>
