@@ -7,6 +7,7 @@
     }
     date_default_timezone_set('Asia/Ho_Chi_Minh');
     $month = date('m', time());
+    $profit_all = $database->get('profit', array());
     $user_order = $database->get_all_month('user_order',array('time_order'=>$month));
     $user_order_not_confirmed = $database->get_all_month2('user_order',array('status'=>0),array('time_order'=>$month));
     $user_order_confirmed = $database->get_all_month2('user_order',array('status'=>1),array('time_order'=>$month));

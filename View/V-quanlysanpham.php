@@ -126,6 +126,7 @@
                                             <th class="admin__product-table-th">Hình ảnh</th>
                                             <th class="admin__product-table-th">Tên sản phẩm</th>
                                             <th class="admin__product-table-th">Giá</th>
+                                            <th class="admin__product-table-th">Số lượng</th>
                                             <th class="admin__product-table-th">Đánh giá trung bình</th>
                                             <th class="admin__product-table-th">Tùy chọn</th>
                                         </tr>
@@ -137,6 +138,7 @@
                                             <td class="admin__product-table-td"><img src="<?php echo $value['image']?>" style="width:70px; height: 70px"></td>
                                             <td class="admin__product-table-td"><?php echo $value['name'] ?></td>
                                             <td class="admin__product-table-td"><?php echo $value['price'] ?></td>
+                                            <td class="admin__product-table-td"><?php echo $value['qty'] ?></td>
                                             <td class="admin__product-table-td">
                                                 <?php  if ($value['total_rate'] && $value['rate_times'] != NULL){ ?>
                                                     <div class="rateResult" data-rateyo-rating="<?php echo number_format($value['total_rate'] / $value['rate_times'],1); ?>"></div>
@@ -178,5 +180,7 @@
             });
             });
     </script>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+    <script type="text/javascript" src="./Assets/JS/topbtn.js"></script>
 </body>
 </html>

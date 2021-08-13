@@ -268,6 +268,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="result-detail">
+                                <?php if (isset($error['message'])){?> 
+                                            <p><?php echo $error['message']; ?></p>
+                                <?php } ?>
+                                <?php if (isset($error['detail'])){?> 
+                                            <p><?php echo $error['detail']; ?></p>
+                                <?php } ?>
+                            </div>
                         <div class="row">
                             <div class="col l-10 l-o-1 m-12 c-12">
                                 <form action="?controller=xulithanhtoan" method="post">

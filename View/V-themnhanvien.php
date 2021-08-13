@@ -159,5 +159,7 @@
             </div>
         </div>
     </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+    <script type="text/javascript" src="./Assets/JS/topbtn.js"></script>
 </body>
 </html>

@@ -253,25 +253,29 @@
                                 </div>
                                 <p class="product-detail__info-price"><?php echo number_format($product[0]['price']) ?>đ</p>
                                 
-                                <div class="product-detail__info-add-to-cart">
-                                    <form action="?controller=themgiohang&id=<?php echo $product[0]['id'] ?>" method="post">
-                                        <label for="qty" class="product-detail__info-qty-label">Số lượng: </label>
-                                        <input type="number" id="qty" name="qty" class="product-detail__info-qty" value="1"><br>
-                                        <label for="size" class="product-detail__info-qty-label">Size</label>
-                                        <select name="size" class="product-detail__info-size" id="size">
-                                            <option value="36">36</option>
-                                            <option value="37">37</option>
-                                            <option value="38">38</option>
-                                            <option value="39">39</option>
-                                            <option value="40">40</option>
-                                            <option value="41">41</option>
-                                            <option value="42">42</option>
-                                            <option value="43">43</option>
-                                        </select>   
-                                        <br>
-                                        <input type="submit" name="add" value="Thêm vào giỏ hàng" class="product-detail__info-btn">
-                                    </form>
-                                </div>
+                                <?php if ($product[0]['qty'] > 0 ){ ?>
+                                    <div class="product-detail__info-add-to-cart">
+                                        <form action="?controller=themgiohang&id=<?php echo $product[0]['id'] ?>" method="post">
+                                            <label for="qty" class="product-detail__info-qty-label">Số lượng: </label>
+                                            <input type="number" id="qty" name="qty" class="product-detail__info-qty" value="1"><br>
+                                            <label for="size" class="product-detail__info-qty-label">Size</label>
+                                            <select name="size" class="product-detail__info-size" id="size">
+                                                <option value="36">36</option>
+                                                <option value="37">37</option>
+                                                <option value="38">38</option>
+                                                <option value="39">39</option>
+                                                <option value="40">40</option>
+                                                <option value="41">41</option>
+                                                <option value="42">42</option>
+                                                <option value="43">43</option>
+                                            </select>   
+                                            <br>
+                                            <input type="submit" name="add" value="Thêm vào giỏ hàng" class="product-detail__info-btn">
+                                        </form>
+                                    </div>
+                                <?php }else{ ?>
+                                    <br>
+                                <?php } ?>
                                 <h3 class="product-detail__desc-heading">
                                     Mô tả sản phẩm
                                 </h3>

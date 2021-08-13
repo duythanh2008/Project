@@ -23,18 +23,15 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Tháng', 'Doanh thu'],
-          ['7', 0],
-          ['8', <?php echo ($profit_data[0]['profit']) ?>],
-          ['9', 0],
-          ['10', 0],
-          ['11', 0],
-          ['12', 0]
+           <?php foreach ($profit_all as $key => $value){ ?>
+              ['<?php echo $value['month'] ?>',<?php echo $value['profit'] ?>],
+           <?php } ?>
         ]);
 
         var options = {
             chart: {
                 title: 'Doanh thu của cửa hàng',
-                subtitle: 'Quý 3 và quý 4'
+                subtitle: 'Năm 2021'
             },
             colors: ['#12ca12'],
             hAxis: {
@@ -52,18 +49,15 @@
       function drawChart2() {
         var data = google.visualization.arrayToDataTable([
           ['Tháng', 'Số đơn hàng', 'Sản phẩm bán ra'],
-          ['7', 0, 0],
-          ['8', <?php echo $profit_data[0]['all_order'] ?>, <?php echo $profit_data[0]['sold_product'] ?>],
-          ['9', 0, 0],
-          ['10', 0, 0],
-          ['11', 0, 0],
-          ['12', 0, 0]
+          <?php foreach ($profit_all as $key => $value){ ?>
+              ['<?php echo $value['month'] ?>',<?php echo $value['all_order'] ?>,<?php echo $value['sold_product'] ?>],
+           <?php } ?>
         ]);
 
         var options = {
             chart: {
                 title: 'Số đơn hàng và sản phẩm bán ra của cửa hàng',
-                subtitle: 'Quý 3 và quý 4'
+                subtitle: 'Năm 2021'
             },
             colors: ['#2929ff','#ffe600'],
             hAxis: {
@@ -214,5 +208,7 @@
             </div>
         </div>
     </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+    <script type="text/javascript" src="./Assets/JS/topbtn.js"></script>
 </body>
 </html>
