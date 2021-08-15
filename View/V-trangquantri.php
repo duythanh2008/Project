@@ -191,6 +191,7 @@
                     </div>
                 </div>
                 <div class="admin-content">
+                <?php if ($admin[0]['lv'] == 1){ ?>
                     <div class="row no-gutters">
                         <div class="col l-12 m-12 c-12">
                             <h3 class="admin-content__heading">Thống kê</h3><br>
@@ -240,6 +241,9 @@
                             <div id="barchart_material1" style="width: 100%; height: 500px;padding: 20px"></div>
                         </div>
                     </div>
+                    <?php }else{ ?>
+                        <h3 class="admin-notice">Tài khoản quản trị viên mới có thể xem thông tin này !</h3>
+                        <?php } ?>
                 </div>
             </div>
         </div>

@@ -378,6 +378,10 @@
     font-size: 1.6rem;
 }
 
+.header__navbar-category-product-mobile{
+    list-style: none;
+}
+
 .header__navbar-mobile-link-account{
     text-decoration: none;
     color: var(--white-color);
@@ -418,7 +422,7 @@
     text-decoration: none;
     color: var(--white-color);
     font-size: 1.5rem;
-    padding: 6px 0;
+    padding: 10px 0;
 }
 .content{
     min-height: 530px;
@@ -2351,7 +2355,12 @@
       border: 1px solid var(--primary-color);
       background-color: var(--white-color);
   }
-
+.admin-notice{
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 100px;
+    padding: 0 16px;
+}
 
 
 
