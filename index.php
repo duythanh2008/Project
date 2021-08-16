@@ -127,5 +127,11 @@
         case 'xoadonhang':
             require_once './Controller/C-xoadonhang.php';
             break;
+        case 'quanlynguoidung':
+            require_once './Controller/C-quanlynguoidung.php';
+            break;
+        case 'xulinguoidung':
+            require_once './Controller/C-xulinguoidung.php';
+            break;
     }
 ?>

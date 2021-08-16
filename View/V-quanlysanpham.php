@@ -44,6 +44,9 @@
                         <li id="menu1" class="admin-menu__item">
                             <a href="?controller=quanlynhanvien" class="admin-menu__item-link">Quản lý nhân viên</a>
                         </li>
+                        <li id="menu1" class="admin-menu__item">
+                            <a href="?controller=quanlynguoidung" class="admin-menu__item-link">Quản lý người dùng</a>
+                        </li>
                         <li class="admin-menu__item">
                             <a href="?controller=quanlysanpham" class="admin-menu__item-link active">Quản lý sản phẩm</a>
                         </li>
@@ -87,6 +90,9 @@
                                 <li id="menu1" class="admin-menu__item">
                                     <a href="?controller=quanlynhanvien" class="admin-menu__item-link">Quản lý nhân viên</a>
                                 </li>
+                                <li id="menu1" class="admin-menu__item">
+                                    <a href="?controller=quanlynguoidung" class="admin-menu__item-link">Quản lý người dùng</a>
+                                </li>
                                 <li class="admin-menu__item">
                                     <a href="?controller=quanlysanpham" class="admin-menu__item-link active">Quản lý sản phẩm</a>
                                 </li>
@@ -128,7 +134,9 @@
                                             <th class="admin__product-table-th">Giá</th>
                                             <th class="admin__product-table-th">Số lượng</th>
                                             <th class="admin__product-table-th">Đánh giá trung bình</th>
+                                            <?php if ($admin[0]['lv'] == 1){ ?>
                                             <th class="admin__product-table-th">Tùy chọn</th>
+                                            <?php } ?> 
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -145,11 +153,13 @@
                                                 <?php }else{ ?>
                                                 <?php  echo "Chưa có đánh giá";} ?>
                                             </td>
+                                            <?php if ($admin[0]['lv'] == 1){ ?>
                                             <td class="admin__product-table-td">
                                                 <input onclick="window.location ='?controller=xulisanpham&method=edit&id=<?php echo $value['id']; ?>'" type="button" class="btn-option" value="Sửa">
                                                 <input type="hidden" name="product-id" value="<?php echo $value['id'] ?>">
                                                 <input onclick="window.location ='?controller=xulisanpham&method=del&id=<?php echo $value['id']; ?>'" type="button" class="btn-option" value="Xóa">
                                             </td>
+                                            <?php } ?>
                                         </tr>
                                         <?php } ?>
                                     </tbody>
