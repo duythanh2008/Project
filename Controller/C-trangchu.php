@@ -6,6 +6,7 @@
         $keyword = $_GET['keyword'];
         $product = $database->get_like('product','name',$keyword);
     }
+        $product_new = $database->get_limit_desc('product',array(),'id',15);
         $product1 = $database->get_limit('product',array('catalog'=>2),5);
         $product2 = $database->get_limit('product',array('catalog'=>3),5);
         $product3 = $database->get_limit('product',array('catalog'=>4),5);

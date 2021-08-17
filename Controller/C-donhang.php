@@ -1,7 +1,7 @@
 <?php
     if(isset($_SESSION['customer'])){
         $user = $database->get('user_info', array('id'=>$_SESSION['customer']));
-        $package_user = $database->get('user_order', array('user_id'=>$user[0]['id']));
+        $package_user = $database->get_limit_desc('user_order', array('user_id'=>$user[0]['id']),'time_order',100);
     }
     if (isset($_POST['checksubmit'])){
         $code = $_POST['code'];

@@ -121,28 +121,40 @@
                                     </div>
                                     <div class="admin__add-product-item">
                                         <label for="image" class="admin__add-product-label">Hình ảnh sản phẩm 1</label>
-                                        <input type="file" name="image" value="<?php echo $data_product[0]['image'] ?>" id="image" class="admin__add-product-image">
+                                        <div class="admin__add-product-image-info">
+                                            <img src="<?php echo $data_product[0]['image'] ?>" class="admin__add-product-image-show" alt="">
+                                            <input type="file" name="image" id="image" class="admin__add-product-image">
+                                        </div>
                                         <?php if (isset($error['image'])){?> 
                                             <p class="error"><?php echo $error['image']; ?></p>
                                         <?php } ?>
                                     </div>
                                     <div class="admin__add-product-item">
                                         <label for="image2" class="admin__add-product-label">Hình ảnh sản phẩm 2</label>
-                                        <input type="file" name="image2" value="<?php echo $data_product[0]['image2'] ?>" id="image2" class="admin__add-product-image">
+                                        <div class="admin__add-product-image-info">
+                                            <img src="<?php echo $data_product[0]['image2'] ?>" class="admin__add-product-image-show" alt="">
+                                            <input type="file" name="image2" id="image2" class="admin__add-product-image">
+                                        </div>
                                         <?php if (isset($error['image2'])){?> 
                                             <p class="error"><?php echo $error['image2']; ?></p>
                                         <?php } ?>
                                     </div>
                                     <div class="admin__add-product-item">
                                         <label for="image3" class="admin__add-product-label">Hình ảnh sản phẩm 3</label>
-                                        <input type="file" name="image3" value="<?php echo $data_product[0]['image3'] ?>" id="image3" class="admin__add-product-image">
+                                        <div class="admin__add-product-image-info">
+                                            <img src="<?php echo $data_product[0]['image3'] ?>" class="admin__add-product-image-show" alt="">
+                                            <input type="file" name="image3" id="image3" class="admin__add-product-image">
+                                        </div>
                                         <?php if (isset($error['image3'])){?> 
                                             <p class="error"><?php echo $error['image3']; ?></p>
                                         <?php } ?>
                                     </div>
                                     <div class="admin__add-product-item">
                                         <label for="image4" class="admin__add-product-label">Hình ảnh sản phẩm 4</label>
-                                        <input type="file" name="image4" value="<?php echo $data_product[0]['image4'] ?>" id="image4" class="admin__add-product-image">
+                                        <div class="admin__add-product-image-info">
+                                            <img src="<?php echo $data_product[0]['image4'] ?>" class="admin__add-product-image-show" alt="">
+                                            <input type="file" name="image4" id="image4" class="admin__add-product-image">
+                                        </div>
                                         <?php if (isset($error['image4'])){?> 
                                             <p class="error"><?php echo $error['image4']; ?></p>
                                         <?php } ?>
@@ -171,6 +183,13 @@
                                     <?php if (isset($error['catalog'])){?> 
                                         <p class="error"><?php echo $error['catalog']; ?></p>
                                     <?php } ?>
+                                    </div>
+                                    <div class="admin__add-product-item">
+                                        <label for="qty" class="admin__add-product-label">Số lượng sản phẩm</label>
+                                        <input type="text" name="qty" value="<?php echo $data_product[0]['qty'] ?>" id="qty" placeholder="Số lượng sản phẩm" class="admin__add-product-input">
+                                        <?php if (isset($error['qty'])){?> 
+                                            <p class="error"><?php echo $error['qty']; ?></p>
+                                        <?php } ?>
                                     </div>
                                     <input type="submit" value="Sửa sản phẩm" name="edit-product" class="admin__add-product-btn">
                                 </div>

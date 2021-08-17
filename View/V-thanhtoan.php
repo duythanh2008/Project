@@ -303,6 +303,9 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <h3 class="cart-product__pay-heading">Phương thức thanh toán</h3>
+                                        <input type="radio" id="checked" checked>
+                                        <label class="pay-method" for="checked">&nbsp;&nbsp;&nbsp;Thanh toán khi nhận hàng</label>
                                     </div>
                                     <div class="cart-product__pay-total-price">
                                         <h3 class="cart-product__pay-total-price-heading">Tổng thanh toán</h3>

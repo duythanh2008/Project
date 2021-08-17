@@ -278,7 +278,7 @@
                                 </div>
                                 <?php } ?>
                             </div>
-                        <?php }else{?>
+                        <?php }?>
                         <h3 class="home-product__heading">
                             Sản phẩm nổi bật
                         </h3>
@@ -341,28 +341,56 @@
                             </div>
                             <?php } ?>
                         </div>
+                    </div>
+                </div>
+                <div class="grid wide">
+                    <div class="banner__img">
+                        <img style="padding-top: 10px" src="./Assets/Img/banner3.png" alt="" class="banner__img-link">
+                    </div>
+                    <h3 class="home-product__new">
+                        Sản phẩm mới
+                    </h3>
+                    <div class="row sm-gutter">
+                        <?php foreach ($product_new as $key => $value){?>
+                            <div class="col l-2-4 m-4 c-6">
+                                <div class="home-product-item">
+                                    <a href="?controller=chitietsanpham&id=<?php echo $value['id'] ?>" class="home-product-item__link">
+                                        <div class="home-product-item__img" style="background-image: url('<?php echo $value['image'] ?>');"></div>
+                                        <h4 class="home-product-item__name"><?php echo $value['name'] ?></h4>
+                                        <div class="hone-product-item__price">
+                                            <span class="home-product-item__price-current">
+                                            <?php echo number_format($value['price']) ?>đ
+                                            </span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">MỚI</span>
+                                            <span class="home-product-item__sale-off-label">VỀ</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
                         <?php } ?>
                     </div>
                 </div>
                 <!-- Tab items -->
                 <div class="grid wide">
                     <div class="banner__img">
-                            <img style="filter: brightness(180%); margin-top: 25px" src="./Assets/Img/banner2.jpg" alt="" class="banner__img-link">
-                        </div>
+                        <img style="filter: brightness(180%); margin-top: 25px" src="./Assets/Img/banner2.jpg" alt="" class="banner__img-link">
+                    </div>
+                    
                     <h3 class="home-catalog__heading">
                             Danh mục sản phẩm
                     </h3>
-                    
                     <div class="tab">
                         <button class="tablinks active" onclick="catalog(event, 'Aokhoac')">Áo khoác</button>
                         <button class="tablinks" onclick="catalog(event, 'Aophong')">Áo phông</button>
                         <button class="tablinks" onclick="catalog(event, 'Quandai')">Quần dài</button>
                         <button class="tablinks" onclick="catalog(event, 'Quanshort')">Quần short</button>
                         <button class="tablinks" onclick="catalog(event, 'Giaydep')">Giày, dép</button>
-                        </div>
+                    </div>
 
                         <div id="Aokhoac" class="tabcontent active">
-                            <div class="row">
+                            <div class="row sm-gutter">
                                 <?php foreach ($product4 as $key => $value){ ?>
                                     <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-item">
@@ -382,7 +410,7 @@
                         </div>
 
                         <div id="Aophong" class="tabcontent">
-                            <div class="row">
+                            <div class="row sm-gutter">
                                 <?php foreach ($product1 as $key => $value){ ?>
                                     <div class="col l-2-4 m-4 c-6">
                                         <div class="home-product-item">
@@ -402,7 +430,7 @@
                         </div>
 
                         <div id="Quandai" class="tabcontent">
-                            <div class="row">
+                            <div class="row sm-gutter">
                                 <?php foreach ($product2 as $key => $value){ ?>
                                     <div class="col l-2-4 m-4 c-6">
                                         <div class="home-product-item">
@@ -422,7 +450,7 @@
                         </div>
 
                         <div id="Quanshort" class="tabcontent">
-                            <div class="row">
+                            <div class="row sm-gutter">
                                 <?php foreach ($product3 as $key => $value){ ?>
                                     <div class="col l-2-4 m-4 c-6">
                                         <div class="home-product-item">
@@ -460,6 +488,48 @@
                                 <?php } ?>
                             </div>
                         </div>
+                </div>
+            </div>
+            <div class="web-ads">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col l-3 m-6 c-6">
+                            <div class="web-ads_item">
+                                <i class="fas fa-phone-alt web-ads_item-icon"></i>
+                                <div class="web-ads_item-info">
+                                    <h3 class="web-ads_item-info-heading">Hotline hỗ trợ</h3>
+                                    <p class="web-ads_item-info-content">0987654321</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col l-3 m-6 c-6">
+                            <div class="web-ads_item">
+                                <i class="fas fa-truck web-ads_item-icon"></i>
+                                <div class="web-ads_item-info">
+                                    <h3 class="web-ads_item-info-heading">Miễn phí vận chuyển</h3>
+                                    <p class="web-ads_item-info-content">Trên toàn quốc</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col l-3 m-6 c-6">
+                            <div class="web-ads_item">
+                                <i class="fas fa-undo-alt web-ads_item-icon"></i>
+                                <div class="web-ads_item-info">
+                                    <h3 class="web-ads_item-info-heading">Miễn phí đổi trả</h3>
+                                    <p class="web-ads_item-info-content">Trong vòng 7 ngày</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col l-3 m-6 c-6">
+                            <div class="web-ads_item">
+                                <i class="fas fa-hand-holding-usd web-ads_item-icon"></i>
+                                <div class="web-ads_item-info">
+                                    <h3 class="web-ads_item-info-heading">Ship COD</h3>
+                                    <p class="web-ads_item-info-content">Thanh toán khi nhận hàng</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <footer class="footer">

@@ -180,6 +180,25 @@
           }
           return $result;
      }
+     public function get_limit_decrease($table, $condition=array(),$limit){
+          $sql = "SELECT * FROM $table";
+          if (!empty($condition)){
+               $sql.=" WHERE";
+               foreach ($condition as $key => $value){
+                    $sql.= " $key = '$value' AND";
+               }
+               $sql = trim($sql,"AND");
+          }
+          $sql.= " LIMIT $limit DESC";
+          $query = mysqli_query($this->conn,$sql);
+          $result = array();
+          if ($query){
+               while ($row = mysqli_fetch_assoc($query)){
+                    $result[]= $row;
+               }
+          }
+          return $result;
+     }
      public function get_limit_desc($table, $condition=array(),$order_by,$limit){
           $sql = "SELECT * FROM $table";
           if (!empty($condition)){

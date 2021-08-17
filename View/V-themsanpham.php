@@ -172,6 +172,13 @@
                                         <p class="error"><?php echo $error['catalog']; ?></p>
                                     <?php } ?>
                                     </div>
+                                    <div class="admin__add-product-item">
+                                        <label for="qty" class="admin__add-product-label">Số lượng sản phẩm</label>
+                                        <input type="text" name="qty" id="qty" placeholder="Số lượng sản phẩm" class="admin__add-product-input">
+                                        <?php if (isset($error['qty'])){?> 
+                                            <p class="error"><?php echo $error['qty']; ?></p>
+                                        <?php } ?>
+                                    </div>
                                     <input type="submit" value="Thêm sản phẩm" name="add-product" class="admin__add-product-btn">
                                 </div>
                             </form>

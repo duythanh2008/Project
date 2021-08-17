@@ -12,6 +12,7 @@
         $image4 = $_FILES['image4'];
         $description= $_POST['desc'];
         $catalog = $_POST['catalog'];
+        $qty = $_POST['qty'];
         $error = array();
         if ($name == ''){
              $error['name']="Tên sản phầm không được để trống !";
@@ -24,6 +25,9 @@
         }
         if ($catalog == ''){
              $error['catalog']="Danh mục sản phầm không được để trống !";
+        }
+        if ($qty == ''){
+          $error['qty']="Số lượng sản phầm không được để trống !";
         }
         $link= './Assets/Img/';
         $target_file= $link.basename($image['name']);
@@ -90,7 +94,7 @@
                   'image4'=>$target_file4,
                   'description'=>$description,
                   'catalog'=>$catalog,
-                  'qty'=>100
+                  'qty'=>$qty
              ));
              header('location:?controller=quanlysanpham');
         }

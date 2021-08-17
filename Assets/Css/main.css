@@ -513,6 +513,23 @@
     font-size: 2.3rem;
 }
 
+.home-product__new{
+    position: relative;
+    text-align: center;
+    margin-top: 35px;
+    font-size: 2.3rem;
+}
+
+.home-product__new::before{
+    content: '';
+    position: absolute;
+    background-color: var(--primary-color);
+    margin: 0 auto;
+    top: 105%;
+    width: 148px;
+    height: 4px;
+}
+
 .home-product__heading-search{
     position: relative;
     text-align: center;
@@ -630,33 +647,42 @@
 
 /* Tabs */
 .tab {
-    overflow: hidden;
+    display: flex;
+    overflow-y: scroll;
     border: 1px solid #ccc;
     background-color: #Fff;
-    box-shadow: 0 1px 5px rgb(0 0 0 / 30%);
+    box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
+    max-width: 100%;
 }
   
   /* Style the buttons inside the tab */
   .tab button {
+    min-width: 108px;
+    line-height: 1.4rem;
     background-color: inherit;
+    color : var(--primary-color);
     float: left;
     border: none;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    opacity: 0.6;
   }
   
   /* Change background color of buttons on hover */
   .tab button:hover {
-    background-color: #ddd;
+    background-color: #fdfdfd;
+    filter: brightness(90%);
+    opacity: 0.8;
   }
   
   /* Create an active/current tablink class */
   .tab button.active {
+    opacity: 1;
     background-color: var(--primary-color);
-    color : var(--white-color);
+    color: var(--white-color);
   }
   
   /* Style the tab content */
@@ -669,10 +695,49 @@
       display: block;
   }
 
+.web-ads{
+    background-color: #fafafa;
+    margin-bottom: 20px;
+}
+
+.web-ads_item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid var(--border-color);
+    padding: 5px 10px;
+}
+
+.web-ads_item:hover .web-ads_item-info-heading{
+    color: var(--primary-color);
+}
+
+.web-ads_item:first-child{
+    border-left: none;
+}
+
+.web-ads_item-icon{
+    font-size: 3rem;
+    padding-right: 10px;
+}
+
+.web-ads_item-info{
+    padding-left: 10px;
+}
+
+.web-ads_item-info-heading{
+    font-size: 1.6rem;
+}
+
+.web-ads_item-info-content{
+    font-size: 1.4rem;
+}
+
 .home-catalog__heading{
     position: relative;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 25px;
     font-size: 2.3rem;
 }
 
@@ -685,7 +750,48 @@
     width: 210px;
     height: 4px;
 }
-  
+
+.home-product-item__sale-off{
+    position: absolute;
+    padding: 3px 0;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 36px;
+    background-color: var(--primary-color);
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    border-top-right-radius: 2px;
+}
+
+.home-product-item__sale-off::before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    bottom: -4px;
+    color:var(--primary-color);
+    border-width: 0 20px 4px;
+    border-style: solid;
+    border-color: transparent currentColor transparent currentColor;
+}
+
+.home-product-item__sale-off-percent{
+    color: var(--white-color);
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+}
+
+.home-product-item__sale-off-label{
+    color: var(--white-color);
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+}
+
 /* Product */
 .catalog{
     border-radius: 2px;
@@ -1714,6 +1820,7 @@
 .admin-content{
     margin: 0 20px;
     margin-top: 70px;
+    padding-bottom: 30px;
 }
 
 .admin-content__heading{
@@ -1853,6 +1960,12 @@
 .admin__add-product-image{
     font-size: 1.4rem;
     margin-bottom: 10px;    
+}
+
+.admin__add-product-image-show{
+    width: 70px;
+    padding-right: 10px;
+    padding-bottom: 10px;
 }
 
 .admin__add-product-textarea{
@@ -2171,6 +2284,10 @@
     padding: 15px 20px;
     font-size: 1.4rem;
     margin-bottom: 10px;
+}
+
+.pay-method{
+    font-size: 1.6rem;
 }
 
 /* Rating */
@@ -2591,7 +2708,7 @@
     .cart-product__img {
         width: 50px;
     }
-
+    .pay-method,
     .cart-product__total,
     .cart-product__qty-info,
     .cart-product__qty-btn,
