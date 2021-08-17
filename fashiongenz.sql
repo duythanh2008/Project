@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 13, 2021 lúc 12:58 PM
+-- Thời gian đã tạo: Th8 17, 2021 lúc 07:40 PM
 -- Phiên bản máy phục vụ: 10.4.19-MariaDB
 -- Phiên bản PHP: 8.0.7
 
@@ -80,15 +80,16 @@ CREATE TABLE `contact` (
   `id` int(11) NOT NULL,
   `fullname` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `content` varchar(5000) DEFAULT NULL
+  `content` varchar(5000) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `contact`
 --
 
-INSERT INTO `contact` (`id`, `fullname`, `email`, `content`) VALUES
-(8, 'Nguyễn Hữu Duy Thành', 'thanhnguyen15022008@gmail.com', 'Chúng tôi muốn quảng cáo sản phẩm trên website của shop');
+INSERT INTO `contact` (`id`, `fullname`, `email`, `content`, `status`) VALUES
+(8, 'Nguyễn Hữu Duy Thành', 'thanhnguyen15022008@gmail.com', 'Chúng tôi muốn quảng cáo sản phẩm trên website của shop', 0);
 
 -- --------------------------------------------------------
 
@@ -154,7 +155,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `price`, `image`, `description`, `qty`, `catalog`, `total_rate`, `rate_times`, `image2`, `image3`, `image4`) VALUES
-(13, 'Áo phông nam APHTK26', 250000, './Assets/Img/APHTK264-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 89, 2, 11.4, 3, './Assets/Img/APHTK264-2.jpg', './Assets/Img/APHTK264-3.jpg', './Assets/Img/APHTK264-4.jpg'),
+(13, 'Áo phông nam APHTK264', 245000, './Assets/Img/APHTK264-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 89, 2, 11.4, 3, './Assets/Img/APHTK264-2.jpg', './Assets/Img/APHTK264-3.jpg', './Assets/Img/APHTK264-4.jpg'),
 (14, 'Áo phông nam APHTK260', 200000, './Assets/Img/APHTK260-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 99, 2, 7.4, 2, './Assets/Img/APHTK260-2.jpg', './Assets/Img/APHTK260-3.jpg', './Assets/Img/APHTK260-4.jpg'),
 (15, 'Áo phông nam APHTK258', 200000, './Assets/Img/APHTK258-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 96, 2, 5, 1, './Assets/Img/APHTK258-2.jpg', './Assets/Img/APHTK258-3.jpg', './Assets/Img/APHTK258-4.jpg'),
 (16, 'Áo phông nam APTTK284', 250000, './Assets/Img/APTTK284-QSKTK202-1.jpg', '– Chất liệu: 100% COTTON <br>\r\n– Đặc tính: <br>\r\n– Phom: Oversized <br>\r\n– Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ thống <br>\r\n– Shop cam kết hàng đẹp như ảnh, nếu không giống như ảnh, quý khách có thể đổi trả hàng miễn phí', 0, 2, 4.2, 1, './Assets/Img/APTTK284-QSKTK202-2.jpg', './Assets/Img/APTTK284-QSKTK202-3.jpg', './Assets/Img/APTTK284-QSKTK202-4.jpg'),
@@ -219,7 +220,7 @@ INSERT INTO `profit` (`id`, `month`, `profit`, `all_order`, `sold_product`, `ord
 (17, 5, 29610000, 47, 87, 0),
 (18, 6, 21920000, 32, 45, 0),
 (19, 7, 19980000, 35, 42, 0),
-(20, 8, 17223000, 22, 48, 2);
+(20, 8, 17623000, 23, 50, 2);
 
 -- --------------------------------------------------------
 
@@ -277,7 +278,6 @@ CREATE TABLE `user_info` (
 
 INSERT INTO `user_info` (`id`, `username`, `password`, `fullname`, `email`, `phone`, `address`, `code`) VALUES
 (1, 'duythanh2008', 'duythanh2008', 'NGUYEN HUU DUY THANH', 'thanhnguyen15022008@gmail.com', '0334758508', 'Nhân Chính, Thanh Xuân, Hà Nội', 812019),
-(6, 'dtnc1112', 'dtnc1112', 'Admin', 'duythanh@outlook.com', '0123456789', 'Sầm Sơn, Thanh Hóa', NULL),
 (8, 'nguyenvana', '20082002', 'Nguyễn Văn C', 'nguyenvana@outlook.com', '0987654321', 'Sầm Sơn', 684602),
 (9, 'demosanpham', 'demosanpham', 'Nguyễn Hữu A', 'thanhnguyen@gmail.com', '0987654321', 'Nhân Chính, Thanh Xuân, Hà Nội', 891691),
 (10, 'duythanh', '20082002', 'Duy Thành', 'duythanh2008@outlook.com', '0987654321', 'Sầm Sơn, Thanh Hóa', NULL);
@@ -309,7 +309,7 @@ INSERT INTO `user_order` (`id`, `fullname`, `address`, `email`, `phone`, `amount
 (171136, 'Nguyễn Văn A', 'Thanh Xuân, Hà Nội', 'nguyenvana@outlook.com', '0987654321', 250000, 1, '2021-08-07 18:24:42', '2021-08-07 21:32:25', 8),
 (184595, 'Duy Thành', 'Sầm Sơn, Thanh Hóa', 'duythanh2008@outlook.com', '0987654321', 500000, 1, '2021-08-08 17:25:07', '2021-08-08 17:27:13', 10),
 (227934, 'Nguyễn Văn B', 'Sầm Sơn', 'thanhnguyen15022008@gmail.com', '0987654321', 1803000, 1, '2021-08-07 21:41:28', '2021-08-07 21:46:32', 8),
-(228035, 'NGUYEN HUU DUY THANH', 'Nhân Chính, Thanh Xuân, Hà Nội', 'thanhnguyen15022008@gmail.com', '0334758508', 400000, 0, '2021-08-12 15:06:25', NULL, 1),
+(228035, 'NGUYEN HUU DUY THANH', 'Nhân Chính, Thanh Xuân, Hà Nội', 'thanhnguyen15022008@gmail.com', '0334758508', 400000, 1, '2021-08-12 15:06:25', '2021-08-13 23:14:05', 1),
 (288640, 'Nguyễn Hữu A', 'Nhân Chính, Thanh Xuân, Hà Nội', 'thanhnguyen15022008@gmail.com', '0987654321', 1310000, 1, '2021-08-08 11:30:13', '2021-08-08 11:32:58', 9),
 (409637, 'NGUYEN HUU DUY THANH', 'Nhân Chính, Thanh Xuân, Hà Nội', 'thanhnguyen15022008@gmail.com', '0334758508', 1260000, 1, '2021-08-12 14:21:46', '2021-08-12 14:22:16', 1),
 (416984, 'Nguyễn Hữu Duy Thành', 'Thanh Hóa', 'thanhnguyen15022008@gmail.com', '0334758508', 740000, 1, '2021-08-08 10:29:46', '2021-08-08 11:08:53', 1),
@@ -324,6 +324,7 @@ INSERT INTO `user_order` (`id`, `fullname`, `address`, `email`, `phone`, `amount
 (822833, 'Nguyễn Văn C', 'Sầm Sơn', 'thanhnguyen15022008@gmail.com', '0987654321', 1060000, 1, '2021-08-07 21:49:30', '2021-08-07 22:08:28', 8),
 (859879, 'Nguyễn Hữu Duy Thành', 'Thanh Hóa', 'thanhnguyen15022008@gmail.com', '0334758508', 3670000, 1, '2021-08-06 11:51:05', '2021-08-07 21:38:14', 1),
 (879139, 'Nguyễn Hữu Duy Thành', 'Thanh Hóa', 'thanhnguyen15022008@gmail.com', '0334758508', 700000, 1, '2021-08-07 22:11:29', '2021-08-07 22:12:16', 1),
+(893829, 'NGUYEN HUU DUY THANH', 'Nhân Chính, Thanh Xuân, Hà Nội', 'thanhnguyen15022008@gmail.com', '0334758508', 370000, 0, '2021-08-18 00:28:23', NULL, 1),
 (912256, 'Nguyễn Văn C', 'Sầm Sơn', 'thanhnguyen15022008@gmail.com', '0987654321', 510000, 1, '2021-08-07 21:50:57', '2021-08-07 22:09:38', 8),
 (942761, 'Nguyễn Hữu Duy Thành', 'Thanh Hóa', 'thanhnguyen15022008@gmail.com', '0334758508', 250000, 1, '2021-08-06 11:55:57', '2021-08-07 21:31:33', 1),
 (984768, 'Nguyễn Hữu Duy Thành', 'Thanh Hóa', 'thanhnguyen15022008@gmail.com', '0334758508', 2950000, 0, '2021-08-07 23:27:59', NULL, 1),
@@ -388,7 +389,8 @@ INSERT INTO `user_order_detail` (`id`, `order_id`, `product_id`, `qty`, `price`,
 (36, 409637, 16, 1, 250000, 250000, '36'),
 (37, 409637, 34, 1, 750000, 750000, '36'),
 (38, 228035, 17, 2, 200000, 400000, '36'),
-(39, 657875, 17, 2, 200000, 400000, '36');
+(39, 657875, 17, 2, 200000, 400000, '36'),
+(40, 893829, 26, 1, 370000, 370000, '36');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -505,7 +507,7 @@ ALTER TABLE `position`
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT cho bảng `profit`
@@ -523,13 +525,13 @@ ALTER TABLE `rating`
 -- AUTO_INCREMENT cho bảng `user_info`
 --
 ALTER TABLE `user_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `user_order_detail`
 --
 ALTER TABLE `user_order_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
