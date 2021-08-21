@@ -1128,6 +1128,7 @@
     margin-top: 70px;
     width: 100%;
     overflow-x: scroll;
+    padding: 0 8px;
 }
 
 .package-info__table{
@@ -1191,6 +1192,10 @@
 }
 
 .account-info__edit{
+    margin-left: 10px;
+}
+
+.account-info__detail{
     margin-left: 10px;
 }
 

@@ -243,7 +243,7 @@
                                         <?php } ?>
                                         <form action="?controller=doimatkhaukhachhang" method="post">
                                             <div class="row">
-                                                <div class="col l-6 m-12 c-12">
+                                                <div class="col l-6 l-o-3 m-12 c-12">
                                                     <div class="account-info__form">
                                                         <label for="oldpass" class="account-info__label">Mật khẩu cũ</label>
                                                         <input type="password" name="oldpass" id="oldpass" class="account-info__input" placeholder="Mật khẩu cũ" class="account-info__input">

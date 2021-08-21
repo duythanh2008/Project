@@ -79,6 +79,9 @@
         case 'xulithanhtoan':
             require_once './Controller/C-xulithanhtoan.php';
             break;
+        case 'xulithanhtoanonline':
+            require_once './Controller/C-xulithanhtoanonline.php';
+            break;
         case 'dangnhapquantri':
             require_once './Controller/C-dangnhapquantri.php';
             break;

@@ -215,7 +215,7 @@
                                 <a class="accout__location-home" href="?controller=trangchu">Trang chủ</a>
                             </div>
                             <div>
-                                <p class="accout__location-current"> > &nbsp;&nbsp;&nbsp; Thanh toán</p>
+                                <p class="accout__location-current"> > &nbsp;&nbsp;&nbsp; Đặt hàng</p>
                             </div>
                         </div>
                     </div>
@@ -278,7 +278,7 @@
                             </div>
                         <div class="row">
                             <div class="col l-10 l-o-1 m-12 c-12">
-                                <form action="?controller=xulithanhtoan" method="post">
+                                <form action="?controller=xulithanhtoan" class="js-form-payment" method="post">
                                     <div class="cart-product__pay">
                                         <h3 class="cart-product__pay-heading">Thông tin thanh toán</h3>
                                         <div class="row">
@@ -303,14 +303,18 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <h3 class="cart-product__pay-heading">Phương thức thanh toán</h3>
+                                        <!-- <h3 class="cart-product__pay-heading">Phương thức thanh toán</h3>
                                         <input type="radio" id="checked" checked>
-                                        <label class="pay-method" for="checked">&nbsp;&nbsp;&nbsp;Thanh toán khi nhận hàng</label>
+                                        <label class="pay-method" for="checked">&nbsp;&nbsp;&nbsp;Thanh toán khi nhận hàng</label> -->
                                     </div>
                                     <div class="cart-product__pay-total-price">
                                         <h3 class="cart-product__pay-total-price-heading">Tổng thanh toán</h3>
                                         <p class="cart-product__pay-total-price-money"><?php echo number_format($amount)?>đ</p>
-                                        <input type="submit" name="confirm" value="Thanh toán" class="cart-product__pay-total-price-pay">
+                                        <div>
+                                            <input type="hidden" name="payment-cart" class="js-input-payment" value="payment">
+                                            <button type="button" name="confirm" value="payment-cart" class="cart-product__pay-total-price-pay js-payment-cart">Đặt hàng</button>
+                                            <button type="button" name="confirm-online" value="payment-cart-online" class="cart-product__pay-total-price-pay js-payment-cart-online">Đặt hàng và thanh toán</button>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -440,5 +444,19 @@
                                                 <div class="fb-customerchat" page_id="138799094994489"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="./Assets/JS/topbtn.js"></script>
+    <script>
+        $(function() {
+            $('.js-payment-cart').click(function() {
+                let pay = $(this).val();
+                $('.js-input-payment').val(pay);
+                $('.js-form-payment').submit();
+            })
+            $('.js-payment-cart-online').click(function() {
+                let pay = $(this).val();
+                $('.js-input-payment').val(pay);
+                $('.js-form-payment').submit();
+            })
+        })
+    </script>
 </body>
 </html>

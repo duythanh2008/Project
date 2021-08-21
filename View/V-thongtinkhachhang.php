@@ -236,7 +236,7 @@
                                     </div>
                                 </div>
                                 <div class="col l-10 m-12 c-12">
-                                    <div class="account-info__edit">
+                                    <div class="account-info__detail">
                                         <h3 class="account-info__heading">Thông tin tài khoản</h3>
                                         <?php foreach ($user as $key => $value){?>
                                         <form action="#" method="post">
