@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="./Assets/Img/logo.png">
     <link rel="stylesheet" href="./Assets/Css/grid.css">
-    <link rel="stylesheet" href="./Assets/Css/responsive.css">
     <link rel="stylesheet" href="./Assets/Css/main.css">
     <link rel="stylesheet" href="./Assets/Css/base.css">
+    <link rel="stylesheet" href="./Assets/Css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -258,7 +258,7 @@
                                                     </div>
                                                     <div class="account-info__form">
                                                         <label for="email" class="account-info__label">Email</label>
-                                                        <input type="email" name="email" id="email" value="<?php echo $value['email']; ?>" placeholder="Email" class="account-info__input" required>
+                                                        <input type="email" name="email" id="email" value="<?php echo $value['email']; ?>" placeholder="Email" class="account-info__input" required readonly>
                                                     </div>
                                                 </div>
                                                 <input type="submit" class="account-info__submit" name="edit" value="Thay đổi">

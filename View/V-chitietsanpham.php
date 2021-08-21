@@ -241,7 +241,7 @@
                                 </h3>
                                 <div class="product-detail__info-catalog">
                                     <h4 class="product-detail__info-catalog-heading">Danh mục: </h4>
-                                    <a href="#" class="product-detail__info-catalog-name"><?php echo $catalog[0]['name'] ?></a>
+                                    <a href="?controller=sanpham&id=<?php echo $catalog[0]['id'] ?>" class="product-detail__info-catalog-name"><?php echo $catalog[0]['name'] ?></a>
                                 </div>
                                 <div class="product-detail__info-status">
                                     <h4 class="product-detail__info-status-check">Tình trạng: </h4>

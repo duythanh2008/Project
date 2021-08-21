@@ -1,9 +1,7 @@
+
 /* > Tablet */
 @media (max-width: 1112px){
     .admin-menu-icon{
-        display: block;
-    }
-    .admin-menu-icon-search{
         display: block;
     }
     .admin-header__search-input{
@@ -74,9 +72,6 @@
     .product-relative__item-link{
         flex: 0 0 50%;
     }
-    .content{
-        margin-top: 60px;
-    }
     .admin-header{
         width: 100vw;
     }
@@ -92,6 +87,9 @@
     }
     .product-relative__item{
         display: contents;
+    }
+    .content {
+        margin-top: 70px;
     }
 }
 
@@ -126,11 +124,8 @@
     .cart__info-no-cart-img{
         width: 300px;
     }
-    .pagination-item__link{
-        --height: 28px;
-        font-size: 1.6rem;
-        min-width: 36px;
-        height: var(--height);
+    .content {
+        margin-top: 60px;
     }
     .product-detail__rating-item{
         width: 100%;
@@ -191,7 +186,7 @@
         margin: 0 8px;
     }
     .admin-menu-icon{
-        margin-right: 10px;
+        margin-right: 20px;
     }
     .admin-content__heading{
         font-size: 2rem;
@@ -207,29 +202,23 @@
         font-size: 1.4rem;
         margin-right: 8px;
     }
-    .admin-content__item-not-confirm,
-    .admin-content__item-sold,
-    .admin-content__profit,
-    .admin-content__all-item{
-        margin: 5px 5px 5px 0;
-    }
     .admin-content__item-not-confirm-img,
     .admin-content__item-sold-img,
     .admin-content__all-item-img,
     .admin-content__profit-img{
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     .admin-content__item-not-confirm-heading,
     .admin-content__item-sold-heading,
     .admin-content__profit-heading,
     .admin-content__all-item-heading{
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
     .admin-content__item-not-confirm-info,
     .admin-content__item-sold-info,
     .admin-content__profit-info,
     .admin-content__all-item-info{
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
     .admin-content{
         margin-top: 60px;
@@ -237,11 +226,13 @@
     .cart-product__img {
         width: 50px;
     }
+    .pay-method,
     .cart-product__total,
     .cart-product__qty-info,
     .cart-product__qty-btn,
     .cart-product__info-remove,
     .cart-product__info-price,
+    .cart-product__info-size,
     .cart-product__info-name{
         font-size: 1.2rem;
     }
@@ -249,5 +240,17 @@
     .cart-product__total-price-money,
     .cart-product__total-price-heading{
         font-size: 1.3rem;
+    }
+    .cart-product__pay-total-price-pay,
+    .cart-product__pay-total-price-money,
+    .cart-product__pay-total-price-heading{
+        font-size: 1.3rem;
+    }
+    .cart-product__pay-heading{
+        font-size: 1.4rem;
+    }
+    .cart-product__pay-item-label,
+    .cart-product__pay-item-input{
+        font-size: 1.2rem;
     }
 }
