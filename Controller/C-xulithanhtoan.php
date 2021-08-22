@@ -19,7 +19,7 @@
                     if ($values['qty'] - $value['sl'] < 0){
                          $count = 1;
                          $error['message'] = 'Đơn hàng có sản phẩm không đủ số lượng !';
-                         $error['detail'].=" ".$values['name'].",";
+                         $error['detail'].=" ".$values['name']." ( còn ". $values['qty'] ." sản phẩm ),";
                     }
                }
           }
@@ -168,8 +168,8 @@
                     'email'=>$email,
                     'phone'=>$phone
                ),array('id'=>$_SESSION['customer']));
+               header('location: ./vnpay_php/index.php?order_id='.$_SESSION['order_id']);
           }
-          header('location: ./vnpay_php/index.php?order_id='.$_SESSION['order_id']);
      }
 
 ?>
