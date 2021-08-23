@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="./Assets/Css/main.css">
     <link rel="stylesheet" href="./Assets/Css/base.css">
     <link rel="stylesheet" href="./Assets/Css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
+    <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -205,19 +210,19 @@
                                         <div class="row">
                                             <div class="col l-6 m-12 c-12">
                                                 <div class="account__register-item">
-                                                    <label for="register-fullname" class="account__register-input-label">Tên đăng nhập</label>
-                                                    <input type="text" name="user" class="account__register-input" id="register-fullname" placeholder="Tên đăng nhập">
+                                                    <label for="register-fullname" class="account__register-input-label wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".1s">Tên đăng nhập</label>
+                                                    <input type="text" name="user" class="account__register-input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s" id="register-fullname" placeholder="Tên đăng nhập">
                                                     <?php if(isset($error['username'])){?>
-                                                        <p style=" font-size: 14px; color: red;"><?php echo $error['username'] ?></p>
+                                                        <p class="wow fadeInUp" style=" font-size: 14px; color: red;" data-wow-duration=".5s"  data-wow-delay=".2s"><?php echo $error['username'] ?></p>
                                                     <?php } ?>
                                                 </div>
                                             </div>
                                             <div class="col l-6 m-12 c-12">
                                                 <div class="account__register-item">
-                                                    <label for="register-phone" class="account__register-input-label">Số điện thoại</label>
-                                                    <input type="text" name="phone" class="account__register-input" id="register-phone" placeholder="Số điện thoại">
+                                                    <label for="register-phone" class="account__register-input-label wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".1s">Số điện thoại</label>
+                                                    <input type="text" name="phone" class="account__register-input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s" id="register-phone" placeholder="Số điện thoại">
                                                     <?php if(isset($error['phone'])){?>
-                                                        <p style=" font-size: 14px; color: red;"><?php echo $error['phone'] ?></p>
+                                                        <p class="wow fadeInUp" style=" font-size: 14px; color: red;" data-wow-duration=".5s"  data-wow-delay=".2s"><?php echo $error['phone'] ?></p>
                                                     <?php } ?>
                                                 </div>
                                             </div>
@@ -225,26 +230,26 @@
                                         <div class="row">
                                             <div class="col l-6 m-12 c-12">
                                                 <div class="account__register-item">
-                                                    <label for="register-email" class="account__register-input-label">Email</label>
-                                                    <input type="text" name="email" class="account__register-input" id="register-email" placeholder="Email">
+                                                    <label for="register-email" class="account__register-input-label wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".3s">Email</label>
+                                                    <input type="text" name="email" class="account__register-input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".4s" id="register-email" placeholder="Email">
                                                     <?php if(isset($error['email'])){?>
-                                                        <p style=" font-size: 14px; color: red;"><?php echo $error['email'] ?></p>
+                                                        <p class="wow fadeInUp" style=" font-size: 14px; color: red;" data-wow-duration=".5s"  data-wow-delay=".4s"><?php echo $error['email'] ?></p>
                                                     <?php } ?>
                                                 </div>
                                             </div>
                                             <div class="col l-6 m-12 c-12">
                                                 <div class="account__register-item">
-                                                    <label for="register-password" class="account__register-input-label">Mật khẩu</label>
-                                                    <input type="password" name="pass" class="account__register-input" id="register-password" placeholder="Mật khẩu">
+                                                    <label for="register-password" class="account__register-input-label wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".3s">Mật khẩu</label>
+                                                    <input type="password" name="pass" class="account__register-input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".4s" id="register-password" placeholder="Mật khẩu">
                                                     <?php if(isset($error['password'])){?>
-                                                        <p style=" font-size: 14px; color: red;"><?php echo $error['password'] ?></p>
+                                                        <p class="wow fadeInUp" style=" font-size: 14px; color: red;" data-wow-duration=".5s"  data-wow-delay=".4s"><?php echo $error['password'] ?></p>
                                                     <?php } ?>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col l-6 m-12 c-12">
-                                                <input type="submit" class="account__register-submit" value="Đăng ký" name="dangky" id="login-username">
+                                                <input type="submit" class="account__register-submit wow fadeInUp"  data-wow-duration=".5s"  data-wow-delay=".5s" value="Đăng ký" name="dangky" id="login-username">
                                             </div>
                                         </div>
                                     </form>
@@ -254,7 +259,7 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer">
+            <footer class="footer wow fadeInUp" data-wow-duration="1s">
             <div class="grid wide footer__content">
                     <div class="row">
                         <div class="col l-2-4 m-4 c-6">

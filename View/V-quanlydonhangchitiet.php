@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="./Assets/Css/base.css">
     <link rel="stylesheet" href="./Assets/Css/main.css">
     <link rel="stylesheet" href="./Assets/Css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
+    <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -107,8 +112,8 @@
                 <div class="admin-content">
                     <div class="row no-gutters">
                         <div class="col l-12 m-12 c-12">
-                            <h3 class="admin-content__heading">Đơn hàng số #<?php echo $id ?></h3><br>
-                            <div class="result-detail">
+                            <h3 class="admin-content__heading wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".1s">Đơn hàng số #<?php echo $id ?></h3><br>
+                            <div class="result-detail wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s">
                                 <?php if (isset($error['product'])){?> 
                                             <p><?php echo $error['product']; ?></p>
                                 <?php } ?>
@@ -118,7 +123,7 @@
                             </div>
                             <div style="margin: 0 3px;" class="row">
                                 <div class="col l-3 m-12 c-12">
-                                    <div class="package__info-user">
+                                    <div class="package__info-user wow fadeInLeft" data-wow-duration=".5s"  data-wow-delay=".2s">
                                         <h3 class="package__info-user-heading">Thông tin khách hàng</h3>
                                         <p class="package__info-user-show">Họ và tên: <?php echo $customer[0]['fullname'] ?></p>
                                         <p class="package__info-user-show">Số điện thoại: <?php echo $customer[0]['phone'] ?></p>
@@ -129,7 +134,7 @@
                                         <p class="package__info-user-show">Tổng tiền: <?php echo number_format($customer[0]['amount']) ?>đ</p>
                                     </div>
                                 </div>
-                                <div class="col l-9 m-12m c-12">
+                                <div class="col l-9 m-12m c-12 wow fadeInRight" data-wow-duration=".5s"  data-wow-delay=".2s">
                                     <h3 class="package__info-user-heading">Thông tin sản phẩm</h3>
                                     <div class="cart-table">
                                         <table>

@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="./Assets/Css/base.css">
     <link rel="stylesheet" href="./Assets/Css/main.css">
     <link rel="stylesheet" href="./Assets/Css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
+    <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -107,9 +112,9 @@
                 <div class="admin-content">
                     <div class="row no-gutters">
                         <div class="col l-12 m-12 c-12">
-                            <h3 class="admin-content__heading">Sửa thông tin sản phẩm</h3><br>
+                            <h3 class="admin-content__heading wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".1s">Sửa thông tin sản phẩm</h3><br>
                         </div>
-                        <div class="col l-6 l-o-3 m-12 c-12">
+                        <div class="col l-6 l-o-3 m-12 c-12 wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s">
                             <form action="?controller=xulisanpham&method=edit&id=<?php echo $data_product[0]['id'] ?>" method="post" name="addform" enctype="multipart/form-data">
                                 <div class="admin__add-product">
                                     <div class="admin__add-product-item">

@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="./Assets/Css/main.css">
     <link rel="stylesheet" href="./Assets/Css/base.css">
     <link rel="stylesheet" href="./Assets/Css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
+    <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -223,7 +228,7 @@
                         <div class="account__heading">Hồ sơ khách hàng </div>
                         <div class="account__info">
                             <div class="row sm-gutter">
-                                <div class="col l-2 m-12 c-12">
+                                <div class="col l-2 m-12 c-12 wow fadeInLeft" data-wow-duration=".5s">
                                     <div class="account__section">
                                         <ul class="account-info__list">
                                             <li class="account-info__item">
@@ -235,7 +240,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col l-10 m-12 c-12">
+                                <div class="col l-10 m-12 c-12 wow fadeInRight" data-wow-duration=".5s">
                                     <div class="account-info__detail">
                                         <h3 class="account-info__heading">Thông tin tài khoản</h3>
                                         <?php foreach ($user as $key => $value){?>
@@ -243,25 +248,25 @@
                                             <div class="row">
                                                 <div class="col l-6 m-12 c-12">
                                                     <div class="account-info__form">
-                                                        <label for="fullname" class="account-info__label">Họ và tên</label>
-                                                        <input type="text" name="fullname" id="fullname" value="<?php echo $value['fullname']; ?>" class="account-info__input" placeholder="Họ và tên" class="account-info__input">
+                                                        <label for="fullname" class="account-info__label wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".1s">Họ và tên</label>
+                                                        <input type="text" name="fullname" id="fullname" value="<?php echo $value['fullname']; ?>" class="account-info__input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s" placeholder="Họ và tên" class="account-info__input">
                                                     </div>
                                                     <div class="account-info__form">
-                                                        <label for="phone" class="account-info__label">Số điện thoại</label>
-                                                        <input type="text" name="phone" id="phone" value="<?php echo $value['phone']; ?>" placeholder="Số điện thoại" class="account-info__input" required>
+                                                        <label for="phone" class="account-info__label wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".3s">Số điện thoại</label>
+                                                        <input type="text" name="phone" id="phone" value="<?php echo $value['phone']; ?>" placeholder="Số điện thoại" class="account-info__input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".4s" required>
                                                     </div>
                                                 </div>
                                                 <div class="col l-6 m-12 c-12">
                                                     <div class="account-info__form">
-                                                        <label for="address" class="account-info__label">Địa chỉ</label>
-                                                        <input type="text" name="address" id="address" value="<?php echo $value['address']; ?>" placeholder="Địa chỉ" class="account-info__input">
+                                                        <label for="address" class="account-info__label wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".1s">Địa chỉ</label>
+                                                        <input type="text" name="address" id="address" value="<?php echo $value['address']; ?>" placeholder="Địa chỉ" class="account-info__input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s">
                                                     </div>
                                                     <div class="account-info__form">
-                                                        <label for="email" class="account-info__label">Email</label>
-                                                        <input type="email" name="email" id="email" value="<?php echo $value['email']; ?>" placeholder="Email" class="account-info__input" required readonly>
+                                                        <label for="email" class="account-info__label wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".3s">Email</label>
+                                                        <input type="email" name="email" id="email" value="<?php echo $value['email']; ?>" placeholder="Email" class="account-info__input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".4s" required readonly>
                                                     </div>
                                                 </div>
-                                                <input type="submit" class="account-info__submit" name="edit" value="Thay đổi">
+                                                <input type="submit" class="account-info__submit wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".5s" name="edit" value="Thay đổi">
                                             </div>
                                         </form>
                                         <?php } ?>
@@ -272,7 +277,7 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer">
+            <footer class="footer wow fadeInUp" data-wow-duration="1s">
             <div class="grid wide footer__content">
                     <div class="row">
                         <div class="col l-2-4 m-4 c-6">

@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="./Assets/Css/main.css">
     <link rel="stylesheet" href="./Assets/Css/base.css">
     <link rel="stylesheet" href="./Assets/Css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
+    <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -224,7 +229,7 @@
                             <div class="col l-12 m-12 c-12">
                             <div class="account__heading">Kiểm tra đơn hàng</div>
                                 <div style="margin-top: 20px; margin-bottom: 50px;" class="row">
-                                    <div class="col l-3 m-12 c-12">
+                                    <div class="col l-3 m-12 c-12 wow fadeInLeft" data-wow-duration=".5s">
                                         <div class="package__info-user">
                                             <h3 class="package__info-user-heading">Thông tin khách hàng</h3>
                                             <p class="package__info-user-show">Họ và tên: <?php echo $package[0]['fullname'] ?></p>
@@ -236,7 +241,7 @@
                                             <p class="package__info-user-show">Tổng tiền: <?php echo number_format($package[0]['amount']) ?>đ</p>
                                         </div>
                                     </div>
-                                    <div class="col l-9 m-12m c-12">
+                                    <div class="col l-9 m-12m c-12 wow fadeInRight" data-wow-duration=".5s">
                                         <h3 class="package__info-user-heading">Thông tin sản phẩm</h3>
                                         <div class="cart-table">
                                             <table>
@@ -283,7 +288,7 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer">
+            <footer class="footer wow fadeInUp" data-wow-duration="1s">
             <div class="grid wide footer__content">
                     <div class="row">
                         <div class="col l-2-4 m-4 c-6">

@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="./Assets/Css/main.css">
     <link rel="stylesheet" href="./Assets/Css/base.css">
     <link rel="stylesheet" href="./Assets/Css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
+    <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -221,7 +226,7 @@
                     </div>
                     <div class="grid wide">
                         <div class="row">
-                            <div class="col l-2 m-0 c-0">
+                            <div class="col l-2 m-0 c-0 wow fadeInLeft" data-wow-duration=".55s">
                                 <nav class="catalog">
                                     <h3 class="catalog__heading">Bộ lọc</h3>
                                     <form action="?controller=sanpham" method="post">
@@ -252,11 +257,11 @@
                                         </li>
                                     </ul>
                                     <input type="submit" class="catalog_search-btn" name="search" value="Lọc">
-                                    <a style="text-decoration: none; font-size: 1.2rem;" href="?controller=sanpham">Xóa</a>
+                                    <a style="text-decoration: none; font-size: 1.3rem; color: var(--text-color);" href="?controller=sanpham">Xóa</a>
                                     </form>
                                 </nav>
                             </div>
-                            <div class="col l-10 m-12 c-12">
+                            <div class="col l-10 m-12 c-12 wow fadeInRight" data-wow-duration=".5s">
                                 <div class="row sm-gutter">
                                     <div style="background-color: #f5f5f5" class="col l-0 m-12 c-12">
                                         <h3 class="catalog__heading">Bộ lọc</h3>
@@ -313,7 +318,7 @@
                                     <?php if ($num == 0){ ?>
                                     <p style="margin: 0 auto; font-size: 1.6rem;"><?php echo "Không có sản phẩm phù hợp"; }?></p>
                                 </div>
-                                <div class="page-btn">
+                                <div class="page-btn wow fadeInUp" data-wow-duration=".5s">
                                     <?php
                                     if ($current_page > 3) {
                                         $first_page = 1;
@@ -356,7 +361,7 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer">
+            <footer class="footer wow fadeInUp" data-wow-duration="1s">
                 <div class="grid wide footer__content">
                     <div class="row">
                         <div class="col l-2-4 m-4 c-6">

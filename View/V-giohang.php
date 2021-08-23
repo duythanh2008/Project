@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="./Assets/Css/main.css">
     <link rel="stylesheet" href="./Assets/Css/base.css">
     <link rel="stylesheet" href="./Assets/Css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
+    <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -224,7 +229,7 @@
                         if (isset($_SESSION['cart'])){
                     ?>
                         <div class="row">
-                            <div class="col l-10 l-o-1 m-12 c-12">
+                            <div class="col l-10 l-o-1 m-12 c-12  wow fadeInUp"  data-wow-duration=".5s"  data-wow-delay=".1s">
                                 <div class="cart-table">
                                     <table>
                                         <thead>
@@ -272,7 +277,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="col l-2 l-o-9 m-3 m-o-9 c-4 c-o-8">
+                            <div class="col l-2 l-o-9 m-3 m-o-9 c-4 c-o-8 wow fadeInUp  data-wow-duration=".5s"  data-wow-delay=".2s"">
                                 <div class="cart-product__total-price">
                                     <h3 class="cart-product__total-price-heading">Tổng thanh toán</h3>
                                     <p class="cart-product__total-price-money"><?php echo number_format($amount)?>đ</p>
@@ -283,7 +288,7 @@
                     <?php }else{ ?>
                         <div style="margin: 80px 0 120px 0;" class="account__register">
                             <div class="row">
-                                <div class="col l-12 m-12 c-12">
+                                <div class="col l-12 m-12 c-12 wow fadeInUp" data-wow-duration=".5s">
                                     <div class="cart__info">
                                         <img src="./Assets/Img/no_cart.png" alt="" class="cart__info-no-cart-img">
                                         <h3 class="cart__info-no-cart-content">Chưa có sản phẩm</h3>
@@ -296,7 +301,7 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer">
+            <footer class="footer wow fadeInUp" data-wow-duration="1s">
             <div class="grid wide footer__content">
                     <div class="row">
                         <div class="col l-2-4 m-4 c-6">

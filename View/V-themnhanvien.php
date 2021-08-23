@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="./Assets/Css/base.css">
     <link rel="stylesheet" href="./Assets/Css/main.css">
     <link rel="stylesheet" href="./Assets/Css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
+    <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -107,40 +112,40 @@
                 <div class="admin-content">
                     <div class="row no-gutters">
                         <div class="col l-12 m-12 c-12">
-                            <h3 class="admin-content__heading">Thêm nhân viên</h3><br>
+                            <h3 class="admin-content__heading wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".1s">Thêm nhân viên</h3><br>
                         </div>
                         <div class="col l-6 l-o-3 m-12 c-12">
                             <form action="?controller=themnhanvien" method="post" name="addform">
                                 <div class="admin__add-product">
-                                    <div class="admin__add-product-item">
+                                    <div class="admin__add-product-item wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s">
                                         <label for="fullname" class="admin__add-product-label">Họ và tên</label>
                                         <input type="text" name="fullname" id="fullname" placeholder="Họ và tên" class="admin__add-product-input">
                                         <?php if (isset($error['fullname'])){?> 
                                             <p class="error"><?php echo $error['fullname']; ?></p>
                                         <?php } ?>
                                     </div>
-                                    <div class="admin__add-product-item">
+                                    <div class="admin__add-product-item wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s">
                                         <label for="username" class="admin__add-product-label">Tên đăng nhập</label>
                                         <input type="text" name="username" id="username" placeholder="Tên đăng nhập" class="admin__add-product-input">
                                         <?php if (isset($error['username'])){?> 
                                             <p class="error"><?php echo $error['username']; ?></p>
                                         <?php } ?>
                                     </div>
-                                    <div class="admin__add-product-item">
+                                    <div class="admin__add-product-item wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".3s">
                                         <label for="password" class="admin__add-product-label">Mật khẩu</label>
                                         <input type="password" name="password" id="password" placeholder="Mật khẩu" class="admin__add-product-input">
                                         <?php if (isset($error['password'])){?> 
                                             <p class="error"><?php echo $error['password']; ?></p>
                                         <?php } ?>
                                     </div>
-                                    <div class="admin__add-product-item">
+                                    <div class="admin__add-product-item wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".3s">
                                         <label for="date" class="admin__add-product-label">Ngày sinh</label>
                                         <input type="text" name="date" id="date" placeholder="Ngày sinh" class="admin__add-product-input">
                                         <?php if (isset($error['date'])){?> 
                                             <p class="error"><?php echo $error['date']; ?></p>
                                         <?php } ?>
                                     </div>
-                                    <div class="admin__add-product-item">
+                                    <div class="admin__add-product-item wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".4s">
                                         <label for="gender" class="admin__add-product-label">Giới tính</label>
                                         <select name="gender" id="gender" class="admin__add-product-select">
                                             <?php foreach ($gender_all as $key => $value){ ?>
@@ -148,7 +153,7 @@
                                             <?php } ?>
                                         </select>
                                     </div>
-                                    <div class="admin__add-product-item">
+                                    <div class="admin__add-product-item wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".4s">
                                         <label for="position" class="admin__add-product-label">Chức vụ</label>
                                         <select name="position" id="position" class="admin__add-product-select">
                                             <?php foreach ($position_all as $key => $value){ ?>
@@ -156,7 +161,7 @@
                                             <?php } ?>
                                         </select>
                                     </div>
-                                    <input type="submit" value="Sửa nhân viên" name="add-admin" class="admin__add-product-btn">
+                                    <input type="submit" value="Sửa nhân viên" name="add-admin" class="admin__add-product-btn wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".5s">
                                 </div>
                             </form>
                         </div>

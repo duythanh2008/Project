@@ -60,7 +60,6 @@
                $database->update('user_info',array(
                     'fullname'=>$fullname,
                     'address'=>$address,
-                    'email'=>$email,
                     'phone'=>$phone
                ),array('id'=>$_SESSION['customer']));
                $id = $_SESSION['customer'];

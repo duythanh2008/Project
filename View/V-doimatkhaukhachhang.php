@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="./Assets/Css/main.css">
     <link rel="stylesheet" href="./Assets/Css/base.css">
     <link rel="stylesheet" href="./Assets/Css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
+    <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -223,7 +228,7 @@
                         <div class="account__heading">Hồ sơ khách hàng </div>
                         <div class="account__info">
                             <div class="row sm-gutter">
-                                <div class="col l-2 m-12 c-12">
+                                <div class="col l-2 m-12 c-12 wow fadeInLeft" data-wow-duration=".5s">
                                     <div class="account__section">
                                         <ul class="account-info__list">
                                             <li class="account-info__item">
@@ -235,9 +240,9 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col l-10 m-12 c-12">
+                                <div class="col l-10 m-12 c-12 wow fadeInRight" data-wow-duration=".5s">
                                     <div class="account-info__edit">
-                                        <h3 class="account-info__heading">Đổi mật khẩu</h3>
+                                        <h3 class="account-info__heading wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".1s">Đổi mật khẩu</h3>
                                         <?php if(isset($notice['message'])){?>
                                             <h3 style=" font-size: 1.9rem; color: #33CC1F; text-align: center; "><?php echo $notice['message'] ?></h3>
                                         <?php } ?>
@@ -245,27 +250,27 @@
                                             <div class="row">
                                                 <div class="col l-6 l-o-3 m-12 c-12">
                                                     <div class="account-info__form">
-                                                        <label for="oldpass" class="account-info__label">Mật khẩu cũ</label>
-                                                        <input type="password" name="oldpass" id="oldpass" class="account-info__input" placeholder="Mật khẩu cũ" class="account-info__input">
+                                                        <label for="oldpass" class="account-info__label wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".15s">Mật khẩu cũ</label>
+                                                        <input type="password" name="oldpass" id="oldpass" class="account-info__input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s" placeholder="Mật khẩu cũ" class="account-info__input">
                                                         <?php if(isset($error['oldpass'])){?>
-                                                            <p style=" font-size: 14px; color: red;"><?php echo $error['oldpass'] ?></p>
+                                                            <p class="wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s" style=" font-size: 14px; color: red;"><?php echo $error['oldpass'] ?></p>
                                                         <?php } ?>
                                                     </div>
                                                     <div class="account-info__form">
-                                                        <label for="newpass" class="account-info__label">Mật khẩu mới</label>
-                                                        <input type="password" name="newpass" id="newpass" placeholder="Mật khẩu mới" class="account-info__input">
+                                                        <label for="newpass" class="account-info__label wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".25s">Mật khẩu mới</label>
+                                                        <input type="password" name="newpass" id="newpass" placeholder="Mật khẩu mới" class="account-info__input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".3s">
                                                         <?php if(isset($error['newpass'])){?>
-                                                            <p style=" font-size: 14px; color: red;"><?php echo $error['newpass'] ?></p>
+                                                            <p class="wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".3s" style=" font-size: 14px; color: red;"><?php echo $error['newpass'] ?></p>
                                                         <?php } ?>
                                                     </div>
                                                     <div class="account-info__form">
-                                                        <label for="confirmpass" class="account-info__label">Nhập lại mật khẩu</label>
-                                                        <input type="password" name="confirmpass" id="confirmpass" placeholder="Nhập lại mật khẩu" class="account-info__input">
+                                                        <label for="confirmpass" class="account-info__label wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".35s">Nhập lại mật khẩu</label>
+                                                        <input type="password" name="confirmpass" id="confirmpass" placeholder="Nhập lại mật khẩu" class="account-info__input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".4s">
                                                         <?php if(isset($error['confirmpass'])){?>
-                                                            <p style=" font-size: 14px; color: red;"><?php echo $error['confirmpass'] ?></p>
+                                                            <p class="wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".4s" style=" font-size: 14px; color: red;"><?php echo $error['confirmpass'] ?></p>
                                                         <?php } ?>
                                                     </div>
-                                                    <input type="submit" class="account-info__submit" name="change" value="Đổi mật khẩu">
+                                                    <input type="submit" class="account-info__submit wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".45s" name="change" value="Đổi mật khẩu">
                                                 </div>
                                             </div>
                                         </form>
@@ -276,7 +281,7 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer">
+            <footer class="footer wow fadeInUp" data-wow-duration="1s">
             <div class="grid wide footer__content">
                     <div class="row">
                         <div class="col l-2-4 m-4 c-6">

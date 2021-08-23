@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="./Assets/Css/main.css">
     <link rel="stylesheet" href="./Assets/Css/base.css">
     <link rel="stylesheet" href="./Assets/Css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
+    <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -225,7 +230,7 @@
                                 if(isset($_SESSION['customer']) && $_SESSION['customer'] != NULL){
                         ?>
                             <?php if($package_user){ ?>
-                                <div class="package-info">
+                                <div class="package-info wow fadeInUp" data-wow-duration=".5s">
                                     <table class="package-info__table">
                                         <thead>
                                             <tr>
@@ -262,12 +267,12 @@
                                     </table>
                                 </div>
                                 <?php } else { ?>
-                                        <h3 style="font-size: 1.8rem; text-align: center; margin: 180px 0 260px 0;">Quý khách chưa đặt đơn hàng nào, nếu quý khách đã đặt hàng, thông tin đơn hàng sẽ xuất hiện ở đây</h3>
+                                        <h3 class="wow fadeInUp" data-wow-duration=".5s" style="font-size: 1.8rem; text-align: center; margin: 180px 0 260px 0;">Quý khách chưa đặt đơn hàng nào, nếu quý khách đã đặt hàng, thông tin đơn hàng sẽ xuất hiện ở đây</h3>
                                 <?php } ?>
                         <?php }else{ ?>
                             <?php if (isset($checkcode) && count($checkcode) > 0){ ?>
                                 <div class="row">
-                                    <div class="col l-12 c-12 m-12">
+                                    <div class="col l-12 c-12 m-12 wow fadeInUp" data-wow-duration=".5s">
                                         <div class="package-info">
                                             <table class="package-info__table">
                                                 <thead>
@@ -305,16 +310,16 @@
                                 <div class="row">
                                     <div class="col l-12 m-12 c-12">
                                         <div class="row">
-                                            <div class="col l-6 l-o-3 m-10 m-o-1 c-12">
+                                            <div class="col l-6 l-o-3 m-10 m-o-1 c-12 wow fadeInUp" data-wow-duration=".5s">
                                                 <form action="?controller=donhang" method="post">
                                                     <div class="check__delivery-item">
-                                                        <label for="login-username" class="check__delivery-input-label">Nhập mã đơn hàng</label>
-                                                        <input type="text" name="code" placeholder="Mã đơn hàng"  class="check__delivery-input">
+                                                        <label for="login-username" class="check__delivery-input-label wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".1s">Nhập mã đơn hàng</label>
+                                                        <input type="text" name="code" placeholder="Mã đơn hàng"  class="check__delivery-input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s">
                                                         <?php if(isset($error['code'])){?>
                                                             <p style=" font-size: 14px; color: red;"><?php echo $error['code'] ?></p>
                                                         <?php } ?>
                                                     </div>
-                                                    <div class="check__delivery-item">
+                                                    <div class="check__delivery-item wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".3s">
                                                         <input type="submit" class="check__delivery-submit" name="checksubmit" value="Tìm kiếm">
                                                     </div>
                                                 </form>
@@ -328,7 +333,7 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer">
+            <footer class="footer wow fadeInUp" data-wow-duration="1s">
             <div class="grid wide footer__content">
                     <div class="row">
                         <div class="col l-2-4 m-4 c-6">

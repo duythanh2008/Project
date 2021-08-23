@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="./Assets/Css/base.css">
     <link rel="stylesheet" href="./Assets/Css/main.css">
     <link rel="stylesheet" href="./Assets/Css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
+    <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -249,15 +254,15 @@
                     </form>
                         <?php if (isset($_GET['keyword']) &&  $_GET['keyword'] != ''){?>
                             <?php if (count($product) > 0){ ?>
-                            <h3 class="home-product__heading-search">
+                            <h3 class="home-product__heading-search wow fadeInDown" data-wow-duration="1s">
                                 Kết quả tìm kiếm của "<?php echo $_GET['keyword'] ?>"
                             </h3>
                             <?php } else { ?>
-                            <h3 class="home-product__heading-search">
+                            <h3 class="home-product__heading-search wow fadeInDown" data-wow-duration="1s">
                                 Không có sản phẩm trùng với từ khóa "<?php echo $_GET['keyword'] ?>"
                             </h3>
                             <?php } ?>
-                            <div class="row sm-gutter">
+                            <div class="row sm-gutter wow fadeInLeft" data-wow-duration="1s">
                                 <?php foreach ($product as $key => $value){ ?>
                                 <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-item">
@@ -279,12 +284,12 @@
                                 <?php } ?>
                             </div>
                         <?php }?>
-                        <h3 class="home-product__heading">
+                        <h3 class="home-product__heading  wow fadeInLeft">
                             Sản phẩm nổi bật
                         </h3>
                         <div class="row sm-gutter">
                             <?php foreach ($product1 as $key => $value){ ?>
-                            <div class="col l-2-4 m-4 c-6">
+                            <div class="col l-2-4 m-4 c-6 wow fadeInUp">
                                 <div class="home-product-item">
                                     <a href="?controller=chitietsanpham&id=<?php echo $value['id'] ?>" class="home-product-item__link">
                                         <div class="home-product-item__img" style="background-image: url('<?php echo $value['image'] ?>');"></div>
@@ -303,7 +308,7 @@
                             </div>
                             <?php } ?>
                             <?php foreach ($product2 as $key => $value){ ?>
-                            <div class="col l-2-4 m-4 c-6">
+                            <div class="col l-2-4 m-4 c-6 wow fadeInUp">
                                 <div class="home-product-item">
                                     <a href="?controller=chitietsanpham&id=<?php echo $value['id'] ?>" class="home-product-item__link">
                                         <div class="home-product-item__img" style="background-image: url('<?php echo $value['image'] ?>');"></div>
@@ -322,7 +327,7 @@
                             </div>
                             <?php } ?>
                             <?php foreach ($product3 as $key => $value){ ?>
-                            <div class="col l-2-4 m-4 c-6">
+                            <div class="col l-2-4 m-4 c-6 wow fadeInUp">
                                 <div class="home-product-item">
                                     <a href="?controller=chitietsanpham&id=<?php echo $value['id'] ?>" class="home-product-item__link">
                                         <div class="home-product-item__img" style="background-image: url('<?php echo $value['image'] ?>');"></div>
@@ -344,13 +349,13 @@
                     </div>
                 </div>
                 <div class="grid wide">
-                    <div class="banner__img">
+                    <div class="banner__img wow bounceInRight">
                         <img style="padding-top: 10px" src="./Assets/Img/banner3.png" alt="" class="banner__img-link">
                     </div>
-                    <h3 class="home-product__new">
+                    <h3 class="home-product__new wow fadeInRight">
                         Sản phẩm mới
                     </h3>
-                    <div class="row sm-gutter">
+                    <div class="row sm-gutter wow fadeInUp">
                         <?php foreach ($product_new as $key => $value){?>
                             <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product-item">
@@ -374,14 +379,14 @@
                 </div>
                 <!-- Tab items -->
                 <div class="grid wide">
-                    <div class="banner__img">
+                    <div class="banner__img wow bounceInLeft">
                         <img style="filter: brightness(180%); margin-top: 25px" src="./Assets/Img/banner2.jpg" alt="" class="banner__img-link">
                     </div>
                     
-                    <h3 class="home-catalog__heading">
+                    <h3 class="home-catalog__heading wow fadeInDown" data-wow-duration="1s">
                             Danh mục sản phẩm
                     </h3>
-                    <div class="tab">
+                    <div class="tab wow fadeInRight" data-wow-duration="1s">
                         <button class="tablinks active" onclick="catalog(event, 'Aokhoac')">Áo khoác</button>
                         <button class="tablinks" onclick="catalog(event, 'Aophong')">Áo phông</button>
                         <button class="tablinks" onclick="catalog(event, 'Quandai')">Quần dài</button>
@@ -389,6 +394,7 @@
                         <button class="tablinks" onclick="catalog(event, 'Giaydep')">Giày, dép</button>
                     </div>
 
+                    <div class="wow fadeInLeft">
                         <div id="Aokhoac" class="tabcontent active">
                             <div class="row sm-gutter">
                                 <?php foreach ($product4 as $key => $value){ ?>
@@ -470,7 +476,7 @@
                         </div>
 
                         <div id="Giaydep" class="tabcontent">
-                            <div class="row">
+                            <div class="row sm-gutter">
                                 <?php foreach ($product5 as $key => $value){ ?>
                                     <div class="col l-2-4 m-4 c-6">
                                         <div class="home-product-item">
@@ -488,9 +494,10 @@
                                 <?php } ?>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
-            <div class="web-ads">
+            <div class="web-ads wow fadeInUp">
                 <div class="grid wide">
                     <div class="row">
                         <div class="col l-3 m-6 c-6">
@@ -532,7 +539,7 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer">
+            <footer class="footer wow fadeInUp">
                 <div class="grid wide footer__content">
                     <div class="row">
                         <div class="col l-2-4 m-4 c-6">

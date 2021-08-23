@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="./Assets/Img/logo.png">
     <link rel="stylesheet" href="./Assets/Css/grid.css">
-    <link rel="stylesheet" href="./Assets/Css/responsive.css">
     <link rel="stylesheet" href="./Assets/Css/main.css">
     <link rel="stylesheet" href="./Assets/Css/base.css">
+    <link rel="stylesheet" href="./Assets/Css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
+    <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -211,7 +216,7 @@
             <div class="content">
                 <div style="margin-top: 20px" class="grid wide">
                     <div class="row">
-                        <div class="col l-6 m-12 c-12">
+                        <div class="col l-6 m-12 c-12 wow fadeInLeft" data-wow-duration=".5s">
                             <div class="product-detail__img">
                                 <img src="<?php echo $product[0]['image'] ?>" class="product-detail__img-link" id="productImg">
                                 <div class="small-img-row">
@@ -230,20 +235,20 @@
                               </div> 
                             </div>
                         </div>
-                        <div class="col l-6 m-12 c-12">
+                        <div class="col l-6 m-12 c-12 wow fadeInRight" data-wow-duration=".5s">
                             <div class="product-detail__info">
-                                <div class="product-detail__info-link">
+                                <div class="product-detail__info-link wow fadeInLeft" data-wow-delay=".25s" data-wow-duration=".5s">
                                     <a href="?controller=trangchu" class="product-detail__info-link-pre1">Trang chủ</a> <p style="display: inline-block; font-size: 1.6rem;"> > &nbsp;&nbsp;</p>
                                     <a href="?controller=sanpham" class="product-detail__info-link-pre2">Sản phẩm</a> <p style="display: inline-block; font-size: 1.6rem;"> > &nbsp;&nbsp; </p>
                                 </div>
-                                <h3 class="product-detail__info-name">
+                                <h3 class="product-detail__info-name wow fadeInLeft" data-wow-delay=".25s" data-wow-duration=".5s">
                                     <?php echo $product[0]['name'] ?>
                                 </h3>
-                                <div class="product-detail__info-catalog">
+                                <div class="product-detail__info-catalog wow fadeInRight" data-wow-delay=".25s" data-wow-duration=".5s">
                                     <h4 class="product-detail__info-catalog-heading">Danh mục: </h4>
                                     <a href="?controller=sanpham&id=<?php echo $catalog[0]['id'] ?>" class="product-detail__info-catalog-name"><?php echo $catalog[0]['name'] ?></a>
                                 </div>
-                                <div class="product-detail__info-status">
+                                <div class="product-detail__info-status wow fadeInLeft" data-wow-delay=".25s" data-wow-duration=".5s">
                                     <h4 class="product-detail__info-status-check">Tình trạng: </h4>
                                     <?php if ($product[0]['qty'] > 0 ){ ?>
                                         <p class="product-detail__info-status-checkname">Còn hàng</p>
@@ -251,10 +256,10 @@
                                         <p style="color: red" class="product-detail__info-status-checkname">Hết hàng</p>
                                     <?php } ?>
                                 </div>
-                                <p class="product-detail__info-price"><?php echo number_format($product[0]['price']) ?>đ</p>
+                                <p class="product-detail__info-price wow fadeInRight" data-wow-delay=".25s" data-wow-duration=".5s"><?php echo number_format($product[0]['price']) ?>đ</p>
                                 
                                 <?php if ($product[0]['qty'] > 0 ){ ?>
-                                    <div class="product-detail__info-add-to-cart">
+                                    <div class="product-detail__info-add-to-cart wow fadeInLeft" data-wow-delay=".25s" data-wow-duration=".5s">
                                         <form action="?controller=themgiohang&id=<?php echo $product[0]['id'] ?>" method="post">
                                             <label for="qty" class="product-detail__info-qty-label">Số lượng: </label>
                                             <input type="number" id="qty" name="qty" class="product-detail__info-qty" value="1"><br>
@@ -276,10 +281,10 @@
                                 <?php }else{ ?>
                                     <br>
                                 <?php } ?>
-                                <h3 class="product-detail__desc-heading">
+                                <h3 class="product-detail__desc-heading wow fadeInRight"  data-wow-delay=".25s" data-wow-duration=".5s">
                                     Mô tả sản phẩm
                                 </h3>
-                                <h3 class="product-detail__desc">
+                                <h3 class="product-detail__desc wow fadeInLeft" data-wow-delay=".25s" data-wow-duration=".5s">
                                     <?php echo $product[0]['description'] ?>
                                 </h3>
                             </div>
@@ -288,12 +293,12 @@
                 </div>
                 <div style="margin-top: 50px" class="grid wide">
                     <div class="row">
-                        <div class="col l-9 m-12 c-12">
+                        <div class="col l-9 m-12 c-12 wow fadeInLeft" data-wow-duration=".5s">
                             
                             <h3 class="product-detail__rating-heading">
                                 Đánh giá
                             </h3>
-                            <div class="product-detail__rating">
+                            <div class="product-detail__rating wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".3s">
                                 <?php if ($product[0]['total_rate'] && $product[0]['rate_times'] != ''){ ?>
                                     <h3 style="font-size: 1.6rem; text-align: center;">Đánh giá trung bình</h3>
                                     <div class="product-detail_show-rating">
@@ -346,7 +351,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="col l-3 m-12 c-12">
+                        <div class="col l-3 m-12 c-12 wow fadeInRight" data-wow-duration=".5s">
                             <div class="product-relative">
                                 <h3 class="product-relative__heading">Sản phẩm liên quan</h3>
                                 <ul class="product-relative__list">
@@ -371,7 +376,7 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer">
+            <footer class="footer wow fadeInUp" data-wow-duration="1s">
             <div class="grid wide footer__content">
                     <div class="row">
                         <div class="col l-2-4 m-4 c-6">

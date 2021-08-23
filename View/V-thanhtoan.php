@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="./Assets/Css/main.css">
     <link rel="stylesheet" href="./Assets/Css/base.css">
     <link rel="stylesheet" href="./Assets/Css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
+    <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -224,7 +229,7 @@
                         if (isset($_SESSION['cart'])){
                     ?>
                         <div class="row">
-                            <div class="col l-10 l-o-1 m-12 c-12">
+                            <div class="col l-10 l-o-1 m-12 c-12 wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".1s">
                                 <div class="cart-table">
                                     <table>
                                         <thead>
@@ -268,7 +273,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="result-detail">
+                        <div class="result-detail wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s">
                                 <?php if (isset($error['message'])){?> 
                                             <p><?php echo $error['message']; ?></p>
                                 <?php } ?>
@@ -279,7 +284,7 @@
                         <div class="row">
                             <div class="col l-10 l-o-1 m-12 c-12">
                                 <form action="?controller=xulithanhtoan" class="js-form-payment" method="post">
-                                    <div class="cart-product__pay">
+                                    <div class="cart-product__pay wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".3s">
                                         <h3 class="cart-product__pay-heading">Thông tin thanh toán</h3>
                                         <div class="row">
                                             <div class="col l-6 m-12 c-12">
@@ -307,7 +312,7 @@
                                         <input type="radio" id="checked" checked>
                                         <label class="pay-method" for="checked">&nbsp;&nbsp;&nbsp;Thanh toán khi nhận hàng</label> -->
                                     </div>
-                                    <div class="cart-product__pay-total-price">
+                                    <div class="cart-product__pay-total-price wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".3s">
                                         <h3 class="cart-product__pay-total-price-heading">Tổng thanh toán</h3>
                                         <p class="cart-product__pay-total-price-money"><?php echo number_format($amount)?>đ</p>
                                         <div>
@@ -335,7 +340,7 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer">
+            <footer class="footer wow fadeInUp" data-wow-duration="1s">
             <div class="grid wide footer__content">
                     <div class="row">
                         <div class="col l-2-4 m-4 c-6">

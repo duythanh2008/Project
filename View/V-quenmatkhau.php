@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="./Assets/Css/main.css">
     <link rel="stylesheet" href="./Assets/Css/base.css">
     <link rel="stylesheet" href="./Assets/Css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
+    <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -227,14 +232,14 @@
                                     <form action="?controller=quenmatkhau" method="post">
                                         <div class="row">
                                             <div class="col l-6 l-o-3 m-10 m-o-1 c-12">
-                                                <div class="check__delivery-item">
+                                                <div class="check__delivery-item wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".1s">
                                                     <label for="email-input" class="check__delivery-input-label">Nhập địa chỉ email</label>
                                                     <input type="text" name="email" id="email-input" placeholder="Nhập địa chỉ email"  class="check__delivery-input">
                                                     <?php if(isset($error)){?>
                                                         <p style=" font-size: 14px; color: red;"><?php echo $error ?></p>
                                                     <?php } ?>
                                                 </div>
-                                                <div class="check__delivery-item">
+                                                <div class="check__delivery-item wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s">
                                                     <input type="submit" class="check__delivery-submit" name="find" value="Xác nhận">
                                                 </div>
                                             </div>
@@ -246,7 +251,7 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer">
+            <footer class="footer wow fadeInUp" data-wow-duration="1s">
             <div class="grid wide footer__content">
                     <div class="row">
                         <div class="col l-2-4 m-4 c-6">
