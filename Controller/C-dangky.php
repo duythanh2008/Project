@@ -14,6 +14,10 @@
         }
         if ($email == ''){
             $error['email']= "Vui lòng nhập email";
+        }else{
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $error['email']= "Định dạng email không đúng";
+            }
         }
         if ($password == ''){
             $error['password']= "Vui lòng nhập mật khẩu";
@@ -24,6 +28,10 @@
         }
         if ($phone == ''){
             $error['phone']= "Vui lòng nhập số điện thoại";
+        }else{
+            if(!preg_match('/^[0-9]{10}+$/', $phone)) {
+                $error['phone']= "Số điện thoại không đúng";
+            }
         }
         if (!$error){
             $admin_creat1 = $database->get('user_info',array('username'=>$username));

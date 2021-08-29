@@ -14,6 +14,8 @@
     <script>
     new WOW().init();
     </script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=841263506490089&autoLogAppEvents=1" nonce="NwgDKUNE"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -231,13 +233,26 @@
                                     <h3 class="catalog__heading">Bộ lọc</h3>
                                     <form action="?controller=sanpham" method="post">
                                     <p style="font-size: 17px; font-weight: 600; color: var(--text-color); margin-left: 20px;">Danh mục</p>
-                                    <ul class="catalog__list">
-                                        <?php foreach ($catalog as $key => $value){ ?>
-                                            <li class="catalog__item">
-                                                <input class="find" type="checkbox" class="find" name="catalog[]" value="<?php echo $value['id'] ?>" <?php if(isset($catalog_id) && ($catalog_id == $value['id'])){ echo "checked"; } ?> > &nbsp;<?php echo $value['name'] ?>
-                                            </li>
-                                        <?php } ?>
-                                    </ul>
+                                        <ul class="catalog__list">
+                                            <?php foreach ($catalog as $key => $value){ ?>
+                                                <li class="catalog__item">
+                                                    <input class="find" type="checkbox" class="find" name="catalog[]" value="<?php echo $value['id'] ?>" 
+                                                    <?php if(isset($catalog_list)){
+                                                        foreach ($catalog_list as $key => $item){
+                                                            if($item == $value['id']){
+                                                                echo "checked";
+                                                            }
+                                                        }
+                                                    } ?>
+                                                    <?php if(isset($catalog_id)){
+                                                            if($catalog_id == $value['id']){
+                                                                echo "checked";
+                                                            }
+                                                        }    
+                                                    ?> > &nbsp;<?php echo $value['name'] ?>
+                                                </li>
+                                            <?php } ?>
+                                        </ul>
                                     <p style="font-size: 17px; font-weight: 600; color: var(--text-color); margin-left: 20px;">Giá</p>
                                     <ul class="catalog__list">
                                         <li class="catalog__item">
@@ -270,7 +285,20 @@
                                         <ul class="catalog__list">
                                             <?php foreach ($catalog as $key => $value){ ?>
                                                 <li class="catalog__item">
-                                                    <input class="find" type="checkbox" class="find" name="catalog[]" value="<?php echo $value['id'] ?>" <?php if(isset($catalog_id) && ($catalog_id == $value['id'])){ echo "checked"; } ?> > &nbsp;<?php echo $value['name'] ?>
+                                                    <input class="find" type="checkbox" class="find" name="catalog[]" value="<?php echo $value['id'] ?>" 
+                                                    <?php if(isset($catalog_list)){
+                                                        foreach ($catalog_list as $key => $item){
+                                                            if($item == $value['id']){
+                                                                echo "checked";
+                                                            }
+                                                        }
+                                                    } ?>
+                                                    <?php if(isset($catalog_id)){
+                                                            if($catalog_id == $value['id']){
+                                                                echo "checked";
+                                                            }
+                                                        }    
+                                                    ?> > &nbsp;<?php echo $value['name'] ?>
                                                 </li>
                                             <?php } ?>
                                         </ul>
@@ -312,11 +340,12 @@
                                                     </span>
                                                 </div>
                                             </a>
+                                            <a class="home-product-item__add-to-cart" href="?controller=themgiohang&id=<?php echo $value['id']?>">Thêm vào giỏ</a>
                                         </div>
                                     </div>
                                     <?php } ?>
                                     <?php if ($num == 0){ ?>
-                                    <p style="margin: 0 auto; font-size: 1.6rem;"><?php echo "Không có sản phẩm phù hợp"; }?></p>
+                                    <p style="margin: 20px auto 0; font-size: 1.6rem;"><?php echo "Không có sản phẩm phù hợp"; }?></p>
                                 </div>
                                 <div class="page-btn wow fadeInUp" data-wow-duration=".5s">
                                     <?php
@@ -438,6 +467,9 @@
                             </ul>
                         </div>
                     </div>
+                </div><br>
+                <div style="display: flex; justify-content: center">
+                    <div class="fb-page" data-href="https://www.facebook.com/Fashion-GenZ-138799094994489" data-tabs="timeline" data-width="400" data-height="70" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Fashion-GenZ-138799094994489" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Fashion-GenZ-138799094994489">Fashion GenZ</a></blockquote></div>
                 </div>
                 <div class="footer__copryright">
                     <div class="grid wide">

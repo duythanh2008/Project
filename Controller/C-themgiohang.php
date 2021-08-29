@@ -29,7 +29,34 @@
                  $_SESSION['cart'][$id]['size']=$_POST['size'];
                  $_SESSION['qty'] += $_SESSION['cart'][$id]['sl'];
        }
+       echo "<script type='text/javascript'>alert('Thêm vào giỏ thành công');</script>";
+       header('refresh:0.1;url=?controller=chitietsanpham&id='.$id);
+     }else{
+          if(isset($_SESSION['cart'])){
+            if(isset($_SESSION['cart'][$id])){
+                 $_SESSION['cart'][$id]['sl']=$_SESSION['cart'][$id]['sl'] + 1;
+                 $_SESSION['qty'] += + 1;
+            }
+            else{
+                 $_SESSION['cart'][$id]['id']=$product[0]['id'];
+                 $_SESSION['cart'][$id]['sl']= 1;
+                 $_SESSION['cart'][$id]['price']=$product[0]['price'];
+                 $_SESSION['cart'][$id]['img-link']=$product[0]['image'];
+                 $_SESSION['cart'][$id]['name']=$product[0]['name'];
+                 $_SESSION['cart'][$id]['size']= 36;
+                 $_SESSION['qty'] += $_SESSION['cart'][$id]['sl'];
+            }
+          }
+          else{
+                    $_SESSION['cart'][$id]['id']=$product[0]['id'];
+                    $_SESSION['cart'][$id]['sl']=$_SESSION['cart'][$id]['sl'] + 1;
+                    $_SESSION['cart'][$id]['price']=$product[0]['price'];
+                    $_SESSION['cart'][$id]['img-link']=$product[0]['image'];
+                    $_SESSION['cart'][$id]['name']=$product[0]['name'];
+                    $_SESSION['cart'][$id]['size']= 36;
+                    $_SESSION['qty'] += $_SESSION['cart'][$id]['sl'];
+          }
+          echo "<script type='text/javascript'>alert('Thêm vào giỏ thành công');</script>";
+          header("refresh:0.1;url=" . $_SERVER["HTTP_REFERER"]);
      }
-     echo "<script type='text/javascript'>alert('Thêm vào giỏ thành công');</script>";
-     header('refresh:0.1;url=?controller=chitietsanpham&id='.$id);
 ?>

@@ -19,9 +19,9 @@
                }
      if (isset($_POST['search'])){
           if (isset($_POST['catalog'])){
-               $catalog_id = $_POST['catalog'];
+               $catalog_list = $_POST['catalog'];
           }
-          if (isset($catalog_id) && $catalog_id != ''){
+          if (isset($catalog_list) && $catalog_list != ''){
                if (isset($_POST['price'])){
                     switch($_POST['price']){
                          case '1':
@@ -51,8 +51,8 @@
                     $item_per_page = !empty($_GET['per_page'])?$_GET['per_page']:40;
                     $current_page = !empty($_GET['page'])?$_GET['page']:1; //Trang hiện tại
                     $offset = ($current_page - 1) * $item_per_page;
-                    $product = $database->get_full_results('product',array('catalog'=>$catalog_id),$begin,$end,$item_per_page,$offset);
-                    $totalRecords = $database->get_full_results('product',array('catalog'=>$catalog_id),$begin,$end,$item_per_page,$offset);
+                    $product = $database->get_full_results('product',array('catalog'=>$catalog_list),$begin,$end,$item_per_page,$offset);
+                    $totalRecords = $database->get_full_results('product',array('catalog'=>$catalog_list),$begin,$end,$item_per_page,$offset);
                     $totalRecords = $totalRecords->num_rows;
                     $totalPages = ceil($totalRecords / $item_per_page);
                     require_once('./View/V-sanpham.php');

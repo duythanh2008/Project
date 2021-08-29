@@ -14,6 +14,8 @@
     <script>
     new WOW().init();
     </script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=841263506490089&autoLogAppEvents=1" nonce="NwgDKUNE"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -251,21 +253,21 @@
                                                 <div class="col l-6 l-o-3 m-12 c-12">
                                                     <div class="account-info__form">
                                                         <label for="oldpass" class="account-info__label wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".15s">Mật khẩu cũ</label>
-                                                        <input type="password" name="oldpass" id="oldpass" class="account-info__input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s" placeholder="Mật khẩu cũ" class="account-info__input">
+                                                        <input type="password" name="oldpass" id="oldpass" <?php if (isset($_POST['oldpass'])) { ?> value="<?php echo $_POST['oldpass']; ?>"<?php } ?> class="account-info__input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s" placeholder="Mật khẩu cũ" class="account-info__input">
                                                         <?php if(isset($error['oldpass'])){?>
                                                             <p class="wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s" style=" font-size: 14px; color: red;"><?php echo $error['oldpass'] ?></p>
                                                         <?php } ?>
                                                     </div>
                                                     <div class="account-info__form">
                                                         <label for="newpass" class="account-info__label wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".25s">Mật khẩu mới</label>
-                                                        <input type="password" name="newpass" id="newpass" placeholder="Mật khẩu mới" class="account-info__input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".3s">
+                                                        <input type="password" name="newpass" id="newpass" <?php if (isset($_POST['newpass'])) { ?> value="<?php echo $_POST['newpass']; ?>"<?php } ?> placeholder="Mật khẩu mới" class="account-info__input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".3s">
                                                         <?php if(isset($error['newpass'])){?>
                                                             <p class="wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".3s" style=" font-size: 14px; color: red;"><?php echo $error['newpass'] ?></p>
                                                         <?php } ?>
                                                     </div>
                                                     <div class="account-info__form">
                                                         <label for="confirmpass" class="account-info__label wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".35s">Nhập lại mật khẩu</label>
-                                                        <input type="password" name="confirmpass" id="confirmpass" placeholder="Nhập lại mật khẩu" class="account-info__input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".4s">
+                                                        <input type="password" name="confirmpass" id="confirmpass" <?php if (isset($_POST['confirmpass'])) { ?> value="<?php echo $_POST['confirmpass']; ?>"<?php } ?> placeholder="Nhập lại mật khẩu" class="account-info__input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".4s">
                                                         <?php if(isset($error['confirmpass'])){?>
                                                             <p class="wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".4s" style=" font-size: 14px; color: red;"><?php echo $error['confirmpass'] ?></p>
                                                         <?php } ?>
@@ -358,6 +360,9 @@
                             </ul>
                         </div>
                     </div>
+                </div><br>
+                <div style="display: flex; justify-content: center">
+                    <div class="fb-page" data-href="https://www.facebook.com/Fashion-GenZ-138799094994489" data-tabs="timeline" data-width="400" data-height="70" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Fashion-GenZ-138799094994489" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Fashion-GenZ-138799094994489">Fashion GenZ</a></blockquote></div>
                 </div>
                 <div class="footer__copryright">
                     <div class="grid wide">

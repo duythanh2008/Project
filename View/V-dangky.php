@@ -14,6 +14,8 @@
     <script>
     new WOW().init();
     </script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=841263506490089&autoLogAppEvents=1" nonce="NwgDKUNE"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -211,7 +213,7 @@
                                             <div class="col l-6 m-12 c-12">
                                                 <div class="account__register-item">
                                                     <label for="register-fullname" class="account__register-input-label wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".1s">Tên đăng nhập</label>
-                                                    <input type="text" name="user" class="account__register-input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s" id="register-fullname" placeholder="Tên đăng nhập">
+                                                    <input type="text" name="user" class="account__register-input wow fadeInUp" <?php if (isset($_POST['user'])) { ?> value="<?php echo $_POST['user']; ?>"<?php } ?> data-wow-duration=".5s"  data-wow-delay=".2s" id="register-fullname" placeholder="Tên đăng nhập">
                                                     <?php if(isset($error['username'])){?>
                                                         <p class="wow fadeInUp" style=" font-size: 14px; color: red;" data-wow-duration=".5s"  data-wow-delay=".2s"><?php echo $error['username'] ?></p>
                                                     <?php } ?>
@@ -220,7 +222,7 @@
                                             <div class="col l-6 m-12 c-12">
                                                 <div class="account__register-item">
                                                     <label for="register-phone" class="account__register-input-label wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".1s">Số điện thoại</label>
-                                                    <input type="text" name="phone" class="account__register-input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s" id="register-phone" placeholder="Số điện thoại">
+                                                    <input type="text" name="phone" class="account__register-input wow fadeInUp" <?php if (isset($_POST['phone'])) { ?> value="<?php echo $_POST['phone']; ?>"<?php } ?> data-wow-duration=".5s"  data-wow-delay=".2s" id="register-phone" placeholder="Số điện thoại">
                                                     <?php if(isset($error['phone'])){?>
                                                         <p class="wow fadeInUp" style=" font-size: 14px; color: red;" data-wow-duration=".5s"  data-wow-delay=".2s"><?php echo $error['phone'] ?></p>
                                                     <?php } ?>
@@ -231,7 +233,7 @@
                                             <div class="col l-6 m-12 c-12">
                                                 <div class="account__register-item">
                                                     <label for="register-email" class="account__register-input-label wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".3s">Email</label>
-                                                    <input type="text" name="email" class="account__register-input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".4s" id="register-email" placeholder="Email">
+                                                    <input type="text" name="email" class="account__register-input wow fadeInUp" <?php if (isset($_POST['email'])) { ?> value="<?php echo $_POST['email']; ?>"<?php } ?> data-wow-duration=".5s"  data-wow-delay=".4s" id="register-email" placeholder="Email">
                                                     <?php if(isset($error['email'])){?>
                                                         <p class="wow fadeInUp" style=" font-size: 14px; color: red;" data-wow-duration=".5s"  data-wow-delay=".4s"><?php echo $error['email'] ?></p>
                                                     <?php } ?>
@@ -240,7 +242,7 @@
                                             <div class="col l-6 m-12 c-12">
                                                 <div class="account__register-item">
                                                     <label for="register-password" class="account__register-input-label wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".3s">Mật khẩu</label>
-                                                    <input type="password" name="pass" class="account__register-input wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".4s" id="register-password" placeholder="Mật khẩu">
+                                                    <input type="password" name="pass" class="account__register-input wow fadeInUp" <?php if (isset($_POST['pass'])) { ?> value="<?php echo $_POST['pass']; ?>"<?php } ?> data-wow-duration=".5s"  data-wow-delay=".4s" id="register-password" placeholder="Mật khẩu">
                                                     <?php if(isset($error['password'])){?>
                                                         <p class="wow fadeInUp" style=" font-size: 14px; color: red;" data-wow-duration=".5s"  data-wow-delay=".4s"><?php echo $error['password'] ?></p>
                                                     <?php } ?>
@@ -336,6 +338,9 @@
                             </ul>
                         </div>
                     </div>
+                </div><br>
+                <div style="display: flex; justify-content: center">
+                    <div class="fb-page" data-href="https://www.facebook.com/Fashion-GenZ-138799094994489" data-tabs="timeline" data-width="400" data-height="70" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Fashion-GenZ-138799094994489" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Fashion-GenZ-138799094994489">Fashion GenZ</a></blockquote></div>
                 </div>
                 <div class="footer__copryright">
                     <div class="grid wide">

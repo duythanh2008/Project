@@ -116,7 +116,7 @@
                                         'vnp_response_code'=>$vnp_response_code,
                                         'code_vnpay'=>$code_vnpay,
                                         'code_bank'=>$code_bank,
-                                        'time'=>$date_time
+                                        'time'=>$time
                                     ));
                                 }
                                 $id = $_SESSION['customer'];
@@ -128,7 +128,7 @@
                                         $content.= '<p style="margin: 5px 0">Số điện thoại: '.$_SESSION['phone'].'</p>';
                                         $content.= '<p style="margin: 5px 0">Địa chỉ: '.$_SESSION['address'].'</p>';
                                         $content.= '<p style="margin: 5px 0">Mã đơn hàng: '.$_SESSION['order_id'].'</p>';
-                                        $content.= '<p style="margin: 5px 0">Tổng tiền: '.number_format($_SESSION['amount']).'đ</p>';
+                                        $content.= '<p style="margin: 5px 0">Tổng tiền: '.number_format($_SESSION['amount']).'đ ( Đã thanh toán )</p>';
                                         $content.= '<table style="text-align:left" cellpadding="10">
                                                     <thead>
                                                             <tr>	

@@ -119,7 +119,7 @@
                                 <div class="admin__add-product">
                                     <div class="admin__add-product-item wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s">
                                         <label for="name" class="admin__add-product-label">Tên sản phẩm</label>
-                                        <input type="text" name="name" id="name" placeholder="Tên sản phẩm" class="admin__add-product-input">
+                                        <input type="text" name="name" id="name" <?php if (isset($_POST['name'])) { ?> value="<?php echo $_POST['name']; ?>"<?php } ?> placeholder="Tên sản phẩm" class="admin__add-product-input">
                                         <?php if (isset($error['name'])){?> 
                                             <p class="error"><?php echo $error['name']; ?></p>
                                         <?php } ?>
@@ -154,14 +154,14 @@
                                     </div>
                                     <div class="admin__add-product-item wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".3s">
                                         <label for="price" class="admin__add-product-label">Giá sản phẩm</label>
-                                        <input type="text" name="price" id="price" placeholder="Giá sản phẩm" class="admin__add-product-input">
+                                        <input type="text" name="price" id="price" <?php if (isset($_POST['price'])) { ?> value="<?php echo $_POST['price']; ?>"<?php } ?> placeholder="Giá sản phẩm" class="admin__add-product-input">
                                         <?php if (isset($error['price'])){?> 
                                             <p class="error"><?php echo $error['price']; ?></p>
                                         <?php } ?>
                                     </div>
                                     <div class="admin__add-product-item wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".4s">
                                         <label for="desc" class="admin__add-product-label">Mô tả sản phẩm</label>
-                                        <textarea name="desc" id="desc" placeholder="Mô tả" class="admin__add-product-textarea"></textarea>
+                                        <textarea name="desc" id="desc" placeholder="Mô tả" class="admin__add-product-textarea"><?php if (isset($_POST['desc'])) { echo $_POST['desc']; } ?></textarea>
                                         <?php if (isset($error['description'])){?> 
                                             <p class="error"><?php echo $error['description']; ?></p>
                                         <?php } ?>
@@ -179,7 +179,7 @@
                                     </div>
                                     <div class="admin__add-product-item wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".4s">
                                         <label for="qty" class="admin__add-product-label">Số lượng sản phẩm</label>
-                                        <input type="text" name="qty" id="qty" placeholder="Số lượng sản phẩm" class="admin__add-product-input">
+                                        <input type="text" name="qty" id="qty" <?php if (isset($_POST['qty'])) { ?> value="<?php echo $_POST['qty']; ?>"<?php } ?> placeholder="Số lượng sản phẩm" class="admin__add-product-input">
                                         <?php if (isset($error['qty'])){?> 
                                             <p class="error"><?php echo $error['qty']; ?></p>
                                         <?php } ?>

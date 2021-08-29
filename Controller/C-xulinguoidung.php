@@ -28,7 +28,11 @@
                    }
                    if ($phone == ''){
                         $error['phone']= "Vui lòng nhập số điện thoại";
-                   }
+                   }else{
+                         if(!preg_match('/^[0-9]{10}+$/', $phone)) {
+                              $error['phone']= "Số điện thoại không đúng";
+                         }
+                    }
                    if ($email == ''){
                         $error['email']= "Vui lòng nhập địa chỉ email";
                    }

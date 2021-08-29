@@ -133,6 +133,7 @@
                                             <th class="admin__product-table-th">Tổng tiền</th>
                                             <th class="admin__product-table-th">Thời gian đặt hàng</th>
                                             <th class="admin__product-table-th">Trạng thái</th>
+                                            <th class="admin__product-table-th">Phương thúc thanh toán</th>
                                             <th class="admin__product-table-th">Tùy chọn</th>
                                         </tr>
                                     </thead>
@@ -146,6 +147,11 @@
                                             <td class="admin__product-table-td"><?php echo number_format($value['amount']) ?>đ</td>
                                             <td class="admin__product-table-td"><?php echo $value['time_order']?></td>
                                             <td class="admin__product-table-td" style="color: red">Chưa xác nhận</td>
+                                            <td class="admin__product-table-td"><?php if ($value['payment_method'] == 0){
+                                                                                    echo "Thanh toán khi nhận hàng";
+                                                                                }else{
+                                                                                    echo "Thanh toán online";
+                                                                                } ?></td>
                                             <td class="admin__product-table-td">
                                                 <input onclick="window.location ='?controller=xulidonhang&id=<?php echo $value['id']; ?>'" type="button" class="btn-option" value="Duyệt">
                                                 <input onclick="window.location ='?controller=quanlydonhangchitiet&id=<?php echo $value['id']; ?>'" type="button" class="btn-option" value="Chi tiết">
@@ -162,6 +168,11 @@
                                             <td class="admin__product-table-td"><?php echo number_format($value['amount']) ?>đ</td>
                                             <td class="admin__product-table-td"><?php echo $value['time_order']?></td>
                                             <td class="admin__product-table-td" style="color: #33CC1F">Đã xác nhận</td>
+                                            <td class="admin__product-table-td"><?php if ($value['payment_method'] == 0){
+                                                                                    echo "Thanh toán khi nhận hàng";
+                                                                                }else{
+                                                                                    echo "Thanh toán online";
+                                                                                } ?></td>
                                             <td class="admin__product-table-td">
                                                 <input onclick="window.location ='?controller=quanlydonhangchitiet&id=<?php echo $value['id']; ?>'" type="button" class="btn-option" value="Chi tiết">
                                             </td>

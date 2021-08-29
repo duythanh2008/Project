@@ -253,7 +253,7 @@
                         </div>
                     </div>
                     <?php }else{ ?>
-                        <h3 class="admin-notice">Tài khoản quản trị viên mới có thể xem thông tin này !</h3>
+                        <h3 class="admin-notice wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".1s">Tài khoản quản trị viên mới có thể xem thông tin này !</h3>
                         <?php } ?>
                 </div>
             </div>

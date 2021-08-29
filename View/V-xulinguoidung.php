@@ -154,7 +154,7 @@
                                     </div>
                                     <div class="admin__add-product-item wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".4s">
                                         <label for="email" class="admin__add-product-label">Email</label>
-                                        <input type="email" name="email" id="email" value="<?php echo $data_user[0]['email'] ?>" placeholder="Email" class="admin__add-product-input">
+                                        <input type="email" name="email" id="email" value="<?php echo $data_user[0]['email'] ?>" placeholder="Email" class="admin__add-product-input" readonly>
                                         <?php if (isset($error['email'])){?> 
                                             <p class="error"><?php echo $error['email']; ?></p>
                                         <?php } ?>

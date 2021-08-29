@@ -119,35 +119,35 @@
                                 <div class="admin__add-product">
                                     <div class="admin__add-product-item wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s">
                                         <label for="fullname" class="admin__add-product-label">Họ và tên</label>
-                                        <input type="text" name="fullname" id="fullname" placeholder="Họ và tên" class="admin__add-product-input">
+                                        <input type="text" name="fullname" id="fullname" <?php if (isset($_POST['fullname'])) { ?> value="<?php echo $_POST['fullname']; ?>"<?php } ?> placeholder="Họ và tên" class="admin__add-product-input">
                                         <?php if (isset($error['fullname'])){?> 
                                             <p class="error"><?php echo $error['fullname']; ?></p>
                                         <?php } ?>
                                     </div>
                                     <div class="admin__add-product-item wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".2s">
                                         <label for="username" class="admin__add-product-label">Tên đăng nhập</label>
-                                        <input type="text" name="username" id="username" placeholder="Tên đăng nhập" class="admin__add-product-input">
+                                        <input type="text" name="username" id="username" <?php if (isset($_POST['username'])) { ?> value="<?php echo $_POST['username']; ?>"<?php } ?> placeholder="Tên đăng nhập" class="admin__add-product-input">
                                         <?php if (isset($error['username'])){?> 
                                             <p class="error"><?php echo $error['username']; ?></p>
                                         <?php } ?>
                                     </div>
                                     <div class="admin__add-product-item wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".3s">
                                         <label for="password" class="admin__add-product-label">Mật khẩu</label>
-                                        <input type="password" name="password" id="password" placeholder="Mật khẩu" class="admin__add-product-input">
+                                        <input type="password" name="password" id="password" <?php if (isset($_POST['password'])) { ?> value="<?php echo $_POST['password']; ?>"<?php } ?> placeholder="Mật khẩu" class="admin__add-product-input">
                                         <?php if (isset($error['password'])){?> 
                                             <p class="error"><?php echo $error['password']; ?></p>
                                         <?php } ?>
                                     </div>
                                     <div class="admin__add-product-item wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".3s">
                                         <label for="date" class="admin__add-product-label">Ngày sinh</label>
-                                        <input type="text" name="date" id="date" placeholder="Ngày sinh" class="admin__add-product-input">
+                                        <input type="text" name="date" id="date" <?php if (isset($_POST['date'])) { ?> value="<?php echo $_POST['date']; ?>"<?php } ?> placeholder="Ngày sinh" class="admin__add-product-input">
                                         <?php if (isset($error['date'])){?> 
                                             <p class="error"><?php echo $error['date']; ?></p>
                                         <?php } ?>
                                     </div>
                                     <div class="admin__add-product-item wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".4s">
                                         <label for="gender" class="admin__add-product-label">Giới tính</label>
-                                        <select name="gender" id="gender" class="admin__add-product-select">
+                                        <select name="gender" id="gender"  class="admin__add-product-select">
                                             <?php foreach ($gender_all as $key => $value){ ?>
                                                 <option value="<?php echo $value['id'] ?>"><?php echo $value['name'] ?></option>
                                             <?php } ?>
@@ -161,7 +161,7 @@
                                             <?php } ?>
                                         </select>
                                     </div>
-                                    <input type="submit" value="Sửa nhân viên" name="add-admin" class="admin__add-product-btn wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".5s">
+                                    <input type="submit" value="Thêm nhân viên" name="add-admin" class="admin__add-product-btn wow fadeInUp" data-wow-duration=".5s"  data-wow-delay=".5s">
                                 </div>
                             </form>
                         </div>
